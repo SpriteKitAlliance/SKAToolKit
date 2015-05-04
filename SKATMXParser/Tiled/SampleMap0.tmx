@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="40" height="24" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="Backgrounds.1" tilewidth="64" tileheight="64">
+  <image source="Backgrounds.atlasc/Backgrounds.1.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="257" name="Items.1" tilewidth="64" tileheight="64">
+  <image source="Items.atlasc/Items.1.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="282" name="Structural.1" tilewidth="64" tileheight="64">
+  <image source="Structural.atlasc/Structural.1.png" width="1088" height="1088"/>
+ </tileset>
+ <tileset firstgid="571" name="Tiles.1" tilewidth="64" tileheight="64">
+  <image source="Tiles.atlasc/Tiles.1.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="635" name="Walls.1" tilewidth="64" tileheight="64">
+  <image source="Walls.atlasc/Walls.1.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="891" name="Platforms.1" tilewidth="64" tileheight="64">
+  <image source="Platforms.atlasc/Platforms.1.png" width="768" height="768"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt1VcVwlAUBdEXigAgCKAJoAmgCaAJCEUAkAiAgACaAJoAmj9GxlmL+7F/xsB4zrkEkkghDU+oZZBFDj7yYq2AIkoooyLWqqihjgaaYq2FNjrooifW+hhgiBHGYi3ABFPMMBdrCyyxQohIrK2xQYwtdmJtjwOOOOEs1i644oY7HmLtiRfe+OAr1pRea/+1/9p/7b/2X/vvv/z3B5dtVVA=
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzF1klPFEEYxvGqIjF6YZETm8CgiXph0buA4MUlcf0Arh8AtwThpKBxubkvRzfUqxtxOajs4IFFRcCLA+6e9Kb/zhSZTk1PV88wDZX8MtXQ7zvPdL890KyEOIYWtOKVEOI13qAL3ehBL/rQjwEMYkjYz0+1X7OR5zTO4CzOYZhzRjCKMbzDe3zAOD5iApOYEvbzU+1n5rmKa7iOG1joZebpwD3cx4MM5Pvn9MgSQkJlpV5v5jHv91xXDplykYelaeSzzd9cVymZylCOSBr5wp6/SjJVoRo1lnzZkhmQsX2+jAlr/tZRW4s61KvEY2eN8P7r2TegERtU4nHY8+e3ouRrUv7Cnj+/9VfazwkyfytUXJCVE+B9nRUNcJ5t/pbRoxRlKEcEFbpvlHmfxgy+uGb/K/tvHr4bz4d5/Qo88trmr5KaKlSjBmuwNsDnLqC2EEUoRonr2ifL7/U5bPNXS5Y61DvPGhrQGPD+BV1+99k2f1up3Ybt2IGd2JXhfH7PiW3+dlO7B3uxD/txYB6vn23+mqg9iEM4jCM4Oo/XzzZ/x6k9gTa04yROZSBfhN4VWI4lKva3bdijr23+zlNzARdxCZdxxdVnlP2YjL8mW3nG757R+zle4KXmlc82fzepuYXbuIO76HD1mWY/I+OvyVanipldA+wHMYS32uc0vv8eUvMIj/EET9Hp0ce5P7lJ8s1mc+ebYD+JKXzS/hj1Utrnr4tzutGDXvSh39WnkH0RilGif76SulUqMZtjtfYDP/ELv7XFuiZf91kk7fNn+/8n7GPb/G3EJmzGlgU4NvP8B81BIe0=
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="40" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AU0APcZGRguMVIHl8dSGsgydECvAKa/5qRPL4FkLaksftGASq4DgzvG4M4zF8A3fYSiIWJcCNyWkfPB6SIUQPUMGOKIad1GFscT97AJTaQgJMJQl9Dc5PEIHLjKBieAJZXaZVnKQWwvDrY8uwooA+gR/uKEjDavqINAADalCor
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1"/>
+</map>
