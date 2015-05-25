@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Sprite Kit Alliance. All rights reserved.
 //
 
-#import "SKAMap.h"
+#import "SKATiledMap.h"
 #import "SKAMapTile.h"
 #import "CollisionDefine.h"
 
-@interface SKAMap ()
+@interface SKATiledMap ()
 
 @end
 
-@implementation SKAMap
+@implementation SKATiledMap
 
 -(instancetype)initWithMapName:(NSString *)mapName
 {

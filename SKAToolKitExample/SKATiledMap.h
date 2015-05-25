@@ -11,7 +11,7 @@
 #import "SKASpriteLayer.h"
 #import "SKAObjectLayer.h"
 
-@interface SKAMap : SKNode
+@interface SKATiledMap : SKNode
 
 -(instancetype)initWithMapName:(NSString *)mapName;
 

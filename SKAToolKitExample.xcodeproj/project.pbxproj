@@ -28,28 +28,15 @@
 		B67A57E71B10BD1700395E70 /* Structural.tps in Resources */ = {isa = PBXBuildFile; fileRef = B67A57D91B10BD1700395E70 /* Structural.tps */; };
 		B67A57E81B10BD1700395E70 /* Tiles.tps in Resources */ = {isa = PBXBuildFile; fileRef = B67A57DA1B10BD1700395E70 /* Tiles.tps */; };
 		B67A57E91B10BD1700395E70 /* Walls.tps in Resources */ = {isa = PBXBuildFile; fileRef = B67A57DB1B10BD1700395E70 /* Walls.tps */; };
-		B67A57F71B10BE0800395E70 /* SKATiledMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A57F61B10BE0800395E70 /* SKATiledMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A581E1B10BE3400395E70 /* SKAMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A58121B10BE3400395E70 /* SKAMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A581F1B10BE3400395E70 /* SKAMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A58131B10BE3400395E70 /* SKAMap.m */; };
-		B67A58201B10BE3400395E70 /* SKAObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A58141B10BE3400395E70 /* SKAObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A58211B10BE3400395E70 /* SKAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A58151B10BE3400395E70 /* SKAObject.m */; };
-		B67A58221B10BE3400395E70 /* SKASpriteLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A58161B10BE3400395E70 /* SKASpriteLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A58231B10BE3400395E70 /* SKASpriteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A58171B10BE3400395E70 /* SKASpriteLayer.m */; };
-		B67A58241B10BE3400395E70 /* SKAObjectLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A58181B10BE3400395E70 /* SKAObjectLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A58251B10BE3400395E70 /* SKAObjectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A58191B10BE3400395E70 /* SKAObjectLayer.m */; };
-		B67A58261B10BE3400395E70 /* SKASprite.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A581A1B10BE3400395E70 /* SKASprite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A58271B10BE3400395E70 /* SKASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A581B1B10BE3400395E70 /* SKASprite.m */; };
-		B67A58281B10BE3400395E70 /* SKAMapTile.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A581C1B10BE3400395E70 /* SKAMapTile.h */; };
-		B67A58291B10BE3400395E70 /* SKAMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A581D1B10BE3400395E70 /* SKAMapTile.m */; };
-		B67A58391B10DD5B00395E70 /* SKATestHud.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A58371B10DD5B00395E70 /* SKATestHud.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A583A1B10DD5B00395E70 /* SKATestHud.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A58381B10DD5B00395E70 /* SKATestHud.m */; };
-		B67A58451B10DF5F00395E70 /* SKAButtonSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A58431B10DF5F00395E70 /* SKAButtonSprite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A58461B10DF5F00395E70 /* SKAButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A58441B10DF5F00395E70 /* SKAButtonSprite.m */; };
-		B67A584F1B115EEF00395E70 /* SKATestPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A584D1B115EEF00395E70 /* SKATestPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B67A58501B115EEF00395E70 /* SKATestPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B67A584E1B115EEF00395E70 /* SKATestPlayer.m */; };
-		B67A58541B11619900395E70 /* CollisionDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = B67A58531B11619900395E70 /* CollisionDefine.h */; };
-		B67A585F1B125BBB00395E70 /* SKATiledMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67A585E1B125BBB00395E70 /* SKATiledMap.framework */; };
-		B67A58601B125BBB00395E70 /* SKATiledMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B67A585E1B125BBB00395E70 /* SKATiledMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6C751251B13912100455CA6 /* SKAButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751111B13912100455CA6 /* SKAButtonSprite.m */; };
+		B6C751261B13912100455CA6 /* SKATiledMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751131B13912100455CA6 /* SKATiledMap.m */; };
+		B6C751271B13912100455CA6 /* SKAMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751151B13912100455CA6 /* SKAMapTile.m */; };
+		B6C751281B13912100455CA6 /* SKAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751171B13912100455CA6 /* SKAObject.m */; };
+		B6C751291B13912100455CA6 /* SKAObjectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751191B13912100455CA6 /* SKAObjectLayer.m */; };
+		B6C7512A1B13912100455CA6 /* SKASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511B1B13912100455CA6 /* SKASprite.m */; };
+		B6C7512B1B13912100455CA6 /* SKASpriteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511D1B13912100455CA6 /* SKASpriteLayer.m */; };
+		B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511F1B13912100455CA6 /* SKATestHud.m */; };
+		B6C7512D1B13912100455CA6 /* SKATestPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751211B13912100455CA6 /* SKATestPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B67A58601B125BBB00395E70 /* SKATiledMap.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,7 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B63D27C11AF6C17800E7F043 /* SKATMXParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKATMXParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKAToolKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D27C51AF6C17800E7F043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63D27C61AF6C17800E7F043 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B63D27C81AF6C17800E7F043 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,41 +79,29 @@
 		B67A57D91B10BD1700395E70 /* Structural.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Structural.tps; sourceTree = "<group>"; };
 		B67A57DA1B10BD1700395E70 /* Tiles.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tiles.tps; sourceTree = "<group>"; };
 		B67A57DB1B10BD1700395E70 /* Walls.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Walls.tps; sourceTree = "<group>"; };
-		B67A57F21B10BE0800395E70 /* SKATiledMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKATiledMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B67A57F51B10BE0800395E70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B67A57F61B10BE0800395E70 /* SKATiledMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKATiledMap.h; sourceTree = "<group>"; };
-		B67A58121B10BE3400395E70 /* SKAMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAMap.h; sourceTree = "<group>"; };
-		B67A58131B10BE3400395E70 /* SKAMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAMap.m; sourceTree = "<group>"; };
-		B67A58141B10BE3400395E70 /* SKAObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObject.h; sourceTree = "<group>"; };
-		B67A58151B10BE3400395E70 /* SKAObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObject.m; sourceTree = "<group>"; };
-		B67A58161B10BE3400395E70 /* SKASpriteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASpriteLayer.h; sourceTree = "<group>"; };
-		B67A58171B10BE3400395E70 /* SKASpriteLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASpriteLayer.m; sourceTree = "<group>"; };
-		B67A58181B10BE3400395E70 /* SKAObjectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObjectLayer.h; sourceTree = "<group>"; };
-		B67A58191B10BE3400395E70 /* SKAObjectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObjectLayer.m; sourceTree = "<group>"; };
-		B67A581A1B10BE3400395E70 /* SKASprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASprite.h; sourceTree = "<group>"; };
-		B67A581B1B10BE3400395E70 /* SKASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASprite.m; sourceTree = "<group>"; };
-		B67A581C1B10BE3400395E70 /* SKAMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAMapTile.h; sourceTree = "<group>"; };
-		B67A581D1B10BE3400395E70 /* SKAMapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAMapTile.m; sourceTree = "<group>"; };
-		B67A58371B10DD5B00395E70 /* SKATestHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestHud.h; sourceTree = "<group>"; };
-		B67A58381B10DD5B00395E70 /* SKATestHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestHud.m; sourceTree = "<group>"; };
-		B67A58431B10DF5F00395E70 /* SKAButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAButtonSprite.h; sourceTree = "<group>"; };
-		B67A58441B10DF5F00395E70 /* SKAButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAButtonSprite.m; sourceTree = "<group>"; };
-		B67A584D1B115EEF00395E70 /* SKATestPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestPlayer.h; sourceTree = "<group>"; };
-		B67A584E1B115EEF00395E70 /* SKATestPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestPlayer.m; sourceTree = "<group>"; };
-		B67A58531B11619900395E70 /* CollisionDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionDefine.h; sourceTree = "<group>"; };
-		B67A585E1B125BBB00395E70 /* SKATiledMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKATiledMap.framework; path = "Build/Products/Debug-iphoneos/SKATiledMap.framework"; sourceTree = "<group>"; };
+		B6C7510F1B13912100455CA6 /* CollisionDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionDefine.h; sourceTree = "<group>"; };
+		B6C751101B13912100455CA6 /* SKAButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAButtonSprite.h; sourceTree = "<group>"; };
+		B6C751111B13912100455CA6 /* SKAButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAButtonSprite.m; sourceTree = "<group>"; };
+		B6C751121B13912100455CA6 /* SKATiledMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATiledMap.h; sourceTree = "<group>"; };
+		B6C751131B13912100455CA6 /* SKATiledMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATiledMap.m; sourceTree = "<group>"; };
+		B6C751141B13912100455CA6 /* SKAMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAMapTile.h; sourceTree = "<group>"; };
+		B6C751151B13912100455CA6 /* SKAMapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAMapTile.m; sourceTree = "<group>"; };
+		B6C751161B13912100455CA6 /* SKAObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObject.h; sourceTree = "<group>"; };
+		B6C751171B13912100455CA6 /* SKAObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObject.m; sourceTree = "<group>"; };
+		B6C751181B13912100455CA6 /* SKAObjectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObjectLayer.h; sourceTree = "<group>"; };
+		B6C751191B13912100455CA6 /* SKAObjectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObjectLayer.m; sourceTree = "<group>"; };
+		B6C7511A1B13912100455CA6 /* SKASprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASprite.h; sourceTree = "<group>"; };
+		B6C7511B1B13912100455CA6 /* SKASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASprite.m; sourceTree = "<group>"; };
+		B6C7511C1B13912100455CA6 /* SKASpriteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASpriteLayer.h; sourceTree = "<group>"; };
+		B6C7511D1B13912100455CA6 /* SKASpriteLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASpriteLayer.m; sourceTree = "<group>"; };
+		B6C7511E1B13912100455CA6 /* SKATestHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestHud.h; sourceTree = "<group>"; };
+		B6C7511F1B13912100455CA6 /* SKATestHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestHud.m; sourceTree = "<group>"; };
+		B6C751201B13912100455CA6 /* SKATestPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestPlayer.h; sourceTree = "<group>"; };
+		B6C751211B13912100455CA6 /* SKATestPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B63D27BE1AF6C17800E7F043 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B67A585F1B125BBB00395E70 /* SKATiledMap.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B67A57EE1B10BE0800395E70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,12 +111,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60431FA1B13959000563651 /* SKATiledMap */ = {
+			isa = PBXGroup;
+			children = (
+				B6C751121B13912100455CA6 /* SKATiledMap.h */,
+				B6C751131B13912100455CA6 /* SKATiledMap.m */,
+				B6C751181B13912100455CA6 /* SKAObjectLayer.h */,
+				B6C751191B13912100455CA6 /* SKAObjectLayer.m */,
+				B6C7511C1B13912100455CA6 /* SKASpriteLayer.h */,
+				B6C7511D1B13912100455CA6 /* SKASpriteLayer.m */,
+				B6C751161B13912100455CA6 /* SKAObject.h */,
+				B6C751171B13912100455CA6 /* SKAObject.m */,
+				B6C7511A1B13912100455CA6 /* SKASprite.h */,
+				B6C7511B1B13912100455CA6 /* SKASprite.m */,
+				B6C751141B13912100455CA6 /* SKAMapTile.h */,
+				B6C751151B13912100455CA6 /* SKAMapTile.m */,
+			);
+			name = SKATiledMap;
+			sourceTree = "<group>";
+		};
+		B60431FB1B1395B900563651 /* SKATestHud */ = {
+			isa = PBXGroup;
+			children = (
+				B6C7511E1B13912100455CA6 /* SKATestHud.h */,
+				B6C7511F1B13912100455CA6 /* SKATestHud.m */,
+			);
+			name = SKATestHud;
+			sourceTree = "<group>";
+		};
+		B60431FC1B1395CB00563651 /* SKAButtonSprite */ = {
+			isa = PBXGroup;
+			children = (
+				B6C751101B13912100455CA6 /* SKAButtonSprite.h */,
+				B6C751111B13912100455CA6 /* SKAButtonSprite.m */,
+			);
+			name = SKAButtonSprite;
+			sourceTree = "<group>";
+		};
+		B60431FD1B1395D700563651 /* SKATestPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B6C751201B13912100455CA6 /* SKATestPlayer.h */,
+				B6C751211B13912100455CA6 /* SKATestPlayer.m */,
+			);
+			name = SKATestPlayer;
+			sourceTree = "<group>";
+		};
 		B63D27B81AF6C17800E7F043 = {
 			isa = PBXGroup;
 			children = (
-				B67A585E1B125BBB00395E70 /* SKATiledMap.framework */,
-				B63D27C31AF6C17800E7F043 /* SKATMXParser */,
-				B67A57F31B10BE0800395E70 /* SKATiledMap */,
+				B63D27C31AF6C17800E7F043 /* SKAToolKitExample */,
 				B63D27C21AF6C17800E7F043 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,16 +168,16 @@
 		B63D27C21AF6C17800E7F043 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B63D27C11AF6C17800E7F043 /* SKATMXParser.app */,
-				B67A57F21B10BE0800395E70 /* SKATiledMap.framework */,
+				B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B63D27C31AF6C17800E7F043 /* SKATMXParser */ = {
+		B63D27C31AF6C17800E7F043 /* SKAToolKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				B67A57CC1B10BD1700395E70 /* Tiled */,
+				B6C7510E1B13907100455CA6 /* SKAToolKit */,
+				B67A57CC1B10BD1700395E70 /* Tiled Sample Map */,
 				B63D29DE1AF6F50600E7F043 /* GameScene.h */,
 				B63D29DF1AF6F50600E7F043 /* GameScene.m */,
 				B63D27CB1AF6C17800E7F043 /* ViewController.h */,
@@ -169,7 +187,7 @@
 				B63D27D31AF6C17800E7F043 /* LaunchScreen.xib */,
 				B63D27C41AF6C17800E7F043 /* Supporting Files */,
 			);
-			path = SKATMXParser;
+			path = SKAToolKitExample;
 			sourceTree = "<group>";
 		};
 		B63D27C41AF6C17800E7F043 /* Supporting Files */ = {
@@ -183,7 +201,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B67A57CC1B10BD1700395E70 /* Tiled */ = {
+		B67A57CC1B10BD1700395E70 /* Tiled Sample Map */ = {
 			isa = PBXGroup;
 			children = (
 				B67A57CD1B10BD1700395E70 /* Backgrounds.tps */,
@@ -196,6 +214,7 @@
 				B67A57DA1B10BD1700395E70 /* Tiles.tps */,
 				B67A57DB1B10BD1700395E70 /* Walls.tps */,
 			);
+			name = "Tiled Sample Map";
 			path = Tiled;
 			sourceTree = "<group>";
 		};
@@ -212,77 +231,24 @@
 			path = spritesheets;
 			sourceTree = "<group>";
 		};
-		B67A57F31B10BE0800395E70 /* SKATiledMap */ = {
+		B6C7510E1B13907100455CA6 /* SKAToolKit */ = {
 			isa = PBXGroup;
 			children = (
-				B67A57F61B10BE0800395E70 /* SKATiledMap.h */,
-				B67A58121B10BE3400395E70 /* SKAMap.h */,
-				B67A58131B10BE3400395E70 /* SKAMap.m */,
-				B67A58431B10DF5F00395E70 /* SKAButtonSprite.h */,
-				B67A58441B10DF5F00395E70 /* SKAButtonSprite.m */,
-				B67A58421B10DE7300395E70 /* Map Objects */,
-				B67A58371B10DD5B00395E70 /* SKATestHud.h */,
-				B67A58381B10DD5B00395E70 /* SKATestHud.m */,
-				B67A58531B11619900395E70 /* CollisionDefine.h */,
-				B67A584D1B115EEF00395E70 /* SKATestPlayer.h */,
-				B67A584E1B115EEF00395E70 /* SKATestPlayer.m */,
-				B67A57F41B10BE0800395E70 /* Supporting Files */,
+				B6C7510F1B13912100455CA6 /* CollisionDefine.h */,
+				B60431FA1B13959000563651 /* SKATiledMap */,
+				B60431FB1B1395B900563651 /* SKATestHud */,
+				B60431FC1B1395CB00563651 /* SKAButtonSprite */,
+				B60431FD1B1395D700563651 /* SKATestPlayer */,
 			);
-			path = SKATiledMap;
-			sourceTree = "<group>";
-		};
-		B67A57F41B10BE0800395E70 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B67A57F51B10BE0800395E70 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B67A58421B10DE7300395E70 /* Map Objects */ = {
-			isa = PBXGroup;
-			children = (
-				B67A58141B10BE3400395E70 /* SKAObject.h */,
-				B67A58151B10BE3400395E70 /* SKAObject.m */,
-				B67A58161B10BE3400395E70 /* SKASpriteLayer.h */,
-				B67A58171B10BE3400395E70 /* SKASpriteLayer.m */,
-				B67A58181B10BE3400395E70 /* SKAObjectLayer.h */,
-				B67A58191B10BE3400395E70 /* SKAObjectLayer.m */,
-				B67A581A1B10BE3400395E70 /* SKASprite.h */,
-				B67A581B1B10BE3400395E70 /* SKASprite.m */,
-				B67A581C1B10BE3400395E70 /* SKAMapTile.h */,
-				B67A581D1B10BE3400395E70 /* SKAMapTile.m */,
-			);
-			name = "Map Objects";
+			name = SKAToolKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		B67A57EF1B10BE0800395E70 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B67A58201B10BE3400395E70 /* SKAObject.h in Headers */,
-				B67A58281B10BE3400395E70 /* SKAMapTile.h in Headers */,
-				B67A58391B10DD5B00395E70 /* SKATestHud.h in Headers */,
-				B67A58221B10BE3400395E70 /* SKASpriteLayer.h in Headers */,
-				B67A58241B10BE3400395E70 /* SKAObjectLayer.h in Headers */,
-				B67A584F1B115EEF00395E70 /* SKATestPlayer.h in Headers */,
-				B67A57F71B10BE0800395E70 /* SKATiledMap.h in Headers */,
-				B67A581E1B10BE3400395E70 /* SKAMap.h in Headers */,
-				B67A58261B10BE3400395E70 /* SKASprite.h in Headers */,
-				B67A58541B11619900395E70 /* CollisionDefine.h in Headers */,
-				B67A58451B10DF5F00395E70 /* SKAButtonSprite.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		B63D27C01AF6C17800E7F043 /* SKATMXParser */ = {
+		B63D27C01AF6C17800E7F043 /* SKAToolKitExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B63D27E41AF6C17800E7F043 /* Build configuration list for PBXNativeTarget "SKATMXParser" */;
+			buildConfigurationList = B63D27E41AF6C17800E7F043 /* Build configuration list for PBXNativeTarget "SKAToolKitExample" */;
 			buildPhases = (
 				B63D27BD1AF6C17800E7F043 /* Sources */,
 				B63D27BE1AF6C17800E7F043 /* Frameworks */,
@@ -293,28 +259,10 @@
 			);
 			dependencies = (
 			);
-			name = SKATMXParser;
+			name = SKAToolKitExample;
 			productName = SKATMXParser;
-			productReference = B63D27C11AF6C17800E7F043 /* SKATMXParser.app */;
+			productReference = B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B67A57F11B10BE0800395E70 /* SKATiledMap */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B67A580B1B10BE0900395E70 /* Build configuration list for PBXNativeTarget "SKATiledMap" */;
-			buildPhases = (
-				B67A57ED1B10BE0800395E70 /* Sources */,
-				B67A57EE1B10BE0800395E70 /* Frameworks */,
-				B67A57EF1B10BE0800395E70 /* Headers */,
-				B67A57F01B10BE0800395E70 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SKATiledMap;
-			productName = SKATiledMap;
-			productReference = B67A57F21B10BE0800395E70 /* SKATiledMap.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -328,12 +276,9 @@
 					B63D27C01AF6C17800E7F043 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
-					B67A57F11B10BE0800395E70 = {
-						CreatedOnToolsVersion = 6.3.2;
-					};
 				};
 			};
-			buildConfigurationList = B63D27BC1AF6C17800E7F043 /* Build configuration list for PBXProject "SKATMXParser" */;
+			buildConfigurationList = B63D27BC1AF6C17800E7F043 /* Build configuration list for PBXProject "SKAToolKitExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -346,8 +291,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B63D27C01AF6C17800E7F043 /* SKATMXParser */,
-				B67A57F11B10BE0800395E70 /* SKATiledMap */,
+				B63D27C01AF6C17800E7F043 /* SKAToolKitExample */,
 			);
 		};
 /* End PBXProject section */
@@ -377,13 +321,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B67A57F01B10BE0800395E70 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -391,26 +328,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6C751251B13912100455CA6 /* SKAButtonSprite.m in Sources */,
 				B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */,
+				B6C751261B13912100455CA6 /* SKATiledMap.m in Sources */,
 				B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */,
+				B6C751281B13912100455CA6 /* SKAObject.m in Sources */,
+				B6C751271B13912100455CA6 /* SKAMapTile.m in Sources */,
+				B6C7512B1B13912100455CA6 /* SKASpriteLayer.m in Sources */,
+				B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */,
+				B6C7512A1B13912100455CA6 /* SKASprite.m in Sources */,
 				B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */,
+				B6C751291B13912100455CA6 /* SKAObjectLayer.m in Sources */,
+				B6C7512D1B13912100455CA6 /* SKATestPlayer.m in Sources */,
 				B63D27C71AF6C17800E7F043 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B67A57ED1B10BE0800395E70 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B67A58231B10BE3400395E70 /* SKASpriteLayer.m in Sources */,
-				B67A58271B10BE3400395E70 /* SKASprite.m in Sources */,
-				B67A58291B10BE3400395E70 /* SKAMapTile.m in Sources */,
-				B67A58501B115EEF00395E70 /* SKATestPlayer.m in Sources */,
-				B67A583A1B10DD5B00395E70 /* SKATestHud.m in Sources */,
-				B67A58461B10DF5F00395E70 /* SKAButtonSprite.m in Sources */,
-				B67A58211B10BE3400395E70 /* SKAObject.m in Sources */,
-				B67A58251B10BE3400395E70 /* SKAObjectLayer.m in Sources */,
-				B67A581F1B10BE3400395E70 /* SKAMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,15 +450,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Build/Products/Debug-iphonesimulator",
-					"$(PROJECT_DIR)/SKATMXParser",
-					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos",
-				);
-				INFOPLIST_FILE = SKATMXParser/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SKAToolKitExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SKAToolKitExample;
 			};
 			name = Debug;
 		};
@@ -536,64 +461,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Build/Products/Debug-iphonesimulator",
-					"$(PROJECT_DIR)/SKATMXParser",
-					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos",
-				);
-				INFOPLIST_FILE = SKATMXParser/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SKAToolKitExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B67A580C1B10BE0900395E70 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SKATiledMap/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B67A580D1B10BE0900395E70 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SKATiledMap/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				PRODUCT_NAME = SKAToolKitExample;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B63D27BC1AF6C17800E7F043 /* Build configuration list for PBXProject "SKATMXParser" */ = {
+		B63D27BC1AF6C17800E7F043 /* Build configuration list for PBXProject "SKAToolKitExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B63D27E21AF6C17800E7F043 /* Debug */,
@@ -602,20 +480,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B63D27E41AF6C17800E7F043 /* Build configuration list for PBXNativeTarget "SKATMXParser" */ = {
+		B63D27E41AF6C17800E7F043 /* Build configuration list for PBXNativeTarget "SKAToolKitExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B63D27E51AF6C17800E7F043 /* Debug */,
 				B63D27E61AF6C17800E7F043 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B67A580B1B10BE0900395E70 /* Build configuration list for PBXNativeTarget "SKATiledMap" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B67A580C1B10BE0900395E70 /* Debug */,
-				B67A580D1B10BE0900395E70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

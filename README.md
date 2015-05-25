@@ -1,40 +1,25 @@
-#SKATiledMap
-SKATiledMap is a simple solution for creating a map using the free Tiled Map Editor http://www.mapeditor.org/ in Apples SpriteKit framework. The Sprite Kit Alliance is happy to provide SKATileMap free of charge without any warranty or guarantee (see license below for more info).
+#SKAToolKit
+SKAToolKit is a set of tools created by the Sprite Kit Alliance to be used with Apples Sprite Kit framework. One of the biggest features is the SKATiledMap which is a simple solution for creating a map using the free Tiled Map Editor http://www.mapeditor.org/. The Sprite Kit Alliance is happy to provide the SKAToolKit free of charge without any warranty or guarantee (see license below for more info).
 
 ###Suported Map Types
 Currently SKATileMap supports Tiled Maps that are exported in the JSON format.
 
-###Framework Install Instructions
-- Download the SKATiledMap.framework
-- Copy framework into your project in finder (do not drag it into project)
-- In your project settings find the "Embedded Binaries" section
-- Hit plus
-- If SKATiledMap.framework is not listed select add other
-- Navigate to SKATiledMap.frame (should be in your project folder)
-- Select SKATileMap.framework and select add
-- import <SKATiledMap/SKATiledMap.h>
-
-###Non Framework Install Instructions
-- Copy all files in SKATiledMap folder into your project
-- Import either SKATiledMap or SKA file you want
-
-
-###Creating a Map
-
-SKAMap *map = [[SKAMap alloc]initWithMapName:@"yourMapName"];
+###SKAToolKit Install Instructions
+- Copy all files in SKAToolKit folder into your project
+- Import either SKATiledMap or any SKA file you want
 
 ###Tiled Object Defaults
 When creating your tiled map SKATiledMap will create physical bodies if it finds these properties on a tile or object.
 
 - SKACollisionType : SKACollisionTypeRect
 
-###SKAMap
-This is a sprite node that represents a map created in Tiled. Currently SKAMap only supports JSON format. Add the JSON file and any images used for your tiles into your project.
+###SKATiledMap
+This is a sprite node that represents a map created in Tiled. Currently SKATiledMap only supports JSON format. Add the JSON file and any images used for your tiles into your project.
 
-    SKAMap *map = [[SKAMap alloc]initWithMapName:@"yourMapName"]; //name of your JSON file
+    SKATiledMap *map = [[SKATiledMap alloc]initWithMapName:@"yourMapName"]; //name of your JSON file
 
-###SKAMap Auto Follow Feature
-The SKAMap has an auto follow feature. This is a great feature if you want the map to position itself to keep a player on screen. To use this feature set the autoFollowNode to any subclass of SKNode and call the maps update method in the scene update method. 
+###SKATiledMap Auto Follow Feature
+The SKATiledMap has an auto follow feature. This is a great feature if you want the map to position itself and keep a player on screen. To use this feature set the autoFollowNode to any subclass of SKNode and call the maps update method in the scene update method. 
 
     self.player = [SKATestPlayer spriteNodeWithColor:[SKColor greenColor] size:CGSizeMake(40, 80)];
     self.player.zPosition = 20;

@@ -7,12 +7,14 @@
 //
 
 #import "GameScene.h"
-#import <SKATiledMap/SKATiledMap.h>
+#import "SKATiledMap.h"
+#import "SKATestPlayer.h"
+#import "SKATestHud.h"
 
 @interface GameScene ()
 
 @property (nonatomic, strong)SKATestPlayer *player;
-@property (nonatomic, strong)SKAMap *map;
+@property (nonatomic, strong)SKATiledMap *map;
 
 @end
 
@@ -20,7 +22,7 @@
 
 -(void)didMoveToView:(SKView *)view
 {
-    self.map = [[SKAMap alloc]initWithMapName:@"SampleMap0"];
+    self.map = [[SKATiledMap alloc]initWithMapName:@"SampleMap0"];
 //    self.map.xScale = .3;
 //    self.map.yScale = .3;
     [self addChild:self.map];

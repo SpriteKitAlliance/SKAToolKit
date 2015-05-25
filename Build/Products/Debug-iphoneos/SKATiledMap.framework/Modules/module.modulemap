@@ -1,6 +1,0 @@
-framework module SKATiledMap {
-  umbrella header "SKATiledMap.h"
-
-  export *
-  module * { export * }
-}
