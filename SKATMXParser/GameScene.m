@@ -49,7 +49,7 @@
     
     self.map.autoFollowNode = self.player;
 
-    
+     
     SKATestHud *testHud = [SKATestHud hudWithScene:self.scene withPlayer:self.player];
     
     [self addChild:testHud];
