@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "SKATMXMap.h"
 #import "GameScene.h"
 
 @interface ViewController ()
@@ -26,6 +25,7 @@
     skView.showsFPS = YES;
     skView.showsDrawCount = YES;
     skView.showsNodeCount = YES;
+    skView.showsPhysics = YES;
     
     // Create and configure the scene.
     //SKScene * scene = [MyScene sceneWithSize:CGSizeMake(self.view.bounds.size.height, self.view.bounds.size.width)];

@@ -37,7 +37,119 @@
          "draworder":"topdown",
          "height":0,
          "name":"Object Layer 1",
-         "objects":[],
+         "objects":[
+                {
+                 "height":239.394,
+                 "name":"pizza",
+                 "properties":
+                    {
+                     "customKey":"value of sorts"
+                    },
+                 "rotation":0,
+                 "type":"cheeseburger",
+                 "visible":true,
+                 "width":290.909,
+                 "x":793.939,
+                 "y":242.424
+                }, 
+                {
+                 "height":15.4970000000001,
+                 "name":"",
+                 "properties":
+                    {
+                     "SKACollisionType":"SKACollisionTypeRect"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":2066.84333333333,
+                 "x":238.3033,
+                 "y":1407.63666666667
+                }, 
+                {
+                 "height":1354.54666666667,
+                 "name":"",
+                 "properties":
+                    {
+                     "SKACollisionType":"SKACollisionTypeRect"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":17.7723333333333,
+                 "x":237.0348,
+                 "y":52.7361666666665
+                }, 
+                {
+                 "height":244.784422809458,
+                 "name":"",
+                 "properties":
+                    {
+                     "SKACollisionType":"SKACollisionTypeRect"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":317.107093184979,
+                 "x":1663.421418637,
+                 "y":1157.16272600835
+                }, 
+                {
+                 "height":196.116828929068,
+                 "name":"",
+                 "properties":
+                    {
+                     "SKACollisionType":"SKACollisionTypeRect"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":120.598980064905,
+                 "x":1410.75197032916,
+                 "y":1217.37042188224
+                }, 
+                {
+                 "height":125.333333333333,
+                 "name":"",
+                 "properties":
+                    {
+                     "SKACollisionType":"SKACollisionTypeRect"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":65.3333333333335,
+                 "x":1346.66666666667,
+                 "y":1284
+                }, 
+                {
+                 "height":56,
+                 "name":"",
+                 "properties":
+                    {
+                     "SKACollisionType":"SKACollisionTypeRect"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":58.6666666666667,
+                 "x":1282.66666666667,
+                 "y":1349.33333333333
+                }, 
+                {
+                 "height":1418.66666666667,
+                 "name":"",
+                 "properties":
+                    {
+                     "SKACollisionType":"SKACollisionTypeRect"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":11.9999999999995,
+                 "x":2306.66666666667,
+                 "y":6.66666666666667
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -55,7 +167,7 @@
  "tilesets":[
         {
          "firstgid":1,
-         "image":"Backgrounds.atlasc\/Backgrounds.1.png",
+         "image":"spritesheets\/Backgrounds.1.png",
          "imageheight":1024,
          "imagewidth":1024,
          "margin":0,
@@ -70,7 +182,7 @@
         }, 
         {
          "firstgid":257,
-         "image":"Items.atlasc\/Items.1.png",
+         "image":"spritesheets\/Items.1.png",
          "imageheight":320,
          "imagewidth":320,
          "margin":0,
@@ -85,7 +197,7 @@
         }, 
         {
          "firstgid":282,
-         "image":"Structural.atlasc\/Structural.1.png",
+         "image":"spritesheets\/Structural.1.png",
          "imageheight":1088,
          "imagewidth":1088,
          "margin":0,
@@ -96,11 +208,30 @@
             },
          "spacing":0,
          "tileheight":64,
+         "tileproperties":
+            {
+             "0":
+                {
+                 "SKACollisionType":"SKACollisionTypeRect"
+                },
+             "1":
+                {
+                 "SKACollisionType":"SKACollisionTypeRect"
+                },
+             "2":
+                {
+                 "SKACollisionType":"SKACollisionTypeRect"
+                },
+             "3":
+                {
+                 "SKACollisionType":"SKACollisionTypeRect"
+                }
+            },
          "tilewidth":64
         }, 
         {
          "firstgid":571,
-         "image":"Tiles.atlasc\/Tiles.1.png",
+         "image":"spritesheets\/Tiles.1.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -115,7 +246,7 @@
         }, 
         {
          "firstgid":635,
-         "image":"Walls.atlasc\/Walls.1.png",
+         "image":"spritesheets\/Walls.1.png",
          "imageheight":1024,
          "imagewidth":1024,
          "margin":0,
@@ -130,7 +261,7 @@
         }, 
         {
          "firstgid":891,
-         "image":"Platforms.atlasc\/Platforms.1.png",
+         "image":"spritesheets\/Platforms.1.png",
          "imageheight":768,
          "imagewidth":768,
          "margin":0,

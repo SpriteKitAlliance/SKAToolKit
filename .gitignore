@@ -1,5 +1,11 @@
 ### Xcode stuff
-build/
+*/Intermediates
+*.framework.dSYM
+*/Contents
+*.app.dSYM
+*.app
+*.dSYM/*
+Build/Intermediates/*
 *.pbxuser
 !default.pbxuser
 *.mode1v3
