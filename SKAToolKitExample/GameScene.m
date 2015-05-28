@@ -10,11 +10,14 @@
 #import "SKATiledMap.h"
 #import "SKATestPlayer.h"
 #import "SKATestHud.h"
+#import "SKAMiniMap.h"
+#import "SKACroppedMiniMap.h"
 
 @interface GameScene ()
 
 @property (nonatomic, strong)SKATestPlayer *player;
 @property (nonatomic, strong)SKATiledMap *map;
+@property (nonatomic, strong)SKACroppedMiniMap *croppedMiniMap;
 
 @end
 
@@ -26,6 +29,18 @@
 //    self.map.xScale = .3;
 //    self.map.yScale = .3;
     [self addChild:self.map];
+    
+    NSInteger padding = 10;
+    
+    SKAMiniMap *miniMap = [[SKAMiniMap alloc]initWithMap:self.map withWidth:150];
+     miniMap.position = CGPointMake(self.size.width-miniMap.size.width/2-padding, self.size.height-miniMap.size.height/2-padding);
+    
+    self.croppedMiniMap = [[SKACroppedMiniMap alloc]initWithMap:self.map withWidth:150 withCroppedSize:CGSizeMake(50, 50)];
+    
+    self.croppedMiniMap.position = CGPointMake(self.size.width-self.croppedMiniMap.size.width/2-padding, self.size.height-self.croppedMiniMap.size.height/2-padding);
+
+
+    miniMap.position = CGPointMake(self.size.width-miniMap.size.width/2, self.size.height-miniMap.size.height/2);
     
     SKAction *fadeOut = [SKAction fadeAlphaTo:0 duration:.5];
     SKAction *fadeIn = [SKAction fadeAlphaTo:1 duration:.5];
@@ -50,19 +65,24 @@
     [self.map addChild:self.player];
     
     self.map.autoFollowNode = self.player;
-
+    self.croppedMiniMap.autoFollowNode = self.player;
      
     SKATestHud *testHud = [SKATestHud hudWithScene:self.scene withPlayer:self.player];
     
+    [testHud addChild:miniMap];
+
+//    [testHud addChild:self.croppedMiniMap];
+
     [self addChild:testHud];
-    
-    
+
+
 }
 
 -(void)update:(NSTimeInterval)currentTime
 {
     [self.player update];
     [self.map update];
+    [self.croppedMiniMap update];
 }
 
 @end

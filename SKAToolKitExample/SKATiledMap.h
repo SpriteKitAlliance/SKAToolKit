@@ -33,4 +33,10 @@
 
 -(void)update;
 
+//returns a small version of the map at the time of creation
+-(SKSpriteNode *)miniMapWithWidth:(NSInteger)width;
+
+-(SKSpriteNode *)miniMapWithWidth:(NSInteger)width withCroppedSize:(CGSize)size;
+
+
 @end

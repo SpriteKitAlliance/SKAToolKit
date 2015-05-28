@@ -12,6 +12,9 @@
 
 @interface SKATiledMap ()
 
+@property(nonatomic, strong)SKSpriteNode *miniMap;
+@property(nonatomic, strong)SKSpriteNode *croppedMap;
+
 @end
 
 @implementation SKATiledMap
@@ -64,7 +67,6 @@
         
         SKTexture *mainTexture = [SKTexture textureWithImage:image];
         
-        NSLog(@"Image: %@", image);
         
         //calculating small texture
         NSInteger imageWidth = [tileset[@"imagewidth"] integerValue];
@@ -113,7 +115,6 @@
     {
         NSArray *data = layerDictionary[@"data"];
         
-        NSLog(@"Layer: %@", layerDictionary);
         
         if (data.count)
         {
@@ -161,13 +162,6 @@
                         NSString *key = [NSString stringWithFormat:@"%@", number];
                         
                         SKAMapTile *mapTile = tileSets[key];
-                        
-                        NSLog(@"KEY: %@", key);
-                        
-                        if(!mapTile)
-                        {
-                            
-                        }
                         
                         SKASprite *sprite = [SKASprite spriteNodeWithTexture:mapTile.texture];
                         sprite.position = CGPointMake(sprite.size.width/2 + j*sprite.size.width, sprite.size.height/2 + i*sprite.size.height);
@@ -268,6 +262,42 @@
     
     self.spriteLayers = spriteLayers;
     self.objectLayers = objectLayers;
+    
+}
+
+-(SKSpriteNode *)miniMapWithWidth:(NSInteger)width
+{
+    SKTexture *texture = [self.scene.view textureFromNode:self];
+    
+    NSInteger height = ((float)width/((float)self.mapWidth*(float)self.tileWidth)) * (self.mapHeight*self.tileWidth);
+    SKSpriteNode *miniMap = [SKSpriteNode spriteNodeWithTexture:texture size:CGSizeMake(width, height)];
+    
+    [self addChild:miniMap];
+    
+    texture = [self.scene.view textureFromNode:miniMap];
+    
+    [miniMap removeFromParent];
+    
+    miniMap = [SKSpriteNode spriteNodeWithTexture:texture];
+
+    return miniMap;
+}
+
+-(SKSpriteNode *)miniMapWithWidth:(NSInteger)width withCroppedSize:(CGSize)size
+{
+    self.miniMap = [self miniMapWithWidth:width];
+    self.miniMap.anchorPoint = CGPointMake(0, 0);
+    
+    SKCropNode *croppedNode = [[SKCropNode alloc]init];
+    [croppedNode addChild:self.miniMap];
+    
+    SKSpriteNode *mask = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:size];
+    croppedNode.maskNode = mask;
+    
+    self.croppedMap = [SKSpriteNode spriteNodeWithColor:[SKColor clearColor] size:size];
+    [self.croppedMap addChild:croppedNode];
+    
+    return self.croppedMap;
 }
 
 -(void)update
@@ -293,6 +323,34 @@
         
         self.position = CGPointMake((int)(position.x), (int)(position.y));
     }
+    
+    if (self.autoFollowNode && self.miniMap && self.croppedMap)
+    {
+        float scale = self.miniMap.size.width/(self.mapWidth * self.tileWidth);
+        
+        self.miniMap.position = CGPointMake(-self.autoFollowNode.position.x+self.scene.size.width/2, -self.autoFollowNode.position.y+self.scene.size.height/2);
+        
+        //scaling down
+        self.miniMap.position = CGPointMake(self.miniMap.position.x*scale, self.miniMap.position.y*scale);
+        
+        //keep map from going off screen
+        CGPoint position = self.miniMap.position;
+        
+        if (position.x > 0)
+            position.x = 0;
+        
+        if (position.y > 0)
+            position.y = 0;
+        
+        if (position.y < -self.miniMap.size.height+self.croppedMap.size.height)
+            position.y = -self.miniMap.size.height+self.croppedMap.size.height;
+        
+        if (position.x < -self.miniMap.size.width+self.croppedMap.size.width)
+            position.x = -self.miniMap.size.width+self.croppedMap.size.width;
+        
+        self.miniMap.position = CGPointMake((int)(position.x-self.croppedMap.size.width/2), (int)(position.y-self.croppedMap.size.height/2));
+    }
+
 }
 
 

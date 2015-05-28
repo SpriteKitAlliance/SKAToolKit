@@ -1,20 +1,17 @@
 #SKAToolKit
 SKAToolKit is a set of tools created by the Sprite Kit Alliance to be used with Apples Sprite Kit framework. One of the biggest features is the SKATiledMap which is a simple solution for creating a map using the free Tiled Map Editor http://www.mapeditor.org/. The Sprite Kit Alliance is happy to provide the SKAToolKit free of charge without any warranty or guarantee (see license below for more info).
 
-###Suported Map Types
-Currently SKATileMap supports Tiled Maps that are exported in the JSON format.
 
-###SKAToolKit Install Instructions
+
+##SKAToolKit Install Instructions
 - Copy all files in SKAToolKit folder into your project
 - Import either SKATiledMap or any SKA file you want
 
-###Tiled Object Defaults
-When creating your tiled map SKATiledMap will create physical bodies if it finds these properties on a tile or object.
-
-- SKACollisionType : SKACollisionTypeRect
-
-###SKATiledMap
+##SKATiledMap
 This is a sprite node that represents a map created in Tiled. Currently SKATiledMap only supports JSON format. Add the JSON file and any images used for your tiles into your project.
+
+###Suported Map Types
+Currently SKATileMap supports Tiled Maps that are exported in the JSON format.
 
     SKATiledMap *map = [[SKATiledMap alloc]initWithMapName:@"yourMapName"]; //name of your JSON file
 
@@ -33,7 +30,13 @@ The SKATiledMap has an auto follow feature. This is a great feature if you want 
         [self.map update];
     }
 
-###SKATestHud and SKATestPlayer
+###Tiled Object Defaults
+When creating your tiled map SKATiledMap will create physical bodies if it finds these properties on a tile or object.
+
+- SKACollisionType : SKACollisionTypeRect
+
+
+##SKATestHud and SKATestPlayer
 The SKATestHud and SKATestPlayer are used to quickly test a map without having to create any custom code. SKATestHud default zPosition is 100.
 
 Example
@@ -48,7 +51,7 @@ Example
     [self addChild:testHud];
 
 
-###SKAButtonSprite
+##SKAButtonSprite
 SKAButtonSprite is a simple sprite button. It can be created using any SKSpriteNode inits or convince methods. IMPORTANT you must set userInteractionEnabled = YES;
 
 Optional Delegate Methods
@@ -65,6 +68,22 @@ Example
     self.buttonLeft.userInteractionEnabled = YES;
     self.buttonLeft.delegate = self;
     [self addChild:self.buttonLeft];
+    
+##SKAMiniMap
+SKAMiniMap creates a minimap of any node that you pass in. The node you pass in must be part of a scene with a view
+
+![SKAMiniMap Example](Documentation/skaminimap.png)
+
+
+
+##SKACroppedMiniMap
+SKACroppedMiniMap is similar to SKAMiniMap, but instead of seeing the entire map at once you can choice a viewport size.
+
+###SKACroppedMiniMap AutoFollowFeature
+SKACroppedMiniMap has an auto follow feature. Set the autoFollowNode to a node that is a child of the map used to create the SKACroppedMiniMap.
+
+![SKACroppedMiniMap Example](Documentation/skacroppedminimap.png)
+
     
 ###Contact Info
 If you would like to get in contact with the SKA email Skyler at skyler@skymistdevelopment.com
