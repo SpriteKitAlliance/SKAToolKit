@@ -9,6 +9,7 @@
 #import "SKATiledMap.h"
 #import "SKAMapTile.h"
 #import "CollisionDefine.h"
+#import "SKATMXParser.h"
 
 @interface SKATiledMap ()
 
@@ -19,24 +20,78 @@
 
 @implementation SKATiledMap
 
+#pragma mark - Init
 -(instancetype)initWithMapName:(NSString *)mapName
 {
-    self = [super init];
+    if(!(self = [super init])) return nil;
 
     [self loadFile:mapName];
     
     return self;
 }
 
+#pragma mark - File Loading
 -(void)loadFile:(NSString *)fileName
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"tmx"];
     
+    if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+    {
+        [self loadMap:[self mapDictionaryForTMXFile:filePath]];
+    }
+    else
+    {
+        filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
+        
+        if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+        {
+            [self loadMap:[self mapDictionaryForJSONFile:filePath]];
+        }
+        else
+        {
+            NSLog(@"error: no file could be found for %@.tmx or %@.json", fileName, fileName);
+        }
+    }
+}
+
+- (NSDictionary *)mapDictionaryForTMXFile:(NSString *)filePath
+{
+    NSError *error;
+    NSData *data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&error];
+    
+    if(!error)
+    {
+        SKATMXParser *parser = [[SKATMXParser alloc] init];
+        return [parser dictionaryWithData:data];
+    }
+    
+    NSLog(@"Error creating map from TMX file: %@", filePath);
+    return nil;
+}
+
+-(NSDictionary *)mapDictionaryForJSONFile:(NSString *)filePath
+{
     NSError *error = nil;
-    
     NSData *JSONData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&error];
     
-    NSDictionary *mapDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&error];
+    if(!error)
+    {
+        error = nil;
+        NSDictionary *mapDictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:&error];
+        
+        if(!error)
+        {
+            return mapDictionary;
+        }
+    }
+    
+    NSLog(@"Error creating map from JSON file: %@", filePath);
+    return nil;
+}
+
+- (void)loadMap:(NSDictionary *)mapDictionary
+{
+    NSLog(@"map dictionary: %@", mapDictionary);
     
     self.mapProperties = mapDictionary[@"properties"];
     
@@ -137,7 +192,6 @@
     for (NSDictionary *layerDictionary in mapDictionary[@"layers"])
     {
         NSArray *data = layerDictionary[@"data"];
-        
         
         if (data.count)
         {
