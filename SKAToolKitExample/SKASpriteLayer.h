@@ -11,8 +11,7 @@
 
 @interface SKASpriteLayer : SKNode
 
-//two dementional array of SKASprites
-@property (nonatomic, strong)NSArray *sprites;
+
 
 @property (nonatomic)NSInteger height;
 @property (nonatomic)NSInteger width;
@@ -24,5 +23,10 @@
 @property (nonatomic)BOOL visible;
 
 @property (nonatomic, strong)NSArray *collisionSprites;
+
+//two dementional array of SKASprites and NSNull
+@property (nonatomic, strong)NSArray *sprites;
+
+-(SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y;
 
 @end

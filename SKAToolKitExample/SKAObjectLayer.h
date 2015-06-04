@@ -28,4 +28,6 @@
 
 @property (nonatomic, strong)NSArray *collisionSprites;
 
+- (NSArray *)objectsWithName:(NSString *)name;
+
 @end

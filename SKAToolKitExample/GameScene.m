@@ -51,12 +51,11 @@
     
     [layer runAction:repeat];
     
-    SKASpriteLayer *backgroundLayer = self.map.spriteLayers[1];
-    
     SKAction *rotate = [SKAction rotateByAngle:2 duration:1];
     SKAction *repeatRotation = [SKAction repeatActionForever:rotate];
     
-    SKASprite *sprite = backgroundLayer.sprites[3][3];
+    SKASprite *sprite = [self.map spriteOnLayer:1 indexX:3 indexY:3];
+    
     [sprite runAction:repeatRotation];
     
     self.player = [SKATestPlayer spriteNodeWithColor:[SKColor greenColor] size:CGSizeMake(40, 80)];
@@ -74,8 +73,6 @@
 //    [testHud addChild:self.croppedMiniMap];
 
     [self addChild:testHud];
-
-
 }
 
 -(void)update:(NSTimeInterval)currentTime
