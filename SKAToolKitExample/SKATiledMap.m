@@ -43,6 +43,8 @@
     self.mapWidth = [mapDictionary[@"width"] integerValue];
     self.mapHeight = [mapDictionary[@"height"] integerValue];
     
+    self.tileWidth = [mapDictionary[@"tilewidth"] integerValue];
+    self.tileHeight = [mapDictionary[@"tileheight"] integerValue];
     
     //creating tile dictionary
     NSMutableDictionary *tileSets = [[NSMutableDictionary alloc]init];
@@ -52,9 +54,6 @@
         
         NSInteger tileWidth = [tileset[@"tilewidth"] integerValue];
         NSInteger tileHeight = [tileset[@"tileheight"] integerValue];
-
-        self.tileWidth = tileWidth;
-        self.tileHeight = tileHeight;
         
         //getting big texture
         NSString *path = [[tileset[@"image"] lastPathComponent] stringByDeletingPathExtension];
@@ -79,17 +78,19 @@
         NSInteger spacing = [tileset[@"spacing"] integerValue];
         NSInteger margin = [tileset[@"margin"] integerValue];
         
-        NSInteger width = imageWidth- margin * 2;
+        NSInteger width = imageWidth - margin * 2;
         NSInteger height = imageHeight - margin * 2;
+        
+        NSInteger tileColumns = ceil((float)width/(float)(tileWidth + spacing));
+        NSInteger tileRows = ceil((float)height/(float)(tileHeight + spacing));
+        
 
-        NSInteger tileRows = width/(tileWidth+ spacing * 2);
-        NSInteger tileColumns = height/(tileHeight + spacing *2);
         
-        float spacingPercentWidth = (float)spacing/tileWidth;
-        float spacingPercentHeight = (float)spacing/tileHeight;
+        float spacingPercentWidth = (float)spacing/(float)imageWidth;
+        float spacingPercentHeight = (float)spacing/(float)imageHeight;
         
-        float marginPercentWidth = (float)margin/tileWidth;
-        float marginPercentHeight = (float)margin/tileHeight;
+        float marginPercentWidth = (float)margin/(float)tileWidth;
+        float marginPercentHeight = (float)margin/(float)tileHeight;
         
         float tileWidthPercent = (float)tileWidth/(float)imageWidth;
         float tileHeightPercent = (float)tileHeight/(float)imageHeight;
@@ -102,8 +103,9 @@
             {
                 
                 SKAMapTile *mapTile = [[SKAMapTile alloc]init];
-                float x = marginPercentWidth + spacingPercentWidth + (j * (tileWidthPercent + (spacingPercentWidth * 2)));
-                float y = 1.0f - (marginPercentHeight + spacingPercentHeight + tileHeightPercent + (i * (tileHeightPercent + (spacingPercentHeight * 2) )));
+                float x = marginPercentWidth + j * (tileWidthPercent + spacingPercentWidth); //advance based on column
+                
+                float y = 1.0f - (marginPercentHeight + tileHeightPercent + (i * (tileHeightPercent + (spacingPercentHeight) )));
                 
                 SKTexture *texture = [SKTexture textureWithRect:CGRectMake(x, y, tileWidthPercent, tileHeightPercent) inTexture:mainTexture];
                 texture.filteringMode = SKTextureFilteringNearest;
@@ -209,7 +211,12 @@
                         }
 
                         [spriteLayer addChild:sprite];
-
+                        
+                        if (!spriteLayer.visible)
+                        {
+                            sprite.hidden = YES;
+                        }
+                        
                         sprites[j][i] = sprite;
                     }
                     else
