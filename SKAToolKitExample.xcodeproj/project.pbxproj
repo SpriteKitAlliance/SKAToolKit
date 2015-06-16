@@ -14,6 +14,15 @@
 		B63D27D21AF6C17800E7F043 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63D27D11AF6C17800E7F043 /* Images.xcassets */; };
 		B63D27D51AF6C17800E7F043 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63D27D31AF6C17800E7F043 /* LaunchScreen.xib */; };
 		B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D29DF1AF6F50600E7F043 /* GameScene.m */; };
+		B6578C5B1B36239E0049A82E /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C4A1B36239E0049A82E /* LFCGzipUtility.m */; };
+		B6578C5C1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C4C1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.m */; };
+		B6578C5D1B36239E0049A82E /* SKAMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C4E1B36239E0049A82E /* SKAMapTile.m */; };
+		B6578C5E1B36239E0049A82E /* SKAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C501B36239E0049A82E /* SKAObject.m */; };
+		B6578C5F1B36239E0049A82E /* SKAObjectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C521B36239E0049A82E /* SKAObjectLayer.m */; };
+		B6578C601B36239E0049A82E /* SKASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C541B36239E0049A82E /* SKASprite.m */; };
+		B6578C611B36239E0049A82E /* SKASpriteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C561B36239E0049A82E /* SKASpriteLayer.m */; };
+		B6578C621B36239E0049A82E /* SKATiledMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C581B36239E0049A82E /* SKATiledMap.m */; };
+		B6578C631B36239E0049A82E /* SKATMXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B6578C5A1B36239E0049A82E /* SKATMXParser.m */; };
 		B67A57DC1B10BD1700395E70 /* Backgrounds.tps in Resources */ = {isa = PBXBuildFile; fileRef = B67A57CD1B10BD1700395E70 /* Backgrounds.tps */; };
 		B67A57DD1B10BD1700395E70 /* Items.tps in Resources */ = {isa = PBXBuildFile; fileRef = B67A57CE1B10BD1700395E70 /* Items.tps */; };
 		B67A57DE1B10BD1700395E70 /* Platforms.tps in Resources */ = {isa = PBXBuildFile; fileRef = B67A57CF1B10BD1700395E70 /* Platforms.tps */; };
@@ -31,14 +40,9 @@
 		B67B1CE51B195B0E008FA53B /* SKAMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B1CE41B195B0E008FA53B /* SKAMiniMap.m */; };
 		B67B1CE81B195EFF008FA53B /* SKACroppedMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B1CE71B195EFF008FA53B /* SKACroppedMiniMap.m */; };
 		B6C751251B13912100455CA6 /* SKAButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751111B13912100455CA6 /* SKAButtonSprite.m */; };
-		B6C751261B13912100455CA6 /* SKATiledMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751131B13912100455CA6 /* SKATiledMap.m */; };
-		B6C751271B13912100455CA6 /* SKAMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751151B13912100455CA6 /* SKAMapTile.m */; };
-		B6C751281B13912100455CA6 /* SKAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751171B13912100455CA6 /* SKAObject.m */; };
-		B6C751291B13912100455CA6 /* SKAObjectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751191B13912100455CA6 /* SKAObjectLayer.m */; };
-		B6C7512A1B13912100455CA6 /* SKASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511B1B13912100455CA6 /* SKASprite.m */; };
-		B6C7512B1B13912100455CA6 /* SKASpriteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511D1B13912100455CA6 /* SKASpriteLayer.m */; };
 		B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511F1B13912100455CA6 /* SKATestHud.m */; };
 		B6C7512D1B13912100455CA6 /* SKATestPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751211B13912100455CA6 /* SKATestPlayer.m */; };
+		F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +71,25 @@
 		B63D27D41AF6C17800E7F043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B63D29DE1AF6F50600E7F043 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		B63D29DF1AF6F50600E7F043 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		B6578C481B36239E0049A82E /* CollisionDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollisionDefine.h; path = SKATiledMap/CollisionDefine.h; sourceTree = "<group>"; };
+		B6578C491B36239E0049A82E /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = SKATiledMap/LFCGzipUtility.h; sourceTree = "<group>"; };
+		B6578C4A1B36239E0049A82E /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = SKATiledMap/LFCGzipUtility.m; sourceTree = "<group>"; };
+		B6578C4B1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+SKATMXParserUtils.h"; path = "SKATiledMap/NSMutableDictionary+SKATMXParserUtils.h"; sourceTree = "<group>"; };
+		B6578C4C1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+SKATMXParserUtils.m"; path = "SKATiledMap/NSMutableDictionary+SKATMXParserUtils.m"; sourceTree = "<group>"; };
+		B6578C4D1B36239E0049A82E /* SKAMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKAMapTile.h; path = SKATiledMap/SKAMapTile.h; sourceTree = "<group>"; };
+		B6578C4E1B36239E0049A82E /* SKAMapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKAMapTile.m; path = SKATiledMap/SKAMapTile.m; sourceTree = "<group>"; };
+		B6578C4F1B36239E0049A82E /* SKAObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKAObject.h; path = SKATiledMap/SKAObject.h; sourceTree = "<group>"; };
+		B6578C501B36239E0049A82E /* SKAObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKAObject.m; path = SKATiledMap/SKAObject.m; sourceTree = "<group>"; };
+		B6578C511B36239E0049A82E /* SKAObjectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKAObjectLayer.h; path = SKATiledMap/SKAObjectLayer.h; sourceTree = "<group>"; };
+		B6578C521B36239E0049A82E /* SKAObjectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKAObjectLayer.m; path = SKATiledMap/SKAObjectLayer.m; sourceTree = "<group>"; };
+		B6578C531B36239E0049A82E /* SKASprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKASprite.h; path = SKATiledMap/SKASprite.h; sourceTree = "<group>"; };
+		B6578C541B36239E0049A82E /* SKASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKASprite.m; path = SKATiledMap/SKASprite.m; sourceTree = "<group>"; };
+		B6578C551B36239E0049A82E /* SKASpriteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKASpriteLayer.h; path = SKATiledMap/SKASpriteLayer.h; sourceTree = "<group>"; };
+		B6578C561B36239E0049A82E /* SKASpriteLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKASpriteLayer.m; path = SKATiledMap/SKASpriteLayer.m; sourceTree = "<group>"; };
+		B6578C571B36239E0049A82E /* SKATiledMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKATiledMap.h; path = SKATiledMap/SKATiledMap.h; sourceTree = "<group>"; };
+		B6578C581B36239E0049A82E /* SKATiledMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKATiledMap.m; path = SKATiledMap/SKATiledMap.m; sourceTree = "<group>"; };
+		B6578C591B36239E0049A82E /* SKATMXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKATMXParser.h; path = SKATiledMap/SKATMXParser.h; sourceTree = "<group>"; };
+		B6578C5A1B36239E0049A82E /* SKATMXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKATMXParser.m; path = SKATiledMap/SKATMXParser.m; sourceTree = "<group>"; };
 		B67A57CD1B10BD1700395E70 /* Backgrounds.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Backgrounds.tps; sourceTree = "<group>"; };
 		B67A57CE1B10BD1700395E70 /* Items.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Items.tps; sourceTree = "<group>"; };
 		B67A57CF1B10BD1700395E70 /* Platforms.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Platforms.tps; sourceTree = "<group>"; };
@@ -85,25 +108,13 @@
 		B67B1CE41B195B0E008FA53B /* SKAMiniMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAMiniMap.m; sourceTree = "<group>"; };
 		B67B1CE61B195EFF008FA53B /* SKACroppedMiniMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKACroppedMiniMap.h; sourceTree = "<group>"; };
 		B67B1CE71B195EFF008FA53B /* SKACroppedMiniMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKACroppedMiniMap.m; sourceTree = "<group>"; };
-		B6C7510F1B13912100455CA6 /* CollisionDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionDefine.h; sourceTree = "<group>"; };
 		B6C751101B13912100455CA6 /* SKAButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAButtonSprite.h; sourceTree = "<group>"; };
 		B6C751111B13912100455CA6 /* SKAButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAButtonSprite.m; sourceTree = "<group>"; };
-		B6C751121B13912100455CA6 /* SKATiledMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATiledMap.h; sourceTree = "<group>"; };
-		B6C751131B13912100455CA6 /* SKATiledMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATiledMap.m; sourceTree = "<group>"; };
-		B6C751141B13912100455CA6 /* SKAMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAMapTile.h; sourceTree = "<group>"; };
-		B6C751151B13912100455CA6 /* SKAMapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAMapTile.m; sourceTree = "<group>"; };
-		B6C751161B13912100455CA6 /* SKAObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObject.h; sourceTree = "<group>"; };
-		B6C751171B13912100455CA6 /* SKAObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObject.m; sourceTree = "<group>"; };
-		B6C751181B13912100455CA6 /* SKAObjectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObjectLayer.h; sourceTree = "<group>"; };
-		B6C751191B13912100455CA6 /* SKAObjectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObjectLayer.m; sourceTree = "<group>"; };
-		B6C7511A1B13912100455CA6 /* SKASprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASprite.h; sourceTree = "<group>"; };
-		B6C7511B1B13912100455CA6 /* SKASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASprite.m; sourceTree = "<group>"; };
-		B6C7511C1B13912100455CA6 /* SKASpriteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASpriteLayer.h; sourceTree = "<group>"; };
-		B6C7511D1B13912100455CA6 /* SKASpriteLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASpriteLayer.m; sourceTree = "<group>"; };
 		B6C7511E1B13912100455CA6 /* SKATestHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestHud.h; sourceTree = "<group>"; };
 		B6C7511F1B13912100455CA6 /* SKATestHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestHud.m; sourceTree = "<group>"; };
 		B6C751201B13912100455CA6 /* SKATestPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestPlayer.h; sourceTree = "<group>"; };
 		B6C751211B13912100455CA6 /* SKATestPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestPlayer.m; sourceTree = "<group>"; };
+		F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,22 +132,25 @@
 		B60431FA1B13959000563651 /* SKATiledMap */ = {
 			isa = PBXGroup;
 			children = (
-				B6C751121B13912100455CA6 /* SKATiledMap.h */,
-				B6C751131B13912100455CA6 /* SKATiledMap.m */,
-				B6C751181B13912100455CA6 /* SKAObjectLayer.h */,
-				B6C751191B13912100455CA6 /* SKAObjectLayer.m */,
-				B6C7511C1B13912100455CA6 /* SKASpriteLayer.h */,
-				B6C7511D1B13912100455CA6 /* SKASpriteLayer.m */,
-				B67B1CE31B195B0E008FA53B /* SKAMiniMap.h */,
-				B67B1CE41B195B0E008FA53B /* SKAMiniMap.m */,
-				B67B1CE61B195EFF008FA53B /* SKACroppedMiniMap.h */,
-				B67B1CE71B195EFF008FA53B /* SKACroppedMiniMap.m */,
-				B6C751161B13912100455CA6 /* SKAObject.h */,
-				B6C751171B13912100455CA6 /* SKAObject.m */,
-				B6C7511A1B13912100455CA6 /* SKASprite.h */,
-				B6C7511B1B13912100455CA6 /* SKASprite.m */,
-				B6C751141B13912100455CA6 /* SKAMapTile.h */,
-				B6C751151B13912100455CA6 /* SKAMapTile.m */,
+				B6578C481B36239E0049A82E /* CollisionDefine.h */,
+				B6578C491B36239E0049A82E /* LFCGzipUtility.h */,
+				B6578C4A1B36239E0049A82E /* LFCGzipUtility.m */,
+				B6578C4B1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.h */,
+				B6578C4C1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.m */,
+				B6578C4D1B36239E0049A82E /* SKAMapTile.h */,
+				B6578C4E1B36239E0049A82E /* SKAMapTile.m */,
+				B6578C4F1B36239E0049A82E /* SKAObject.h */,
+				B6578C501B36239E0049A82E /* SKAObject.m */,
+				B6578C511B36239E0049A82E /* SKAObjectLayer.h */,
+				B6578C521B36239E0049A82E /* SKAObjectLayer.m */,
+				B6578C531B36239E0049A82E /* SKASprite.h */,
+				B6578C541B36239E0049A82E /* SKASprite.m */,
+				B6578C551B36239E0049A82E /* SKASpriteLayer.h */,
+				B6578C561B36239E0049A82E /* SKASpriteLayer.m */,
+				B6578C571B36239E0049A82E /* SKATiledMap.h */,
+				B6578C581B36239E0049A82E /* SKATiledMap.m */,
+				B6578C591B36239E0049A82E /* SKATMXParser.h */,
+				B6578C5A1B36239E0049A82E /* SKATMXParser.m */,
 			);
 			name = SKATiledMap;
 			sourceTree = "<group>";
@@ -203,6 +218,7 @@
 		B63D27C41AF6C17800E7F043 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */,
 				B63D27C81AF6C17800E7F043 /* AppDelegate.h */,
 				B63D27C91AF6C17800E7F043 /* AppDelegate.m */,
 				B63D27C51AF6C17800E7F043 /* Info.plist */,
@@ -244,7 +260,10 @@
 		B6C7510E1B13907100455CA6 /* SKAToolKit */ = {
 			isa = PBXGroup;
 			children = (
-				B6C7510F1B13912100455CA6 /* CollisionDefine.h */,
+				B67B1CE31B195B0E008FA53B /* SKAMiniMap.h */,
+				B67B1CE41B195B0E008FA53B /* SKAMiniMap.m */,
+				B67B1CE61B195EFF008FA53B /* SKACroppedMiniMap.h */,
+				B67B1CE71B195EFF008FA53B /* SKACroppedMiniMap.m */,
 				B60431FA1B13959000563651 /* SKATiledMap */,
 				B60431FB1B1395B900563651 /* SKATestHud */,
 				B60431FC1B1395CB00563651 /* SKAButtonSprite */,
@@ -338,20 +357,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6578C5F1B36239E0049A82E /* SKAObjectLayer.m in Sources */,
 				B6C751251B13912100455CA6 /* SKAButtonSprite.m in Sources */,
 				B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */,
-				B6C751261B13912100455CA6 /* SKATiledMap.m in Sources */,
+				B6578C5D1B36239E0049A82E /* SKAMapTile.m in Sources */,
 				B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */,
-				B6C751281B13912100455CA6 /* SKAObject.m in Sources */,
-				B6C751271B13912100455CA6 /* SKAMapTile.m in Sources */,
-				B6C7512B1B13912100455CA6 /* SKASpriteLayer.m in Sources */,
 				B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */,
-				B6C7512A1B13912100455CA6 /* SKASprite.m in Sources */,
 				B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */,
 				B67B1CE81B195EFF008FA53B /* SKACroppedMiniMap.m in Sources */,
-				B6C751291B13912100455CA6 /* SKAObjectLayer.m in Sources */,
+				B6578C631B36239E0049A82E /* SKATMXParser.m in Sources */,
+				B6578C5B1B36239E0049A82E /* LFCGzipUtility.m in Sources */,
 				B6C7512D1B13912100455CA6 /* SKATestPlayer.m in Sources */,
 				B63D27C71AF6C17800E7F043 /* main.m in Sources */,
+				B6578C601B36239E0049A82E /* SKASprite.m in Sources */,
+				B6578C5E1B36239E0049A82E /* SKAObject.m in Sources */,
+				B6578C621B36239E0049A82E /* SKATiledMap.m in Sources */,
+				B6578C5C1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.m in Sources */,
+				B6578C611B36239E0049A82E /* SKASpriteLayer.m in Sources */,
 				B67B1CE51B195B0E008FA53B /* SKAMiniMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

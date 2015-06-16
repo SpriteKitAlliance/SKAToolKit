@@ -32,6 +32,7 @@
     
     NSInteger padding = 10;
     
+    
     SKAMiniMap *miniMap = [[SKAMiniMap alloc]initWithMap:self.map withWidth:150];
      miniMap.position = CGPointMake(self.size.width-miniMap.size.width/2-padding, self.size.height-miniMap.size.height/2-padding);
     
@@ -65,7 +66,7 @@
     
     self.map.autoFollowNode = self.player;
     self.croppedMiniMap.autoFollowNode = self.player;
-     
+    
     SKATestHud *testHud = [SKATestHud hudWithScene:self.scene withPlayer:self.player];
     
     [testHud addChild:miniMap];
@@ -78,6 +79,10 @@
 -(void)update:(NSTimeInterval)currentTime
 {
     [self.player update];
+    
+    CGPoint playerIndex = [self.map indexForPoint:self.player.position];
+    [self.map cullAroundIndexX:playerIndex.x indexY:playerIndex.y columnWidth:14 rowHeight:7];
+    
     [self.map update];
     [self.croppedMiniMap update];
 }

@@ -6,6 +6,7 @@ The Sprite Kit Alliance is happy to provide the SKAToolKit free of charge withou
 ##SKAToolKit Install Instructions
 - Copy all files in SKAToolKit folder into your project
 - Import either SKATiledMap or any SKA file you want
+- Link to `libz.dylib` in the “Linked Frameworks and Libraries” section of your project file
 
 ##SKATiledMap
 This is a sprite node that represents a map created in Tiled. Currently SKATiledMap only supports JSON format. Add the JSON file and any images used for your tiles into your project.
