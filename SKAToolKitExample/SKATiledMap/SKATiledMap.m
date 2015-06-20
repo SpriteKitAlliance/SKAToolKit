@@ -121,61 +121,98 @@
         
         //getting big texture
         NSString *path = [[tileset[@"image"] lastPathComponent] stringByDeletingPathExtension];
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:path ofType:[tileset[@"image"] pathExtension]];
         
-        UIImage *image = [UIImage imageNamed:[tileset[@"image"] lastPathComponent]];
-        
-        if (!image)
+
+        if (path)
         {
-            NSLog(@"Image not found in bundle: %@ looking in file path", [tileset[@"image"] lastPathComponent]);
-            image = [[UIImage alloc]initWithContentsOfFile:filePath];
-        }
-        
-        SKTexture *mainTexture = [SKTexture textureWithImage:image];
-        mainTexture.filteringMode = SKTextureFilteringNearest;
-
-        
-        //calculating small texture
-        NSInteger imageWidth = [tileset[@"imagewidth"] integerValue];
-        NSInteger imageHeight = [tileset[@"imageheight"] integerValue];
-        
-        NSInteger spacing = [tileset[@"spacing"] integerValue];
-        NSInteger margin = [tileset[@"margin"] integerValue];
-        
-        NSInteger width = imageWidth - margin * 2;
-        NSInteger height = imageHeight - margin * 2;
-        
-        NSInteger tileColumns = ceil((float)width/(float)(tileWidth + spacing));
-        NSInteger tileRows = ceil((float)height/(float)(tileHeight + spacing));
-        
-
-        
-        float spacingPercentWidth = (float)spacing/(float)imageWidth;
-        float spacingPercentHeight = (float)spacing/(float)imageHeight;
-        
-        float marginPercentWidth = (float)margin/(float)tileWidth;
-        float marginPercentHeight = (float)margin/(float)tileHeight;
-        
-        float tileWidthPercent = (float)tileWidth/(float)imageWidth;
-        float tileHeightPercent = (float)tileHeight/(float)imageHeight;
-
-        NSInteger index = [tileset[@"firstgid"] integerValue];
-        
-        for (NSInteger i = 0; i < tileRows; i++)
-        {
-            for (NSInteger j = 0; j < tileColumns; j++)
+            NSString *filePath = [[NSBundle mainBundle] pathForResource:path ofType:[tileset[@"image"] pathExtension]];
+            
+            UIImage *image = [UIImage imageNamed:[tileset[@"image"] lastPathComponent]];
+            
+            if (!image)
             {
-                
+                NSLog(@"Image not found in bundle: %@ looking in file path", [tileset[@"image"] lastPathComponent]);
+                image = [[UIImage alloc]initWithContentsOfFile:filePath];
+            }
+            
+            SKTexture *mainTexture = [SKTexture textureWithImage:image];
+            mainTexture.filteringMode = SKTextureFilteringNearest;
+            
+            
+            //calculating small texture
+            NSInteger imageWidth = [tileset[@"imagewidth"] integerValue];
+            NSInteger imageHeight = [tileset[@"imageheight"] integerValue];
+            
+            NSInteger spacing = [tileset[@"spacing"] integerValue];
+            NSInteger margin = [tileset[@"margin"] integerValue];
+            
+            NSInteger width = imageWidth - margin * 2;
+            NSInteger height = imageHeight - margin * 2;
+            
+            NSInteger tileColumns = ceil((float)width/(float)(tileWidth + spacing));
+            NSInteger tileRows = ceil((float)height/(float)(tileHeight + spacing));
+            
+            
+            
+            float spacingPercentWidth = (float)spacing/(float)imageWidth;
+            float spacingPercentHeight = (float)spacing/(float)imageHeight;
+            
+            float marginPercentWidth = (float)margin/(float)tileWidth;
+            float marginPercentHeight = (float)margin/(float)tileHeight;
+            
+            float tileWidthPercent = (float)tileWidth/(float)imageWidth;
+            float tileHeightPercent = (float)tileHeight/(float)imageHeight;
+            
+            NSInteger index = [tileset[@"firstgid"] integerValue];
+            
+            for (NSInteger i = 0; i < tileRows; i++)
+            {
+                for (NSInteger j = 0; j < tileColumns; j++)
+                {
+                    
+                    SKAMapTile *mapTile = [[SKAMapTile alloc]init];
+                    float x = marginPercentWidth + j * (tileWidthPercent + spacingPercentWidth); //advance based on column
+                    
+                    float y = 1.0f - (marginPercentHeight + tileHeightPercent + (i * (tileHeightPercent + (spacingPercentHeight) )));
+                    
+                    SKTexture *texture = [SKTexture textureWithRect:CGRectMake(x, y, tileWidthPercent, tileHeightPercent) inTexture:mainTexture];
+                    texture.filteringMode = SKTextureFilteringNearest;
+                    
+                    mapTile.texture = texture;
+                    mapTile.indexKey = index;
+                    
+                    NSString *key = [NSString stringWithFormat:@"%@", @(mapTile.indexKey)];
+                    
+                    NSString *propertyKey =  [NSString stringWithFormat:@"%@", @(mapTile.indexKey-[tileset[@"firstgid"] integerValue])];
+                    if (tileset[@"tileproperties"][propertyKey])
+                    {
+                        mapTile.properties = tileset[@"tileproperties"][propertyKey];
+                    }
+                    
+                    [tileSets setObject:mapTile forKey:key];
+                    
+                    index++;
+                }
+            }
+
+        }
+        else
+        {
+            NSLog(@"working off of a collection");
+            
+            for (NSString *key in [tileset[@"tiles"] allKeys])
+            {
                 SKAMapTile *mapTile = [[SKAMapTile alloc]init];
-                float x = marginPercentWidth + j * (tileWidthPercent + spacingPercentWidth); //advance based on column
                 
-                float y = 1.0f - (marginPercentHeight + tileHeightPercent + (i * (tileHeightPercent + (spacingPercentHeight) )));
+                NSDictionary *spriteDict = tileset[@"tiles"][key];
                 
-                SKTexture *texture = [SKTexture textureWithRect:CGRectMake(x, y, tileWidthPercent, tileHeightPercent) inTexture:mainTexture];
+                NSString *imageName = [spriteDict[@"image"] lastPathComponent];
+                
+                SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
                 texture.filteringMode = SKTextureFilteringNearest;
-                                
+                
                 mapTile.texture = texture;
-                mapTile.indexKey = index;
+                mapTile.indexKey = [tileset[@"firstgid"] integerValue] + [key integerValue];
                 
                 NSString *key = [NSString stringWithFormat:@"%@", @(mapTile.indexKey)];
                 
@@ -187,7 +224,6 @@
                 
                 [tileSets setObject:mapTile forKey:key];
                 
-                index++;
             }
         }
     }
@@ -261,7 +297,10 @@
                         SKAMapTile *mapTile = tileSets[key];
                         
                         SKASprite *sprite = [SKASprite spriteNodeWithTexture:mapTile.texture];
-                        sprite.position = CGPointMake(sprite.size.width/2 + j*sprite.size.width, sprite.size.height/2 + i*sprite.size.height);
+                        NSInteger x = (sprite.size.width/2 - self.tileWidth/2) + self.tileWidth/2 + j * self.tileWidth;
+                        NSInteger y = (sprite.size.height/2 - self.tileHeight/2) + self.tileHeight/2 + i*self.tileHeight;
+                        sprite.position = CGPointMake(x, y);
+
                         sprite.properties = mapTile.properties;
                         
                         if ([sprite.properties[@"SKACollisionType"] isEqualToString:@"SKACollisionTypeRect"])
