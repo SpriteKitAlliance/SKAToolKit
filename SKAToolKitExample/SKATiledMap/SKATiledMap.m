@@ -45,10 +45,13 @@
     
     if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
+        NSLog(@"Loading TMX");
         [self loadMap:[self mapDictionaryForTMXFile:filePath]];
     }
     else
     {
+        NSLog(@"Loading JSON");
+
         filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
         
         if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
@@ -92,14 +95,6 @@
             return mapDictionary;
         }
     }
-    
-    NSLog(@"Error creating map from JSON file: %@", filePath);
-    return nil;
-}
-
-- (void)loadMap:(NSDictionary *)mapDictionary
-{
-    NSLog(@"map dictionary: %@", mapDictionary);
     
     NSLog(@"Error creating map from JSON file: %@", filePath);
     return nil;

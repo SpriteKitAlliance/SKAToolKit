@@ -42,10 +42,7 @@
 		B6C751251B13912100455CA6 /* SKAButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751111B13912100455CA6 /* SKAButtonSprite.m */; };
 		B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511F1B13912100455CA6 /* SKATestHud.m */; };
 		B6C7512D1B13912100455CA6 /* SKATestPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751211B13912100455CA6 /* SKATestPlayer.m */; };
-		F40EB5661B1920830052BB05 /* SKATMXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F40EB5651B1920830052BB05 /* SKATMXParser.m */; };
-		F46125791B30E3D400352D7C /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F46125781B30E3D400352D7C /* LFCGzipUtility.m */; };
 		F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */; };
-		F461257E1B30F90B00352D7C /* NSMutableDictionary+SKATMXParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F461257D1B30F90B00352D7C /* NSMutableDictionary+SKATMXParserUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -117,13 +114,7 @@
 		B6C7511F1B13912100455CA6 /* SKATestHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestHud.m; sourceTree = "<group>"; };
 		B6C751201B13912100455CA6 /* SKATestPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestPlayer.h; sourceTree = "<group>"; };
 		B6C751211B13912100455CA6 /* SKATestPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestPlayer.m; sourceTree = "<group>"; };
-		F40EB5641B1920830052BB05 /* SKATMXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATMXParser.h; sourceTree = "<group>"; };
-		F40EB5651B1920830052BB05 /* SKATMXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATMXParser.m; sourceTree = "<group>"; };
-		F46125771B30E3D400352D7C /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
-		F46125781B30E3D400352D7C /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
 		F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		F461257C1B30F90B00352D7C /* NSMutableDictionary+SKATMXParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SKATMXParserUtils.h"; sourceTree = "<group>"; };
-		F461257D1B30F90B00352D7C /* NSMutableDictionary+SKATMXParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SKATMXParserUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,28 +132,25 @@
 		B60431FA1B13959000563651 /* SKATiledMap */ = {
 			isa = PBXGroup;
 			children = (
-				B6C751121B13912100455CA6 /* SKATiledMap.h */,
-				B6C751131B13912100455CA6 /* SKATiledMap.m */,
-				B6C751181B13912100455CA6 /* SKAObjectLayer.h */,
-				B6C751191B13912100455CA6 /* SKAObjectLayer.m */,
-				B6C7511C1B13912100455CA6 /* SKASpriteLayer.h */,
-				B6C7511D1B13912100455CA6 /* SKASpriteLayer.m */,
-				B67B1CE31B195B0E008FA53B /* SKAMiniMap.h */,
-				B67B1CE41B195B0E008FA53B /* SKAMiniMap.m */,
-				B67B1CE61B195EFF008FA53B /* SKACroppedMiniMap.h */,
-				B67B1CE71B195EFF008FA53B /* SKACroppedMiniMap.m */,
-				B6C751161B13912100455CA6 /* SKAObject.h */,
-				B6C751171B13912100455CA6 /* SKAObject.m */,
-				B6C7511A1B13912100455CA6 /* SKASprite.h */,
-				B6C7511B1B13912100455CA6 /* SKASprite.m */,
-				B6C751141B13912100455CA6 /* SKAMapTile.h */,
-				B6C751151B13912100455CA6 /* SKAMapTile.m */,
-				F40EB5641B1920830052BB05 /* SKATMXParser.h */,
-				F40EB5651B1920830052BB05 /* SKATMXParser.m */,
-				F46125771B30E3D400352D7C /* LFCGzipUtility.h */,
-				F46125781B30E3D400352D7C /* LFCGzipUtility.m */,
-				F461257C1B30F90B00352D7C /* NSMutableDictionary+SKATMXParserUtils.h */,
-				F461257D1B30F90B00352D7C /* NSMutableDictionary+SKATMXParserUtils.m */,
+				B6578C481B36239E0049A82E /* CollisionDefine.h */,
+				B6578C491B36239E0049A82E /* LFCGzipUtility.h */,
+				B6578C4A1B36239E0049A82E /* LFCGzipUtility.m */,
+				B6578C4B1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.h */,
+				B6578C4C1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.m */,
+				B6578C4D1B36239E0049A82E /* SKAMapTile.h */,
+				B6578C4E1B36239E0049A82E /* SKAMapTile.m */,
+				B6578C4F1B36239E0049A82E /* SKAObject.h */,
+				B6578C501B36239E0049A82E /* SKAObject.m */,
+				B6578C511B36239E0049A82E /* SKAObjectLayer.h */,
+				B6578C521B36239E0049A82E /* SKAObjectLayer.m */,
+				B6578C531B36239E0049A82E /* SKASprite.h */,
+				B6578C541B36239E0049A82E /* SKASprite.m */,
+				B6578C551B36239E0049A82E /* SKASpriteLayer.h */,
+				B6578C561B36239E0049A82E /* SKASpriteLayer.m */,
+				B6578C571B36239E0049A82E /* SKATiledMap.h */,
+				B6578C581B36239E0049A82E /* SKATiledMap.m */,
+				B6578C591B36239E0049A82E /* SKATMXParser.h */,
+				B6578C5A1B36239E0049A82E /* SKATMXParser.m */,
 			);
 			name = SKATiledMap;
 			sourceTree = "<group>";
@@ -231,7 +219,6 @@
 		B63D27C41AF6C17800E7F043 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */,
 				B63D27C81AF6C17800E7F043 /* AppDelegate.h */,
 				B63D27C91AF6C17800E7F043 /* AppDelegate.m */,
 				B63D27C51AF6C17800E7F043 /* Info.plist */,
@@ -373,19 +360,20 @@
 				B6578C5F1B36239E0049A82E /* SKAObjectLayer.m in Sources */,
 				B6C751251B13912100455CA6 /* SKAButtonSprite.m in Sources */,
 				B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */,
-				F40EB5661B1920830052BB05 /* SKATMXParser.m in Sources */,
-				B6C751261B13912100455CA6 /* SKATiledMap.m in Sources */,
+				B6578C5D1B36239E0049A82E /* SKAMapTile.m in Sources */,
 				B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */,
 				B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */,
-				B6C7512A1B13912100455CA6 /* SKASprite.m in Sources */,
-				F46125791B30E3D400352D7C /* LFCGzipUtility.m in Sources */,
 				B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */,
 				B67B1CE81B195EFF008FA53B /* SKACroppedMiniMap.m in Sources */,
 				B6578C631B36239E0049A82E /* SKATMXParser.m in Sources */,
 				B6578C5B1B36239E0049A82E /* LFCGzipUtility.m in Sources */,
 				B6C7512D1B13912100455CA6 /* SKATestPlayer.m in Sources */,
 				B63D27C71AF6C17800E7F043 /* main.m in Sources */,
-				F461257E1B30F90B00352D7C /* NSMutableDictionary+SKATMXParserUtils.m in Sources */,
+				B6578C601B36239E0049A82E /* SKASprite.m in Sources */,
+				B6578C5E1B36239E0049A82E /* SKAObject.m in Sources */,
+				B6578C621B36239E0049A82E /* SKATiledMap.m in Sources */,
+				B6578C5C1B36239E0049A82E /* NSMutableDictionary+SKATMXParserUtils.m in Sources */,
+				B6578C611B36239E0049A82E /* SKASpriteLayer.m in Sources */,
 				B67B1CE51B195B0E008FA53B /* SKAMiniMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
