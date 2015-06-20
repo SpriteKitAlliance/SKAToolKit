@@ -48,4 +48,6 @@
 
 -(NSArray *)objectsOnLayer:(NSInteger)layerNumber withName:(NSString *)name;
 
+-(void)cullAroundIndexX:(NSInteger)x indexY:(NSInteger)y columnWidth:(NSInteger)width rowHeight:(NSInteger)height;
+
 @end

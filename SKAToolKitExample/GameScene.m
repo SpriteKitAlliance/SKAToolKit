@@ -79,6 +79,10 @@
 -(void)update:(NSTimeInterval)currentTime
 {
     [self.player update];
+    
+    CGPoint playerIndex = [self.map indexForPoint:self.player.position];
+    [self.map cullAroundIndexX:playerIndex.x indexY:playerIndex.y columnWidth:14 rowHeight:7];
+    
     [self.map update];
     [self.croppedMiniMap update];
 }

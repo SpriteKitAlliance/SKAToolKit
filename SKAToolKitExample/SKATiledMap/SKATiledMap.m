@@ -16,6 +16,14 @@
 @property(nonatomic, strong)SKSpriteNode *miniMap;
 @property(nonatomic, strong)SKSpriteNode *croppedMap;
 
+//culling
+@property (nonatomic)BOOL culledBefore;
+@property (nonatomic)NSMutableArray *visibleArray;
+@property (nonatomic)NSInteger lastX;
+@property (nonatomic)NSInteger lastY;
+@property (nonatomic)NSInteger lastWidth;
+@property (nonatomic)NSInteger lastHeight;
+
 @end
 
 @implementation SKATiledMap
@@ -93,6 +101,12 @@
 {
     NSLog(@"map dictionary: %@", mapDictionary);
     
+    NSLog(@"Error creating map from JSON file: %@", filePath);
+    return nil;
+}
+
+- (void)loadMap:(NSDictionary *)mapDictionary
+{
     self.mapProperties = mapDictionary[@"properties"];
     
     self.mapWidth = [mapDictionary[@"width"] integerValue];
@@ -535,6 +549,104 @@
     SKAObjectLayer *objectLayer = self.objectLayers[layerNumber];
     
     return [objectLayer objectsWithName:name];
+}
+
+-(void)cullAroundIndexX:(NSInteger)x indexY:(NSInteger)y columnWidth:(NSInteger)width rowHeight:(NSInteger)height
+{
+    //hide everything
+    if (!self.culledBefore)
+    {
+        for (NSInteger l = 0; l < self.spriteLayers.count; l++)
+        {
+            for (NSInteger x = 0; x < self.mapWidth -1 ; x++)
+            {
+                for (NSInteger y = 0; y < self.mapHeight -1; y++)
+                {
+                    SKASprite *sprite = [self spriteOnLayer:l indexX:x indexY:y];
+                    sprite.hidden = YES;
+                }
+            }
+        }
+    }
+    
+    //only update if something changed
+    if (self.lastX != x || self.lastY != y ||self.lastWidth != width || self.lastHeight != height)
+    {
+        //hide sprites that were previsouly visible
+        for (SKASprite *sprite in self.visibleArray)
+        {
+            sprite.hidden = YES;
+        }
+        
+        //calculate what to make visiable
+        self.visibleArray = [[NSMutableArray alloc]init];
+        
+        NSInteger staringX = x-width/2;
+        NSInteger staringY = y-height/2;
+        NSInteger endingX = staringX + width;
+        NSInteger endingY = staringY + height;
+        
+        if (staringX < 0)
+        {
+            endingX += -staringX;
+
+            staringX = 0;
+        }
+        
+        if (staringY < 0)
+        {
+            endingX += -staringY;
+
+            staringY = 0;
+        }
+        
+        if (endingX > self.mapWidth -1)
+        {
+            staringX = endingX - self.mapWidth-1;
+            endingX = self.mapWidth -1;
+        }
+        
+        if (endingY > self.mapHeight -1)
+        {
+            staringY = endingY - self.mapHeight-1;
+            endingY = self.mapHeight -1;
+        }
+        
+        if (endingX < 0)
+        {
+            endingX = 0;
+        }
+        
+        if (endingY < 0)
+        {
+            endingY = 0;
+        }
+        
+        for (NSInteger l = 0; l < self.spriteLayers.count; l++)
+        {
+            for (NSInteger x = staringX; x < endingX ; x++)
+            {
+                for (NSInteger y = staringY; y < endingY; y++)
+                {
+                    SKASprite *sprite = [self spriteOnLayer:l indexX:x indexY:y];
+                    sprite.hidden = NO;
+                    
+                    if (sprite)
+                    {
+                        [self.visibleArray addObject:sprite];
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    self.lastX = x;
+    self.lastY = y;
+    self.lastWidth = width;
+    self.lastHeight = height;
+    
+    self.culledBefore = YES;
 }
 
 @end
