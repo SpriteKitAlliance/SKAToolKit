@@ -12,10 +12,22 @@ The Sprite Kit Alliance is happy to provide the SKAToolKit free of charge withou
 This is a sprite node that represents a map created in Tiled. Currently SKATiledMap only supports JSON format. Add the JSON file and any images used for your tiles into your project.
 
 ###Resolution Support
+
+####Normal Tilesets
 It is important that you make your map in Tiled using 1x assets. When you are ready to bring it into your app for best results provide 1x, @2x, and @3x assets. Keep in mind that there limitation with SpriteKit and texture sizes. Make sure your 1x assets do not exceed 675 x 675 (when at 3x they would be 2025 under the 2048 limit). Just like tiled you only need to import the images used to create your map. Put these images into an asset catalog for best results. No plist files or reference folders needed.
 
+####Collection Tilesets
+Tiled supports collection tilesets. Make sure you design your map with 1x graphics. You can provide 1x and 2x .atlas or .atlasc folders containing the same image names you used to create your tile map. Remember to add .atlas and .atlasc folders to Xcode as reference folders. At the moment @3x is not supported in atlas folders.
+
 ###Supported Map Types
-Currently SKATileMap supports Tiled Maps that are exported in the JSON format (TMX coming soon). In Tiled export your map as a JSON file and import it into your app. Make sure you locate all images you used for your map and import those along with any @2x and @3x version of those images. You can put these images into an asset catalog for best results.	 There is no need to create atlas reference folders or add plists. Tiled and SKATiledMap do not use them.
+
+####TMX
+TMX support is in its early stages but is now supported. Make sure you include your .tmx and locate all images you used for your map and import those along with any @2x and @3x version of those images (if using normal tilesets) or create atlas folders (if using collection tilesets). See Resolution Support for more info. SKATiledMap will look for a TMX file before it looks for a JSON file. If a feature is missing please contact skyler@skymistdevelopment.com
+
+    SKATiledMap *map = [[SKATiledMap alloc]initWithMapName:@"yourMapName"]; //name of your TMX file
+    
+####JSON
+SKATileMap supports Tiled Maps that are exported in the JSON format. In Tiled export your map as a JSON file and import it into your app. Make sure you locate all images you used for your map and import those along with any @2x and @3x version of those images (if using normal tilesets) or create atlas folders (if using collection tilesets). See Resolution Support for more info.
 
 To create a map it is a simple matter of calling this method.
 
@@ -34,6 +46,15 @@ To create a map it is a simple matter of calling this method.
 
 	//This method is used to get custom named objects that you may have made in Tiled for spawning enemies, player start positions, or any other custom game logic you made a object for.
     -(NSArray *)objectsOnLayer:(NSInteger)layerNumber withName:(NSString *)name;
+    
+###Culling Feature
+SKATiledMap now has a culling feature. Use this for big maps when you need better performance. The method is optimized to be called in the update loop and will set each sprite to hidden outside of the specified range.
+
+    CGPoint playerIndex = [self.map indexForPoint:self.player.position];
+    [self.map cullAroundIndexX:playerIndex.x indexY:playerIndex.y columnWidth:5 rowHeight:5]; //for best resutls set a little wider/higher than your viewing area
+    
+![SKAMiniMap Example](Documentation/culling.png)
+
     
     
 ###Using Layers
