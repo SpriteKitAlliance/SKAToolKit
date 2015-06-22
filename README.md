@@ -56,8 +56,7 @@ SKATiledMap now has a culling feature. Use this for big maps when you need bette
 ![SKAMiniMap Example](Documentation/culling.png)
 
 ![Culling Performance](SKAToolKit/Documentation/culling-example.png)
-
-    
+![Culling Performance](https://github.com/normancroan/SKAToolKit/raw/master/Documentation/culling-example.png)
     
 ###Using Layers
 All layers are available. To do cool things with. For example you can take a layer and add a blinking effect for light sprites you may have.
