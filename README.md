@@ -55,7 +55,6 @@ SKATiledMap now has a culling feature. Use this for big maps when you need bette
     
 ![SKAMiniMap Example](Documentation/culling.png)
 
-![Culling Performance](SKAToolKit/Documentation/culling-example.png)
 ![Culling Performance](https://github.com/normancroan/SKAToolKit/raw/master/Documentation/culling-example.png)
     
 ###Using Layers
