@@ -622,28 +622,40 @@
         
         if (staringX < 0)
         {
-            endingX += -staringX;
+            staringX = 0;
 
+            endingX = width;
+        }
+        
+        if (staringY < 0)
+        {
+            staringY = 0;
+
+            endingY = height;
+        }
+        
+        if (endingX > self.mapWidth -1)
+        {
+            endingX = self.mapWidth -1;
+
+            staringX = endingX - width;
+        }
+        
+        if (endingY > self.mapHeight -1)
+        {
+            endingY = self.mapHeight -1;
+
+            staringY = endingY - height;
+        }
+        
+        if (staringX < 0)
+        {
             staringX = 0;
         }
         
         if (staringY < 0)
         {
-            endingX += -staringY;
-
             staringY = 0;
-        }
-        
-        if (endingX > self.mapWidth -1)
-        {
-            staringX = endingX - self.mapWidth-1;
-            endingX = self.mapWidth -1;
-        }
-        
-        if (endingY > self.mapHeight -1)
-        {
-            staringY = endingY - self.mapHeight-1;
-            endingY = self.mapHeight -1;
         }
         
         if (endingX < 0)
@@ -655,6 +667,7 @@
         {
             endingY = 0;
         }
+
         
         for (NSInteger l = 0; l < self.spriteLayers.count; l++)
         {
