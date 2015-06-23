@@ -8,10 +8,9 @@
 
 #ifndef SKATMXParser_CollisionDefine_h
 #define SKATMXParser_CollisionDefine_h
-#import <Foundation/Foundation.h>
 
-extern const uint32_t SKACategoryPlayer;
-extern const uint32_t SKACategoryFloor;
-extern const uint32_t SKACategoryWall;
+static const uint32_t SKACategoryPlayer     =  0x1 << 20;
+static const uint32_t SKACategoryFloor        =  0x1 << 21;
+static const uint32_t SKACategoryWall    =  0x1 << 22;
 
 #endif
