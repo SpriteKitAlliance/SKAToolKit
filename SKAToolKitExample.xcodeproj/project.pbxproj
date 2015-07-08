@@ -43,6 +43,7 @@
 		B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7511F1B13912100455CA6 /* SKATestHud.m */; };
 		B6C7512D1B13912100455CA6 /* SKATestPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C751211B13912100455CA6 /* SKATestPlayer.m */; };
 		F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */; };
+		F4BAA56F1B4DB8FF00B2D4A8 /* CollisionDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BAA56E1B4DB8FF00B2D4A8 /* CollisionDefine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -115,6 +116,7 @@
 		B6C751201B13912100455CA6 /* SKATestPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestPlayer.h; sourceTree = "<group>"; };
 		B6C751211B13912100455CA6 /* SKATestPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestPlayer.m; sourceTree = "<group>"; };
 		F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		F4BAA56E1B4DB8FF00B2D4A8 /* CollisionDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollisionDefine.m; path = SKATiledMap/CollisionDefine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				B6578C481B36239E0049A82E /* CollisionDefine.h */,
+				F4BAA56E1B4DB8FF00B2D4A8 /* CollisionDefine.m */,
 				B6578C571B36239E0049A82E /* SKATiledMap.h */,
 				B6578C581B36239E0049A82E /* SKATiledMap.m */,
 				B6578C551B36239E0049A82E /* SKASpriteLayer.h */,
@@ -364,6 +367,7 @@
 				B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */,
 				B6C7512C1B13912100455CA6 /* SKATestHud.m in Sources */,
 				B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */,
+				F4BAA56F1B4DB8FF00B2D4A8 /* CollisionDefine.m in Sources */,
 				B67B1CE81B195EFF008FA53B /* SKACroppedMiniMap.m in Sources */,
 				B6578C631B36239E0049A82E /* SKATMXParser.m in Sources */,
 				B6578C5B1B36239E0049A82E /* LFCGzipUtility.m in Sources */,
