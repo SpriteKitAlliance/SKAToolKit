@@ -8,8 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-//TODO Comment this is a class for testing only, not meant to be subclassed or used in the final project
-typedef NS_ENUM(NSUInteger, PlayerState) {
+// TODO Comment this is a class for testing only, not meant to be subclassed or
+// used in the final project
+typedef NS_ENUM(NSUInteger, PlayerState)
+{
     PlayerStateMoveLeft,
     PlayerStateMoveRight,
     PlayerStateMoveIdel
@@ -17,8 +19,8 @@ typedef NS_ENUM(NSUInteger, PlayerState) {
 
 @interface SKATestPlayer : SKSpriteNode
 
-@property (nonatomic) BOOL wantsToJump;
-@property (nonatomic) PlayerState playerState;
+@property(nonatomic) BOOL wantsToJump;
+@property(nonatomic) PlayerState playerState;
 
 - (void)update;
 

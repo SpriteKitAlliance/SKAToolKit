@@ -10,11 +10,11 @@
 
 @interface SKAMiniMap : SKSpriteNode
 
-@property (nonatomic, readonly) float scaledTo;
+@property(nonatomic, readonly) float scaledTo;
 
 /**
  map must be part of a scene with a view
  */
-- (id)initWithMap:(SKNode*)map withWidth:(NSInteger)width;
+- (id)initWithMap:(SKNode *)map withWidth:(NSInteger)width;
 
 @end

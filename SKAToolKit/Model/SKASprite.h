@@ -10,6 +10,6 @@
 
 @interface SKASprite : SKSpriteNode
 
-@property (nonatomic, strong) NSDictionary *properties;
+@property(nonatomic, strong) NSDictionary *properties;
 
 @end

@@ -199,10 +199,10 @@
 		B63D27C41AF6C17800E7F043 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B63D27D31AF6C17800E7F043 /* LaunchScreen.xib */,
 				B63D27C81AF6C17800E7F043 /* AppDelegate.h */,
 				B63D27C91AF6C17800E7F043 /* AppDelegate.m */,
 				B63D27C51AF6C17800E7F043 /* Info.plist */,
+				B63D27D31AF6C17800E7F043 /* LaunchScreen.xib */,
 				B63D27C61AF6C17800E7F043 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -211,12 +211,12 @@
 		B6C7510E1B13907100455CA6 /* SKAToolKit */ = {
 			isa = PBXGroup;
 			children = (
-				BB37048F1B50D25900D7EE0B /* Utilities */,
-				B60431FD1B1395D700563651 /* SKATest */,
 				BB3704901B50D2B300D7EE0B /* Categories */,
-				BB3704991B50D43300D7EE0B /* SKAMaps */,
-				B60431FC1B1395CB00563651 /* SKAButtons */,
 				B60431FA1B13959000563651 /* Model */,
+				B60431FC1B1395CB00563651 /* SKAButtons */,
+				BB3704991B50D43300D7EE0B /* SKAMaps */,
+				B60431FD1B1395D700563651 /* SKATest */,
+				BB37048F1B50D25900D7EE0B /* Utilities */,
 			);
 			name = SKAToolKit;
 			sourceTree = "<group>";
@@ -316,8 +316,8 @@
 		BB3704981B50D42100D7EE0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B6C7510E1B13907100455CA6 /* SKAToolKit */,
 				F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */,
+				B6C7510E1B13907100455CA6 /* SKAToolKit */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

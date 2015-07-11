@@ -11,29 +11,31 @@
 
 @implementation ViewController
 
-- (void)loadView {
-  CGRect applicaitonFrame = [UIScreen mainScreen].applicationFrame;
-  SKView *skView = [[SKView alloc] initWithFrame:applicaitonFrame];
-  self.view = skView;
+- (void)loadView
+{
+    CGRect applicaitonFrame = [UIScreen mainScreen].applicationFrame;
+    SKView *skView = [[SKView alloc] initWithFrame:applicaitonFrame];
+    self.view = skView;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
+
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-  
+    SKView *skView = (SKView *)self.view;
+
     skView.ignoresSiblingOrder = YES;
     skView.showsFPS = YES;
     skView.showsDrawCount = YES;
     skView.showsNodeCount = YES;
     skView.showsPhysics = YES;
-    
+
     // Create and configure the scene.
-    GameScene * scene = [GameScene sceneWithSize:self.view.bounds.size];
-    
+    GameScene *scene = [GameScene sceneWithSize:self.view.bounds.size];
+
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
+
     // Present the scene.
     [skView presentScene:scene];
 

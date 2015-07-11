@@ -21,6 +21,6 @@
 
 @interface SKAButtonSprite : SKSpriteNode
 
-@property (weak)id<ButtonSpriteDelegate> delegate;
+@property(weak) id<ButtonSpriteDelegate> delegate;
 
 @end

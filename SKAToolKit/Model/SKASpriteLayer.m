@@ -10,14 +10,18 @@
 
 @implementation SKASpriteLayer
 
-- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y {
-  SKASprite *sprite = self.sprites[x][y];
-  
-  if ([sprite isKindOfClass:[SKASprite class]]) {
-    return sprite;
-  } else {
-    return nil;
-  }
+- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y
+{
+    SKASprite *sprite = self.sprites[x][y];
+
+    if ([sprite isKindOfClass:[SKASprite class]])
+    {
+        return sprite;
+    }
+    else
+    {
+        return nil;
+    }
 }
 
 @end

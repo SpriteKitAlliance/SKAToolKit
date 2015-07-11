@@ -14,12 +14,14 @@
 /**
  node that is child of map used to create minimap
  */
-@property (nonatomic, strong) SKNode *autoFollowNode;
+@property(nonatomic, strong) SKNode *autoFollowNode;
 
 /**
  map must be part of a scene with a view
  */
-- (id)initWithMap:(SKNode*)map withWidth:(NSInteger)width withCroppedSize:(CGSize)size;
+- (id)initWithMap:(SKNode *)map
+        withWidth:(NSInteger)width
+  withCroppedSize:(CGSize)size;
 
 - (void)update;
 
