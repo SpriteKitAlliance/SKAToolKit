@@ -2,7 +2,7 @@
 //  main.m
 //  SKATMXParser
 //
-//  Created by Skyler Lauren on 5/3/15.
+//  TODO: Insert proper license copy
 //  Copyright (c) 2015 Sprite Kit Alliance. All rights reserved.
 //
 
