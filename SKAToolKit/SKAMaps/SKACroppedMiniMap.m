@@ -38,8 +38,8 @@
 - (void)update {
   
   if (self.autoFollowNode && self.miniMap) {
-    self.miniMap.position = CGPointMake(-self.autoFollowNode.position.x + self.scene.size.width / 2.f,
-                                        -self.autoFollowNode.position.y + self.scene.size.height / 2.f);
+    self.miniMap.position = CGPointMake(-self.autoFollowNode.position.x + self.scene.size.width / 2,
+                                        -self.autoFollowNode.position.y + self.scene.size.height / 2);
     
     //scaling down
     self.miniMap.position = CGPointMake(self.miniMap.position.x*self.miniMap.scaledTo, self.miniMap.position.y * self.miniMap.scaledTo);
@@ -65,8 +65,8 @@
     }
     
     //TODO: Determine if we need to cast to ints here
-    self.miniMap.position = CGPointMake((int) (position.x - self.size.width / 2.f),
-                                        (int) (position.y - self.size.height / 2.f));
+    self.miniMap.position = CGPointMake((int) (position.x - self.size.width / 2),
+                                        (int) (position.y - self.size.height / 2));
   }
 }
 

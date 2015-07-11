@@ -31,8 +31,8 @@
   self.player = player;
   
   self.buttonLeft = [SKAButtonSprite spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(50, 50)];
-  self.buttonLeft.position = CGPointMake(self.buttonLeft.size.width / 2.f + padding,
-                                         self.buttonLeft.size.height / 2.f + padding);
+  self.buttonLeft.position = CGPointMake(self.buttonLeft.size.width / 2 + padding,
+                                         self.buttonLeft.size.height / 2 + padding);
   self.buttonLeft.name = @"buttonLeft";
   self.buttonLeft.userInteractionEnabled = YES;
   self.buttonLeft.delegate = self;
@@ -40,18 +40,18 @@
   
   self.buttonRight = [SKAButtonSprite spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(50, 50)];
   CGFloat buttonRightPos = self.buttonLeft.position.x +
-  self.buttonLeft.size.width / 2.f + padding +
-  self.buttonRight.size.width / 2.f + padding;
+  self.buttonLeft.size.width / 2 + padding +
+  self.buttonRight.size.width / 2 + padding;
   
-  self.buttonRight.position = CGPointMake(buttonRightPos, self.buttonRight.size.height / 2.f + padding);
+  self.buttonRight.position = CGPointMake(buttonRightPos, self.buttonRight.size.height / 2 + padding);
   self.buttonRight.name = @"buttonRight";
   self.buttonRight.userInteractionEnabled = YES;
   self.buttonRight.delegate = self;
   [self addChild:self.buttonRight];
   
   self.buttonJump  = [SKAButtonSprite spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(50, 50)];
-  CGPoint position = CGPointMake(scene.view.frame.size.width - self.buttonJump.size.width / 2.f - padding,
-                                 self.buttonJump.size.height / 2.f + padding);
+  CGPoint position = CGPointMake(scene.view.frame.size.width - self.buttonJump.size.width / 2 - padding,
+                                 self.buttonJump.size.height / 2 + padding);
   self.buttonJump.position = position;
   self.buttonJump.name = @"buttonJump";
   self.buttonJump.userInteractionEnabled = YES;

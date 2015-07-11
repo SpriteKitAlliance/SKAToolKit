@@ -270,8 +270,8 @@
             SKAMapTile *mapTile = tileSets[key];
             
             SKASprite *sprite = [SKASprite spriteNodeWithTexture:mapTile.texture];
-            NSInteger x = (sprite.size.width / 2.f - self.tileWidth / 2.f) + self.tileWidth / 2.f + j * self.tileWidth;
-            NSInteger y = (sprite.size.height / 2.f - self.tileHeight / 2.f) + self.tileHeight / 2.f + i * self.tileHeight;
+            NSInteger x = (sprite.size.width / 2 - self.tileWidth / 2) + self.tileWidth / 2 + j * self.tileWidth;
+            NSInteger y = (sprite.size.height / 2 - self.tileHeight / 2) + self.tileHeight / 2 + i * self.tileHeight;
             sprite.position = CGPointMake(x, y);
             
             sprite.properties = mapTile.properties;
@@ -406,7 +406,7 @@
 
 - (void)update {
   if (self.autoFollowNode) {
-    self.position = CGPointMake(-self.autoFollowNode.position.x+self.scene.size.width/2, -self.autoFollowNode.position.y+self.scene.size.height / 2.f);
+    self.position = CGPointMake(-self.autoFollowNode.position.x+self.scene.size.width/2, -self.autoFollowNode.position.y+self.scene.size.height / 2);
     
     //keep map from going off screen
     CGPoint position = self.position;
@@ -432,7 +432,7 @@
   if (self.autoFollowNode && self.miniMap && self.croppedMap) {
     float scale = self.miniMap.size.width / (self.mapWidth * self.tileWidth);
     
-    self.miniMap.position = CGPointMake(-self.autoFollowNode.position.x + self.scene.size.width / 2.f, -self.autoFollowNode.position.y + self.scene.size.height / 2.f);
+    self.miniMap.position = CGPointMake(-self.autoFollowNode.position.x + self.scene.size.width / 2, -self.autoFollowNode.position.y + self.scene.size.height / 2);
     
     //scaling down
     self.miniMap.position = CGPointMake(self.miniMap.position.x * scale, self.miniMap.position.y * scale);
@@ -563,8 +563,8 @@
     //calculate what to make visiable
     self.visibleArray = [[NSMutableArray alloc] init];
     
-    NSInteger staringX = x - width / 2.f;
-    NSInteger staringY = y - height / 2.f;
+    NSInteger staringX = x - width / 2;
+    NSInteger staringY = y - height / 2;
     NSInteger endingX = staringX + width;
     NSInteger endingY = staringY + height;
     

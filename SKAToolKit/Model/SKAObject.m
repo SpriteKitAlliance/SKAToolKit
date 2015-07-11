@@ -11,11 +11,11 @@
 @implementation SKAObject
 
 - (float)centerX {
-  return self.x + self.width / 2.f;
+  return self.x + self.width / 2;
 }
 
 - (float)centerY {
-  return self.y + self.height / 2.f;
+  return self.y + self.height / 2;
 }
 
 @end
