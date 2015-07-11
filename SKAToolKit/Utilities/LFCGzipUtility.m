@@ -7,7 +7,6 @@
 
 //  TODO: what license can we use here, if any?
 
-
 #import "LFCGzipUtility.h"
 #import "zlib.h"
 
@@ -129,7 +128,7 @@
     // Free data structures that were dynamically created for the stream.
     deflateEnd(&zlibStreamStruct);
     [compressedData setLength:zlibStreamStruct.total_out];
-    NSLog(@"%s: Compressed file from %ld KB to %ld KB", __func__,
+    NSLog(@"%s: Compressed file from %lu KB to %lu KB", __func__,
           [pUncompressedData length] / 1024, [compressedData length] / 1024);
 
     return compressedData;
