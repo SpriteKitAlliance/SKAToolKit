@@ -1,5 +1,5 @@
 //
-//  SKASpriteLayer.m
+//  ViewController.h
 //  SKATMXParser
 //
 //  Copyright (c) 2015 Sprite Kit Alliance
@@ -23,22 +23,8 @@
 //  IN THE SOFTWARE.
 //
 
-#import "SKASpriteLayer.h"
+#import <UIKit/UIKit.h>
 
-@implementation SKASpriteLayer
-
-- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y
-{
-    SKASprite *sprite = self.sprites[x][y];
-
-    if ([sprite isKindOfClass:[SKASprite class]])
-    {
-        return sprite;
-    }
-    else
-    {
-        return nil;
-    }
-}
+@interface ViewController : UIViewController
 
 @end

@@ -1,8 +1,6 @@
 //
-//  SKASpriteLayer.m
-//  SKATMXParser
-//
-//  Copyright (c) 2015 Sprite Kit Alliance
+//  SKATest.h
+//  SKAToolKitExample
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -23,22 +21,10 @@
 //  IN THE SOFTWARE.
 //
 
-#import "SKASpriteLayer.h"
+#ifndef SKAToolKit_SKATest_h
+#define SKAToolKit_SKATest_h
 
-@implementation SKASpriteLayer
+#import "SKATestHud.h"
+#import "SKATestPlayer.h"
 
-- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y
-{
-    SKASprite *sprite = self.sprites[x][y];
-
-    if ([sprite isKindOfClass:[SKASprite class]])
-    {
-        return sprite;
-    }
-    else
-    {
-        return nil;
-    }
-}
-
-@end
+#endif

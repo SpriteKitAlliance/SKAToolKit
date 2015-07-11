@@ -1,8 +1,5 @@
 //
-//  SKASpriteLayer.m
-//  SKATMXParser
-//
-//  Copyright (c) 2015 Sprite Kit Alliance
+//  GameScene.h
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -23,22 +20,8 @@
 //  IN THE SOFTWARE.
 //
 
-#import "SKASpriteLayer.h"
+#import <SpriteKit/SpriteKit.h>
 
-@implementation SKASpriteLayer
-
-- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y
-{
-    SKASprite *sprite = self.sprites[x][y];
-
-    if ([sprite isKindOfClass:[SKASprite class]])
-    {
-        return sprite;
-    }
-    else
-    {
-        return nil;
-    }
-}
+@interface GameScene : SKScene
 
 @end

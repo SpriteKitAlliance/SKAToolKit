@@ -5,6 +5,8 @@
 //  Modified version of Clint Harris' (www.clintharris.net) implementation
 //
 
+//  TODO: what license can we use here, if any?
+
 #import <Foundation/Foundation.h>
 #import "zlib.h"
 

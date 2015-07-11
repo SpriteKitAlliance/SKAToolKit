@@ -1,8 +1,5 @@
 //
-//  SKASpriteLayer.m
-//  SKATMXParser
-//
-//  Copyright (c) 2015 Sprite Kit Alliance
+//  AppDelegate.m
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -23,22 +20,24 @@
 //  IN THE SOFTWARE.
 //
 
-#import "SKASpriteLayer.h"
+#import "AppDelegate.h"
+#import "ViewController.h"
 
-@implementation SKASpriteLayer
+@implementation AppDelegate
 
-- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    SKASprite *sprite = self.sprites[x][y];
+    // Override point for customization after application launch.
+    ViewController *viewController = [[ViewController alloc] init];
 
-    if ([sprite isKindOfClass:[SKASprite class]])
-    {
-        return sprite;
-    }
-    else
-    {
-        return nil;
-    }
+    self.window =
+        [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+
+    return YES;
 }
 
 @end

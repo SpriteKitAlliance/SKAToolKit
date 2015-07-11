@@ -1,8 +1,5 @@
 //
-//  SKASpriteLayer.m
-//  SKATMXParser
-//
-//  Copyright (c) 2015 Sprite Kit Alliance
+//  AppDelegate.h
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -23,22 +20,10 @@
 //  IN THE SOFTWARE.
 //
 
-#import "SKASpriteLayer.h"
+#import <UIKit/UIKit.h>
 
-@implementation SKASpriteLayer
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y
-{
-    SKASprite *sprite = self.sprites[x][y];
-
-    if ([sprite isKindOfClass:[SKASprite class]])
-    {
-        return sprite;
-    }
-    else
-    {
-        return nil;
-    }
-}
+@property(strong, nonatomic) UIWindow *window;
 
 @end

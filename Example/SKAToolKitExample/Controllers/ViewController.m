@@ -1,5 +1,5 @@
 //
-//  SKASpriteLayer.m
+//  ViewController.m
 //  SKATMXParser
 //
 //  Copyright (c) 2015 Sprite Kit Alliance
@@ -23,22 +23,40 @@
 //  IN THE SOFTWARE.
 //
 
-#import "SKASpriteLayer.h"
+#import "ViewController.h"
+#import "GameScene.h"
 
-@implementation SKASpriteLayer
+@implementation ViewController
 
-- (SKASprite *)spriteForIndexX:(NSInteger)x indexY:(NSInteger)y
+- (void)loadView
 {
-    SKASprite *sprite = self.sprites[x][y];
+    CGRect applicaitonFrame = [UIScreen mainScreen].applicationFrame;
+    SKView *skView = [[SKView alloc] initWithFrame:applicaitonFrame];
+    self.view = skView;
+}
 
-    if ([sprite isKindOfClass:[SKASprite class]])
-    {
-        return sprite;
-    }
-    else
-    {
-        return nil;
-    }
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    // Configure the view.
+    SKView *skView = (SKView *)self.view;
+
+    skView.ignoresSiblingOrder = YES;
+    skView.showsFPS = YES;
+    skView.showsDrawCount = YES;
+    skView.showsNodeCount = YES;
+    skView.showsPhysics = YES;
+
+    // Create and configure the scene.
+    GameScene *scene = [GameScene sceneWithSize:self.view.bounds.size];
+
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+
+    // Present the scene.
+    [skView presentScene:scene];
+
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 @end
