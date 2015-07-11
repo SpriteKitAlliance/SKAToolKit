@@ -5,6 +5,9 @@
 //  Modified version of Clint Harris' (www.clintharris.net) implementation
 //
 
+//  TODO: what license can we use here, if any?
+
+
 #import "LFCGzipUtility.h"
 #import "zlib.h"
 
