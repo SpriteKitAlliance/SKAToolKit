@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B63D27C71AF6C17800E7F043 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27C61AF6C17800E7F043 /* main.m */; };
+		B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27C91AF6C17800E7F043 /* AppDelegate.m */; };
+		B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27CC1AF6C17800E7F043 /* ViewController.m */; };
+		B63D27D21AF6C17800E7F043 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63D27D11AF6C17800E7F043 /* Images.xcassets */; };
+		B63D27D51AF6C17800E7F043 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B63D27D31AF6C17800E7F043 /* LaunchScreen.xib */; };
+		B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D29DF1AF6F50600E7F043 /* GameScene.m */; };
+		BB3704BF1B50E0CF00D7EE0B /* SampleMap0.json in Resources */ = {isa = PBXBuildFile; fileRef = BB3704BE1B50E0CF00D7EE0B /* SampleMap0.json */; };
+		BB3704C61B50E0DF00D7EE0B /* Backgrounds.1.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3704C01B50E0DF00D7EE0B /* Backgrounds.1.png */; };
+		BB3704C71B50E0DF00D7EE0B /* Items.1.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3704C11B50E0DF00D7EE0B /* Items.1.png */; };
+		BB3704C81B50E0DF00D7EE0B /* Platforms.1.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3704C21B50E0DF00D7EE0B /* Platforms.1.png */; };
+		BB3704C91B50E0DF00D7EE0B /* Structural.1.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3704C31B50E0DF00D7EE0B /* Structural.1.png */; };
+		BB3704CA1B50E0DF00D7EE0B /* Tiles.1.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3704C41B50E0DF00D7EE0B /* Tiles.1.png */; };
+		BB3704CB1B50E0DF00D7EE0B /* Walls.1.png in Resources */ = {isa = PBXBuildFile; fileRef = BB3704C51B50E0DF00D7EE0B /* Walls.1.png */; };
+		BB3704CD1B50E0F900D7EE0B /* SampleMap0.tmx in Resources */ = {isa = PBXBuildFile; fileRef = BB3704CC1B50E0F900D7EE0B /* SampleMap0.tmx */; };
+		BB3704D41B50E10600D7EE0B /* Backgrounds.tps in Resources */ = {isa = PBXBuildFile; fileRef = BB3704CE1B50E10600D7EE0B /* Backgrounds.tps */; };
+		BB3704D51B50E10600D7EE0B /* Items.tps in Resources */ = {isa = PBXBuildFile; fileRef = BB3704CF1B50E10600D7EE0B /* Items.tps */; };
+		BB3704D61B50E10600D7EE0B /* Platforms.tps in Resources */ = {isa = PBXBuildFile; fileRef = BB3704D01B50E10600D7EE0B /* Platforms.tps */; };
+		BB3704D71B50E10600D7EE0B /* Structural.tps in Resources */ = {isa = PBXBuildFile; fileRef = BB3704D11B50E10600D7EE0B /* Structural.tps */; };
+		BB3704D81B50E10600D7EE0B /* Tiles.tps in Resources */ = {isa = PBXBuildFile; fileRef = BB3704D21B50E10600D7EE0B /* Tiles.tps */; };
+		BB3704D91B50E10600D7EE0B /* Walls.tps in Resources */ = {isa = PBXBuildFile; fileRef = BB3704D31B50E10600D7EE0B /* Walls.tps */; };
+		BB60EA031B520D1B00FD72ED /* NSMutableDictionary+SKATMXParserUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9E11B520D1B00FD72ED /* NSMutableDictionary+SKATMXParserUtils.m */; };
+		BB60EA041B520D1B00FD72ED /* SKACollisionDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9E41B520D1B00FD72ED /* SKACollisionDefine.m */; };
+		BB60EA051B520D1B00FD72ED /* SKAMapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9E61B520D1B00FD72ED /* SKAMapTile.m */; };
+		BB60EA061B520D1B00FD72ED /* SKAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9E81B520D1B00FD72ED /* SKAObject.m */; };
+		BB60EA071B520D1B00FD72ED /* SKAObjectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9EA1B520D1B00FD72ED /* SKAObjectLayer.m */; };
+		BB60EA081B520D1B00FD72ED /* SKASprite.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9EC1B520D1B00FD72ED /* SKASprite.m */; };
+		BB60EA091B520D1B00FD72ED /* SKASpriteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9EE1B520D1B00FD72ED /* SKASpriteLayer.m */; };
+		BB60EA0A1B520D1B00FD72ED /* SKAButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9F11B520D1B00FD72ED /* SKAButtonSprite.m */; };
+		BB60EA0B1B520D1B00FD72ED /* SKACroppedMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9F41B520D1B00FD72ED /* SKACroppedMiniMap.m */; };
+		BB60EA0C1B520D1B00FD72ED /* SKAMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9F61B520D1B00FD72ED /* SKAMiniMap.m */; };
+		BB60EA0D1B520D1B00FD72ED /* SKATiledMap.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9F81B520D1B00FD72ED /* SKATiledMap.m */; };
+		BB60EA0E1B520D1B00FD72ED /* SKATestHud.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9FB1B520D1B00FD72ED /* SKATestHud.m */; };
+		BB60EA0F1B520D1B00FD72ED /* SKATestPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60E9FD1B520D1B00FD72ED /* SKATestPlayer.m */; };
+		BB60EA101B520D1B00FD72ED /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60EA001B520D1B00FD72ED /* LFCGzipUtility.m */; };
+		BB60EA111B520D1B00FD72ED /* SKATMXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60EA021B520D1B00FD72ED /* SKATMXParser.m */; };
+		F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B67A58611B125BBB00395E70 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKAToolKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63D27C51AF6C17800E7F043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B63D27C61AF6C17800E7F043 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B63D27C81AF6C17800E7F043 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B63D27C91AF6C17800E7F043 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B63D27CB1AF6C17800E7F043 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controllers/ViewController.h; sourceTree = "<group>"; };
+		B63D27CC1AF6C17800E7F043 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controllers/ViewController.m; sourceTree = "<group>"; };
+		B63D27D11AF6C17800E7F043 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B63D27D41AF6C17800E7F043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B63D29DE1AF6F50600E7F043 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Scenes/GameScene.h; sourceTree = "<group>"; };
+		B63D29DF1AF6F50600E7F043 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Scenes/GameScene.m; sourceTree = "<group>"; };
+		BB3704BE1B50E0CF00D7EE0B /* SampleMap0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SampleMap0.json; path = Resources/json/SampleMap0.json; sourceTree = "<group>"; };
+		BB3704C01B50E0DF00D7EE0B /* Backgrounds.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Backgrounds.1.png; path = Resources/spritesheets/Backgrounds.1.png; sourceTree = "<group>"; };
+		BB3704C11B50E0DF00D7EE0B /* Items.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Items.1.png; path = Resources/spritesheets/Items.1.png; sourceTree = "<group>"; };
+		BB3704C21B50E0DF00D7EE0B /* Platforms.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Platforms.1.png; path = Resources/spritesheets/Platforms.1.png; sourceTree = "<group>"; };
+		BB3704C31B50E0DF00D7EE0B /* Structural.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Structural.1.png; path = Resources/spritesheets/Structural.1.png; sourceTree = "<group>"; };
+		BB3704C41B50E0DF00D7EE0B /* Tiles.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tiles.1.png; path = Resources/spritesheets/Tiles.1.png; sourceTree = "<group>"; };
+		BB3704C51B50E0DF00D7EE0B /* Walls.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Walls.1.png; path = Resources/spritesheets/Walls.1.png; sourceTree = "<group>"; };
+		BB3704CC1B50E0F900D7EE0B /* SampleMap0.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SampleMap0.tmx; path = Resources/tmx/SampleMap0.tmx; sourceTree = "<group>"; };
+		BB3704CE1B50E10600D7EE0B /* Backgrounds.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Backgrounds.tps; path = Resources/tps/Backgrounds.tps; sourceTree = "<group>"; };
+		BB3704CF1B50E10600D7EE0B /* Items.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Items.tps; path = Resources/tps/Items.tps; sourceTree = "<group>"; };
+		BB3704D01B50E10600D7EE0B /* Platforms.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Platforms.tps; path = Resources/tps/Platforms.tps; sourceTree = "<group>"; };
+		BB3704D11B50E10600D7EE0B /* Structural.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Structural.tps; path = Resources/tps/Structural.tps; sourceTree = "<group>"; };
+		BB3704D21B50E10600D7EE0B /* Tiles.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Tiles.tps; path = Resources/tps/Tiles.tps; sourceTree = "<group>"; };
+		BB3704D31B50E10600D7EE0B /* Walls.tps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Walls.tps; path = Resources/tps/Walls.tps; sourceTree = "<group>"; };
+		BB60E9E01B520D1B00FD72ED /* NSMutableDictionary+SKATMXParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+SKATMXParserUtils.h"; sourceTree = "<group>"; };
+		BB60E9E11B520D1B00FD72ED /* NSMutableDictionary+SKATMXParserUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+SKATMXParserUtils.m"; sourceTree = "<group>"; };
+		BB60E9E31B520D1B00FD72ED /* SKACollisionDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKACollisionDefine.h; sourceTree = "<group>"; };
+		BB60E9E41B520D1B00FD72ED /* SKACollisionDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKACollisionDefine.m; sourceTree = "<group>"; };
+		BB60E9E51B520D1B00FD72ED /* SKAMapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAMapTile.h; sourceTree = "<group>"; };
+		BB60E9E61B520D1B00FD72ED /* SKAMapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAMapTile.m; sourceTree = "<group>"; };
+		BB60E9E71B520D1B00FD72ED /* SKAObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObject.h; sourceTree = "<group>"; };
+		BB60E9E81B520D1B00FD72ED /* SKAObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObject.m; sourceTree = "<group>"; };
+		BB60E9E91B520D1B00FD72ED /* SKAObjectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAObjectLayer.h; sourceTree = "<group>"; };
+		BB60E9EA1B520D1B00FD72ED /* SKAObjectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAObjectLayer.m; sourceTree = "<group>"; };
+		BB60E9EB1B520D1B00FD72ED /* SKASprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASprite.h; sourceTree = "<group>"; };
+		BB60E9EC1B520D1B00FD72ED /* SKASprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASprite.m; sourceTree = "<group>"; };
+		BB60E9ED1B520D1B00FD72ED /* SKASpriteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKASpriteLayer.h; sourceTree = "<group>"; };
+		BB60E9EE1B520D1B00FD72ED /* SKASpriteLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKASpriteLayer.m; sourceTree = "<group>"; };
+		BB60E9F01B520D1B00FD72ED /* SKAButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAButtonSprite.h; sourceTree = "<group>"; };
+		BB60E9F11B520D1B00FD72ED /* SKAButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAButtonSprite.m; sourceTree = "<group>"; };
+		BB60E9F31B520D1B00FD72ED /* SKACroppedMiniMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKACroppedMiniMap.h; sourceTree = "<group>"; };
+		BB60E9F41B520D1B00FD72ED /* SKACroppedMiniMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKACroppedMiniMap.m; sourceTree = "<group>"; };
+		BB60E9F51B520D1B00FD72ED /* SKAMiniMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAMiniMap.h; sourceTree = "<group>"; };
+		BB60E9F61B520D1B00FD72ED /* SKAMiniMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAMiniMap.m; sourceTree = "<group>"; };
+		BB60E9F71B520D1B00FD72ED /* SKATiledMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATiledMap.h; sourceTree = "<group>"; };
+		BB60E9F81B520D1B00FD72ED /* SKATiledMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATiledMap.m; sourceTree = "<group>"; };
+		BB60E9FA1B520D1B00FD72ED /* SKATestHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestHud.h; sourceTree = "<group>"; };
+		BB60E9FB1B520D1B00FD72ED /* SKATestHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestHud.m; sourceTree = "<group>"; };
+		BB60E9FC1B520D1B00FD72ED /* SKATestPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATestPlayer.h; sourceTree = "<group>"; };
+		BB60E9FD1B520D1B00FD72ED /* SKATestPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATestPlayer.m; sourceTree = "<group>"; };
+		BB60E9FF1B520D1B00FD72ED /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
+		BB60EA001B520D1B00FD72ED /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
+		BB60EA011B520D1B00FD72ED /* SKATMXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKATMXParser.h; sourceTree = "<group>"; };
+		BB60EA021B520D1B00FD72ED /* SKATMXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKATMXParser.m; sourceTree = "<group>"; };
+		BB60EA121B52993A00FD72ED /* SKAToolKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SKAToolKit.h; path = ../../SKAToolKit/SKAToolKit.h; sourceTree = "<group>"; };
+		BB60EA131B529AAF00FD72ED /* SKATest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKATest.h; sourceTree = "<group>"; };
+		F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B63D27BE1AF6C17800E7F043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B63D27B81AF6C17800E7F043 = {
+			isa = PBXGroup;
+			children = (
+				B63D27C31AF6C17800E7F043 /* SKAToolKitExample */,
+				B63D27C21AF6C17800E7F043 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B63D27C21AF6C17800E7F043 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B63D27C31AF6C17800E7F043 /* SKAToolKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				BB3704961B50D3F700D7EE0B /* Controllers */,
+				BB3704981B50D42100D7EE0B /* Frameworks */,
+				BB3704911B50D37F00D7EE0B /* Resources */,
+				BB3704971B50D40400D7EE0B /* Scenes */,
+				B63D27C41AF6C17800E7F043 /* Supporting Files */,
+			);
+			path = SKAToolKitExample;
+			sourceTree = "<group>";
+		};
+		B63D27C41AF6C17800E7F043 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B63D27C81AF6C17800E7F043 /* AppDelegate.h */,
+				B63D27C91AF6C17800E7F043 /* AppDelegate.m */,
+				B63D27C51AF6C17800E7F043 /* Info.plist */,
+				B63D27D31AF6C17800E7F043 /* LaunchScreen.xib */,
+				B63D27C61AF6C17800E7F043 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6C7510E1B13907100455CA6 /* SKAToolKit */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E9DF1B520D1B00FD72ED /* Categories */,
+				BB60E9E21B520D1B00FD72ED /* Model */,
+				BB60E9EF1B520D1B00FD72ED /* SKAButtons */,
+				BB60E9F21B520D1B00FD72ED /* SKAMaps */,
+				BB60E9F91B520D1B00FD72ED /* SKATest */,
+				BB60E9FE1B520D1B00FD72ED /* Utilities */,
+				BB60EA121B52993A00FD72ED /* SKAToolKit.h */,
+			);
+			name = SKAToolKit;
+			sourceTree = "<group>";
+		};
+		BB3704911B50D37F00D7EE0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B63D27D11AF6C17800E7F043 /* Images.xcassets */,
+				BB3704941B50D3A000D7EE0B /* json */,
+				BB3704951B50D3C200D7EE0B /* spritesheets */,
+				BB3704931B50D39A00D7EE0B /* tmx */,
+				BB3704921B50D38B00D7EE0B /* tps */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BB3704921B50D38B00D7EE0B /* tps */ = {
+			isa = PBXGroup;
+			children = (
+				BB3704CE1B50E10600D7EE0B /* Backgrounds.tps */,
+				BB3704CF1B50E10600D7EE0B /* Items.tps */,
+				BB3704D01B50E10600D7EE0B /* Platforms.tps */,
+				BB3704D11B50E10600D7EE0B /* Structural.tps */,
+				BB3704D21B50E10600D7EE0B /* Tiles.tps */,
+				BB3704D31B50E10600D7EE0B /* Walls.tps */,
+			);
+			name = tps;
+			sourceTree = "<group>";
+		};
+		BB3704931B50D39A00D7EE0B /* tmx */ = {
+			isa = PBXGroup;
+			children = (
+				BB3704CC1B50E0F900D7EE0B /* SampleMap0.tmx */,
+			);
+			name = tmx;
+			sourceTree = "<group>";
+		};
+		BB3704941B50D3A000D7EE0B /* json */ = {
+			isa = PBXGroup;
+			children = (
+				BB3704BE1B50E0CF00D7EE0B /* SampleMap0.json */,
+			);
+			name = json;
+			sourceTree = "<group>";
+		};
+		BB3704951B50D3C200D7EE0B /* spritesheets */ = {
+			isa = PBXGroup;
+			children = (
+				BB3704C01B50E0DF00D7EE0B /* Backgrounds.1.png */,
+				BB3704C11B50E0DF00D7EE0B /* Items.1.png */,
+				BB3704C21B50E0DF00D7EE0B /* Platforms.1.png */,
+				BB3704C31B50E0DF00D7EE0B /* Structural.1.png */,
+				BB3704C41B50E0DF00D7EE0B /* Tiles.1.png */,
+				BB3704C51B50E0DF00D7EE0B /* Walls.1.png */,
+			);
+			name = spritesheets;
+			sourceTree = "<group>";
+		};
+		BB3704961B50D3F700D7EE0B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B63D27CB1AF6C17800E7F043 /* ViewController.h */,
+				B63D27CC1AF6C17800E7F043 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BB3704971B50D40400D7EE0B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B63D29DE1AF6F50600E7F043 /* GameScene.h */,
+				B63D29DF1AF6F50600E7F043 /* GameScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		BB3704981B50D42100D7EE0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */,
+				B6C7510E1B13907100455CA6 /* SKAToolKit */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB60E9DF1B520D1B00FD72ED /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E9E01B520D1B00FD72ED /* NSMutableDictionary+SKATMXParserUtils.h */,
+				BB60E9E11B520D1B00FD72ED /* NSMutableDictionary+SKATMXParserUtils.m */,
+			);
+			name = Categories;
+			path = ../../SKAToolKit/Categories;
+			sourceTree = "<group>";
+		};
+		BB60E9E21B520D1B00FD72ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E9E31B520D1B00FD72ED /* SKACollisionDefine.h */,
+				BB60E9E41B520D1B00FD72ED /* SKACollisionDefine.m */,
+				BB60E9E51B520D1B00FD72ED /* SKAMapTile.h */,
+				BB60E9E61B520D1B00FD72ED /* SKAMapTile.m */,
+				BB60E9E71B520D1B00FD72ED /* SKAObject.h */,
+				BB60E9E81B520D1B00FD72ED /* SKAObject.m */,
+				BB60E9E91B520D1B00FD72ED /* SKAObjectLayer.h */,
+				BB60E9EA1B520D1B00FD72ED /* SKAObjectLayer.m */,
+				BB60E9EB1B520D1B00FD72ED /* SKASprite.h */,
+				BB60E9EC1B520D1B00FD72ED /* SKASprite.m */,
+				BB60E9ED1B520D1B00FD72ED /* SKASpriteLayer.h */,
+				BB60E9EE1B520D1B00FD72ED /* SKASpriteLayer.m */,
+			);
+			name = Model;
+			path = ../../SKAToolKit/Model;
+			sourceTree = "<group>";
+		};
+		BB60E9EF1B520D1B00FD72ED /* SKAButtons */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E9F01B520D1B00FD72ED /* SKAButtonSprite.h */,
+				BB60E9F11B520D1B00FD72ED /* SKAButtonSprite.m */,
+			);
+			name = SKAButtons;
+			path = ../../SKAToolKit/SKAButtons;
+			sourceTree = "<group>";
+		};
+		BB60E9F21B520D1B00FD72ED /* SKAMaps */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E9F31B520D1B00FD72ED /* SKACroppedMiniMap.h */,
+				BB60E9F41B520D1B00FD72ED /* SKACroppedMiniMap.m */,
+				BB60E9F51B520D1B00FD72ED /* SKAMiniMap.h */,
+				BB60E9F61B520D1B00FD72ED /* SKAMiniMap.m */,
+				BB60E9F71B520D1B00FD72ED /* SKATiledMap.h */,
+				BB60E9F81B520D1B00FD72ED /* SKATiledMap.m */,
+			);
+			name = SKAMaps;
+			path = ../../SKAToolKit/SKAMaps;
+			sourceTree = "<group>";
+		};
+		BB60E9F91B520D1B00FD72ED /* SKATest */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E9FA1B520D1B00FD72ED /* SKATestHud.h */,
+				BB60E9FB1B520D1B00FD72ED /* SKATestHud.m */,
+				BB60E9FC1B520D1B00FD72ED /* SKATestPlayer.h */,
+				BB60E9FD1B520D1B00FD72ED /* SKATestPlayer.m */,
+				BB60EA131B529AAF00FD72ED /* SKATest.h */,
+			);
+			name = SKATest;
+			path = ../../SKAToolKit/SKATest;
+			sourceTree = "<group>";
+		};
+		BB60E9FE1B520D1B00FD72ED /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BB60E9FF1B520D1B00FD72ED /* LFCGzipUtility.h */,
+				BB60EA001B520D1B00FD72ED /* LFCGzipUtility.m */,
+				BB60EA011B520D1B00FD72ED /* SKATMXParser.h */,
+				BB60EA021B520D1B00FD72ED /* SKATMXParser.m */,
+			);
+			name = Utilities;
+			path = ../../SKAToolKit/Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B63D27C01AF6C17800E7F043 /* SKAToolKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B63D27E41AF6C17800E7F043 /* Build configuration list for PBXNativeTarget "SKAToolKitExample" */;
+			buildPhases = (
+				B63D27BD1AF6C17800E7F043 /* Sources */,
+				B63D27BE1AF6C17800E7F043 /* Frameworks */,
+				B63D27BF1AF6C17800E7F043 /* Resources */,
+				B67A58611B125BBB00395E70 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKAToolKitExample;
+			productName = SKATMXParser;
+			productReference = B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B63D27B91AF6C17800E7F043 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Sprite Kit Alliance";
+				TargetAttributes = {
+					B63D27C01AF6C17800E7F043 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = B63D27BC1AF6C17800E7F043 /* Build configuration list for PBXProject "SKAToolKitExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B63D27B81AF6C17800E7F043;
+			productRefGroup = B63D27C21AF6C17800E7F043 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B63D27C01AF6C17800E7F043 /* SKAToolKitExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B63D27BF1AF6C17800E7F043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B63D27D51AF6C17800E7F043 /* LaunchScreen.xib in Resources */,
+				BB3704C81B50E0DF00D7EE0B /* Platforms.1.png in Resources */,
+				BB3704CB1B50E0DF00D7EE0B /* Walls.1.png in Resources */,
+				B63D27D21AF6C17800E7F043 /* Images.xcassets in Resources */,
+				BB3704D81B50E10600D7EE0B /* Tiles.tps in Resources */,
+				BB3704D51B50E10600D7EE0B /* Items.tps in Resources */,
+				BB3704CA1B50E0DF00D7EE0B /* Tiles.1.png in Resources */,
+				BB3704D61B50E10600D7EE0B /* Platforms.tps in Resources */,
+				BB3704C71B50E0DF00D7EE0B /* Items.1.png in Resources */,
+				BB3704C61B50E0DF00D7EE0B /* Backgrounds.1.png in Resources */,
+				BB3704D71B50E10600D7EE0B /* Structural.tps in Resources */,
+				BB3704C91B50E0DF00D7EE0B /* Structural.1.png in Resources */,
+				BB3704BF1B50E0CF00D7EE0B /* SampleMap0.json in Resources */,
+				BB3704D41B50E10600D7EE0B /* Backgrounds.tps in Resources */,
+				BB3704CD1B50E0F900D7EE0B /* SampleMap0.tmx in Resources */,
+				BB3704D91B50E10600D7EE0B /* Walls.tps in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B63D27BD1AF6C17800E7F043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */,
+				BB60EA0D1B520D1B00FD72ED /* SKATiledMap.m in Sources */,
+				BB60EA041B520D1B00FD72ED /* SKACollisionDefine.m in Sources */,
+				B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */,
+				B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */,
+				BB60EA111B520D1B00FD72ED /* SKATMXParser.m in Sources */,
+				BB60EA061B520D1B00FD72ED /* SKAObject.m in Sources */,
+				BB60EA051B520D1B00FD72ED /* SKAMapTile.m in Sources */,
+				BB60EA0E1B520D1B00FD72ED /* SKATestHud.m in Sources */,
+				BB60EA0B1B520D1B00FD72ED /* SKACroppedMiniMap.m in Sources */,
+				BB60EA0A1B520D1B00FD72ED /* SKAButtonSprite.m in Sources */,
+				BB60EA091B520D1B00FD72ED /* SKASpriteLayer.m in Sources */,
+				BB60EA081B520D1B00FD72ED /* SKASprite.m in Sources */,
+				BB60EA0F1B520D1B00FD72ED /* SKATestPlayer.m in Sources */,
+				BB60EA031B520D1B00FD72ED /* NSMutableDictionary+SKATMXParserUtils.m in Sources */,
+				BB60EA071B520D1B00FD72ED /* SKAObjectLayer.m in Sources */,
+				B63D27C71AF6C17800E7F043 /* main.m in Sources */,
+				BB60EA101B520D1B00FD72ED /* LFCGzipUtility.m in Sources */,
+				BB60EA0C1B520D1B00FD72ED /* SKAMiniMap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B63D27D31AF6C17800E7F043 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B63D27D41AF6C17800E7F043 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B63D27E21AF6C17800E7F043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B63D27E31AF6C17800E7F043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B63D27E51AF6C17800E7F043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SKAToolKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = SKAToolKitExample;
+			};
+			name = Debug;
+		};
+		B63D27E61AF6C17800E7F043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SKAToolKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = SKAToolKitExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B63D27BC1AF6C17800E7F043 /* Build configuration list for PBXProject "SKAToolKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B63D27E21AF6C17800E7F043 /* Debug */,
+				B63D27E31AF6C17800E7F043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B63D27E41AF6C17800E7F043 /* Build configuration list for PBXNativeTarget "SKAToolKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B63D27E51AF6C17800E7F043 /* Debug */,
+				B63D27E61AF6C17800E7F043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B63D27B91AF6C17800E7F043 /* Project object */;
+}
