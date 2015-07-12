@@ -30,17 +30,17 @@
 
 @interface SKATiledMap ()
 
-@property(nonatomic, strong) SKSpriteNode *miniMap;
-@property(nonatomic, strong) SKSpriteNode *croppedMap;
+@property (nonatomic, strong) SKSpriteNode *miniMap;
+@property (nonatomic, strong) SKSpriteNode *croppedMap;
 
 // culling
 // TODO more explanation is needed
-@property(nonatomic) BOOL culledBefore;
-@property(nonatomic) NSMutableArray *visibleArray;
-@property(nonatomic) NSInteger lastX;
-@property(nonatomic) NSInteger lastY;
-@property(nonatomic) NSInteger lastWidth;
-@property(nonatomic) NSInteger lastHeight;
+@property (nonatomic) BOOL culledBefore;
+@property (nonatomic) NSMutableArray *visibleArray;
+@property (nonatomic) NSInteger lastX;
+@property (nonatomic) NSInteger lastY;
+@property (nonatomic) NSInteger lastWidth;
+@property (nonatomic) NSInteger lastHeight;
 
 @end
 
@@ -61,7 +61,8 @@
 - (void)loadFile:(NSString *)fileName
 {
     NSString *filePath =
-        [[NSBundle mainBundle] pathForResource:fileName ofType:@"tmx"];
+        [[NSBundle mainBundle] pathForResource:fileName
+                                        ofType:@"tmx"];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
@@ -73,7 +74,8 @@
         NSLog(@"Loading JSON");
 
         filePath =
-            [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
+            [[NSBundle mainBundle] pathForResource:fileName
+                                            ofType:@"json"];
 
         if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
         {
@@ -82,7 +84,7 @@
         else
         {
             NSLog(@"error: no file could be found for %@.tmx or %@.json",
-                  fileName, fileName);
+                fileName, fileName);
         }
     }
 }
@@ -163,7 +165,7 @@
             if (!image)
             {
                 NSLog(@"Image not found in bundle: %@ looking in file path",
-                      [tileset[@"image"] lastPathComponent]);
+                    [tileset[@"image"] lastPathComponent]);
                 image = [[UIImage alloc] initWithContentsOfFile:filePath];
             }
 
@@ -180,10 +182,8 @@
             NSInteger width = imageWidth - margin * 2;
             NSInteger height = imageHeight - margin * 2;
 
-            NSInteger tileColumns =
-                ceil((float)width / (float)(tileWidth + spacing));
-            NSInteger tileRows =
-                ceil((float)height / (float)(tileHeight + spacing));
+            NSInteger tileColumns = ceil((float)width / (float)(tileWidth + spacing));
+            NSInteger tileRows = ceil((float)height / (float)(tileHeight + spacing));
 
             float spacingPercentWidth = (float)spacing / (float)imageWidth;
             float spacingPercentHeight = (float)spacing / (float)imageHeight;
@@ -205,19 +205,13 @@
                 for (NSInteger j = 0; j < tileColumns; j++)
                 {
                     SKAMapTile *mapTile = [[SKAMapTile alloc] init];
-                    float x =
-                        marginPercentWidth +
-                        j * (tileWidthPercent +
-                             spacingPercentWidth); // advance based on column
+                    float x = marginPercentWidth + j * (tileWidthPercent + spacingPercentWidth); // advance based on column
 
-                    float y =
-                        1.0f -
-                        (marginPercentHeight + tileHeightPercent +
-                         (i * (tileHeightPercent + (spacingPercentHeight))));
+                    float y = 1.0f - (marginPercentHeight + tileHeightPercent + (i * (tileHeightPercent + (spacingPercentHeight))));
 
                     SKTexture *texture = [SKTexture
                         textureWithRect:CGRectMake(x, y, tileWidthPercent,
-                                                   tileHeightPercent)
+                                            tileHeightPercent)
                               inTexture:mainTexture];
 
                     texture.filteringMode = SKTextureFilteringNearest;
@@ -234,12 +228,11 @@
                     NSString *propertyKey = [NSString
                         stringWithFormat:
                             @"%@", @(mapTile.indexKey -
-                                     [tileset[@"firstgid"] integerValue])];
+                                       [tileset[@"firstgid"] integerValue])];
 
                     if (tileset[@"tileproperties"][propertyKey])
                     {
-                        mapTile.properties =
-                            tileset[@"tileproperties"][propertyKey];
+                        mapTile.properties = tileset[@"tileproperties"][propertyKey];
                     }
 
                     [tileSets setObject:mapTile forKey:key];
@@ -272,12 +265,11 @@
 
                 NSString *propertyKey = [NSString
                     stringWithFormat:@"%@",
-                                     @(mapTile.indexKey -
-                                       [tileset[@"firstgid"] integerValue])];
+                    @(mapTile.indexKey -
+                                         [tileset[@"firstgid"] integerValue])];
                 if (tileset[@"tileproperties"][propertyKey])
                 {
-                    mapTile.properties =
-                        tileset[@"tileproperties"][propertyKey];
+                    mapTile.properties = tileset[@"tileproperties"][propertyKey];
                 }
 
                 [tileSets setObject:mapTile forKey:key];
@@ -357,12 +349,8 @@
 
                         SKASprite *sprite =
                             [SKASprite spriteNodeWithTexture:mapTile.texture];
-                        NSInteger x =
-                            (sprite.size.width / 2 - self.tileWidth / 2) +
-                            self.tileWidth / 2 + j * self.tileWidth;
-                        NSInteger y =
-                            (sprite.size.height / 2 - self.tileHeight / 2) +
-                            self.tileHeight / 2 + i * self.tileHeight;
+                        NSInteger x = (sprite.size.width / 2 - self.tileWidth / 2) + self.tileWidth / 2 + j * self.tileWidth;
+                        NSInteger y = (sprite.size.height / 2 - self.tileHeight / 2) + self.tileHeight / 2 + i * self.tileHeight;
                         sprite.position = CGPointMake(x, y);
 
                         sprite.properties = mapTile.properties;
@@ -373,10 +361,8 @@
                             sprite.physicsBody = [SKPhysicsBody
                                 bodyWithRectangleOfSize:sprite.size];
                             sprite.physicsBody.dynamic = NO;
-                            sprite.physicsBody.categoryBitMask =
-                                SKACategoryFloor;
-                            sprite.physicsBody.contactTestBitMask =
-                                SKACategoryPlayer;
+                            sprite.physicsBody.categoryBitMask = SKACategoryFloor;
+                            sprite.physicsBody.contactTestBitMask = SKACategoryPlayer;
                             sprite.zPosition = 20;
                         }
 
@@ -433,8 +419,7 @@
 
                 if ([objectLayer.drawOrder isEqualToString:@"topdown"])
                 {
-                    object.y = (self.mapHeight * self.tileHeight) - object.y -
-                               object.height;
+                    object.y = (self.mapHeight * self.tileHeight) - object.y - object.height;
                 }
 
                 object.objectID = [objectDictionary[@"objectID"] integerValue];
@@ -451,16 +436,14 @@
                     SKSpriteNode *floorSprite = [SKSpriteNode
                         spriteNodeWithColor:[UIColor clearColor]
                                        size:CGSizeMake(object.width,
-                                                       object.height)];
+                                                object.height)];
                     floorSprite.zPosition = layer;
-                    floorSprite.position =
-                        CGPointMake(object.centerX, object.centerY);
+                    floorSprite.position = CGPointMake(object.centerX, object.centerY);
                     floorSprite.physicsBody = [SKPhysicsBody
                         bodyWithRectangleOfSize:floorSprite.size];
                     floorSprite.physicsBody.dynamic = NO;
                     floorSprite.physicsBody.categoryBitMask = SKACategoryFloor;
-                    floorSprite.physicsBody.contactTestBitMask =
-                        SKACategoryPlayer;
+                    floorSprite.physicsBody.contactTestBitMask = SKACategoryPlayer;
                     [self addChild:floorSprite];
 
                     [collisionSprites addObject:floorSprite];
@@ -486,9 +469,7 @@
 {
     SKTexture *texture = [self.scene.view textureFromNode:self];
 
-    NSInteger height =
-        ((float)width / ((float)self.mapWidth * (float)self.tileWidth)) *
-        (self.mapHeight * self.tileHeight);
+    NSInteger height = ((float)width / ((float)self.mapWidth * (float)self.tileWidth)) * (self.mapHeight * self.tileHeight);
     SKSpriteNode *miniMap =
         [SKSpriteNode spriteNodeWithTexture:texture
                                        size:CGSizeMake(width, height)];
@@ -513,11 +494,13 @@
     [croppedNode addChild:self.miniMap];
 
     SKSpriteNode *mask =
-        [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:size];
+        [SKSpriteNode spriteNodeWithColor:[SKColor blackColor]
+                                     size:size];
     croppedNode.maskNode = mask;
 
     self.croppedMap =
-        [SKSpriteNode spriteNodeWithColor:[SKColor clearColor] size:size];
+        [SKSpriteNode spriteNodeWithColor:[SKColor clearColor]
+                                     size:size];
     [self.croppedMap addChild:croppedNode];
 
     return self.croppedMap;
@@ -531,10 +514,12 @@
             -self.autoFollowNode.position.x + self.scene.size.width / 2,
             -self.autoFollowNode.position.y + self.scene.size.height / 2);
 
-        // keep map from going off screen
+        /*
+         * Check position of the minimap and stop it from going off screen
+         */
+
         CGPoint position = self.position;
 
-        // TODO explanation please
         if (position.x > 0)
         {
             position.x = 0;
@@ -545,22 +530,17 @@
             position.y = 0;
         }
 
-        if (position.y <
-            -self.mapHeight * self.tileHeight + self.scene.size.height)
-            position.y =
-                -self.mapHeight * self.tileHeight + self.scene.size.height;
-        if (position.x <
-            -self.mapWidth * self.tileWidth + self.scene.size.width)
-            position.x =
-                -self.mapWidth * self.tileWidth + self.scene.size.width;
+        if (position.y < -self.mapHeight * self.tileHeight + self.scene.size.height)
+            position.y = -self.mapHeight * self.tileHeight + self.scene.size.height;
+        if (position.x < -self.mapWidth * self.tileWidth + self.scene.size.width)
+            position.x = -self.mapWidth * self.tileWidth + self.scene.size.width;
 
         self.position = CGPointMake((int)(position.x), (int)(position.y));
     }
 
     if (self.autoFollowNode && self.miniMap && self.croppedMap)
     {
-        float scale =
-            self.miniMap.size.width / (self.mapWidth * self.tileWidth);
+        float scale = self.miniMap.size.width / (self.mapWidth * self.tileWidth);
 
         self.miniMap.position = CGPointMake(
             -self.autoFollowNode.position.x + self.scene.size.width / 2,
@@ -568,12 +548,15 @@
 
         // scaling down
         self.miniMap.position = CGPointMake(self.miniMap.position.x * scale,
-                                            self.miniMap.position.y * scale);
+            self.miniMap.position.y * scale);
 
         // keep map from going off screen
         CGPoint position = self.miniMap.position;
 
-        // TODO: Document why this is needed
+        /*
+         * Check position of the minimap and stop it from going off screen
+         */
+
         if (position.x > 0)
         {
             position.x = 0;
@@ -584,26 +567,23 @@
             position.y = 0;
         }
 
-        if (position.y <
-            -self.miniMap.size.height + self.croppedMap.size.height)
+        if (position.y < -self.miniMap.size.height + self.croppedMap.size.height)
         {
-            position.y =
-                -self.miniMap.size.height + self.croppedMap.size.height;
+            position.y = -self.miniMap.size.height + self.croppedMap.size.height;
         }
 
         if (position.x < -self.miniMap.size.width + self.croppedMap.size.width)
             position.x = -self.miniMap.size.width + self.croppedMap.size.width;
 
-        self.miniMap.position =
-            CGPointMake((int)(position.x - self.croppedMap.size.width / 2),
-                        (int)(position.y - self.croppedMap.size.height / 2));
+        self.miniMap.position = CGPointMake((int)(position.x - self.croppedMap.size.width / 2),
+            (int)(position.y - self.croppedMap.size.height / 2));
     }
 }
 
 - (CGPoint)indexForPoint:(CGPoint)point
 {
     return CGPointMake((NSInteger)point.x / self.tileWidth,
-                       (NSInteger)point.y / self.tileHeight);
+        (NSInteger)point.y / self.tileHeight);
 }
 
 - (NSArray *)tilesAroundPoint:(CGPoint)point inLayer:(NSInteger)layer
@@ -707,7 +687,9 @@
                 for (NSInteger y = 0; y < self.mapHeight - 1; y++)
                 {
                     SKASprite *sprite =
-                        [self spriteOnLayer:l indexX:x indexY:y];
+                        [self spriteOnLayer:l
+                                     indexX:x
+                                     indexY:y];
                     sprite.hidden = YES;
                 }
             }
@@ -715,8 +697,7 @@
     }
 
     // only update if something changed
-    if (self.lastX != x || self.lastY != y || self.lastWidth != width ||
-        self.lastHeight != height)
+    if (self.lastX != x || self.lastY != y || self.lastWidth != width || self.lastHeight != height)
     {
         // hide sprites that were previsouly visible
         for (SKASprite *sprite in self.visibleArray)
@@ -788,7 +769,9 @@
                 for (NSInteger y = staringY; y < endingY; y++)
                 {
                     SKASprite *sprite =
-                        [self spriteOnLayer:l indexX:x indexY:y];
+                        [self spriteOnLayer:l
+                                     indexX:x
+                                     indexY:y];
                     sprite.hidden = NO;
 
                     if (sprite)

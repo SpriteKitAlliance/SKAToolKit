@@ -27,9 +27,9 @@
 
 @interface SKATestPlayer ()
 
-@property(nonatomic, strong) SKAction *playerAnimation;
+@property (nonatomic, strong) SKAction *playerAnimation;
 
-@property(nonatomic) NSInteger currentState;
+@property (nonatomic) NSInteger currentState;
 
 @end
 
@@ -66,7 +66,8 @@
 {
     self.position = CGPointMake(300, 350);
     self.physicsBody =
-        [SKPhysicsBody bodyWithCircleOfRadius:15 center:CGPointMake(0, -40)];
+        [SKPhysicsBody bodyWithCircleOfRadius:15
+                                       center:CGPointMake(0, -40)];
     self.physicsBody.allowsRotation = NO;
     self.physicsBody.restitution = 0;
     self.physicsBody.friction = 0.2;
@@ -106,8 +107,7 @@
 {
     if (!self.physicsBody.velocity.dy)
     {
-        self.physicsBody.velocity =
-            CGVectorMake(-170, self.physicsBody.velocity.dy);
+        self.physicsBody.velocity = CGVectorMake(-170, self.physicsBody.velocity.dy);
     }
 }
 
@@ -115,8 +115,7 @@
 {
     if (!self.physicsBody.velocity.dy)
     {
-        self.physicsBody.velocity =
-            CGVectorMake(170, self.physicsBody.velocity.dy);
+        self.physicsBody.velocity = CGVectorMake(170, self.physicsBody.velocity.dy);
     }
 }
 

@@ -38,18 +38,18 @@ typedef NS_ENUM(NSUInteger, ParseMode)
     ParseModeObjectProperties
 };
 
-@interface SKATMXParser () <NSXMLParserDelegate>
+@interface SKATMXParser ()<NSXMLParserDelegate>
 
-@property(strong, nonatomic) NSMutableDictionary *mapDictionary;
-@property(strong, nonatomic) NSMutableDictionary *currentTileset;
-@property(strong, nonatomic) NSMutableDictionary *currentProperties;
-@property(strong, nonatomic) NSMutableDictionary *currentLayer;
+@property (strong, nonatomic) NSMutableDictionary *mapDictionary;
+@property (strong, nonatomic) NSMutableDictionary *currentTileset;
+@property (strong, nonatomic) NSMutableDictionary *currentProperties;
+@property (strong, nonatomic) NSMutableDictionary *currentLayer;
 
-@property(strong, nonatomic) NSDictionary *currentDataAttributes;
+@property (strong, nonatomic) NSDictionary *currentDataAttributes;
 
-@property(strong, nonatomic) NSString *currentTileID;
+@property (strong, nonatomic) NSString *currentTileID;
 
-@property(nonatomic) ParseMode parseMode;
+@property (nonatomic) ParseMode parseMode;
 
 @end
 
@@ -123,7 +123,8 @@ typedef NS_ENUM(NSUInteger, ParseMode)
         [self.currentDataAttributes[kCompression] isEqualToString:kZlib])
     {
         NSData *data =
-            [[NSData alloc] initWithBase64EncodedString:dataString options:0];
+            [[NSData alloc] initWithBase64EncodedString:dataString
+                                                options:0];
         data = [LFCGzipUtility ungzipData:data];
 
         NSInteger mapWidth = [self.mapDictionary[kWidth] integerValue];
@@ -140,10 +141,7 @@ typedef NS_ENUM(NSUInteger, ParseMode)
             {
                 for (NSInteger x = 0; x < mapWidth; x++)
                 {
-                    NSInteger globalTileID = bytes[tileIndex] |
-                                             (bytes[tileIndex + 1] << 8) |
-                                             (bytes[tileIndex + 2] << 16) |
-                                             (bytes[tileIndex + 3] << 24);
+                    NSInteger globalTileID = bytes[tileIndex] | (bytes[tileIndex + 1] << 8) | (bytes[tileIndex + 2] << 16) | (bytes[tileIndex + 3] << 24);
                     [tileIDArray addObject:@(globalTileID)];
                     tileIndex += 4;
                 }
@@ -215,12 +213,11 @@ typedef NS_ENUM(NSUInteger, ParseMode)
         if (self.parseMode == ParseModeTileProperties)
         {
             self.currentProperties[self.currentTileID] =
-                @{attributeDict[kName] : attributeDict[kValue]};
+                @{ attributeDict[kName] : attributeDict[kValue] };
         }
         else if (self.parseMode == ParseModeObjectProperties)
         {
-            self.currentProperties[attributeDict[kName]] =
-                attributeDict[kValue];
+            self.currentProperties[attributeDict[kName]] = attributeDict[kValue];
         }
     }
     else if ([elementName isEqualToString:kLayer])
@@ -312,8 +309,7 @@ typedef NS_ENUM(NSUInteger, ParseMode)
 
             if (self.currentProperties)
             {
-                [self.currentLayer[kObjects] lastObject][kProperties] =
-                    self.currentProperties;
+                [self.currentLayer[kObjects] lastObject][kProperties] = self.currentProperties;
                 self.currentProperties = nil;
             }
         }

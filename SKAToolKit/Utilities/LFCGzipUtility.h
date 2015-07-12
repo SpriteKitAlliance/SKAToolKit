@@ -13,6 +13,6 @@
 @interface LFCGzipUtility : NSObject
 
 + (NSData *)gzipData:(NSData *)pUncompressedData; // Compression
-+ (NSData *)ungzipData:(NSData *)compressedData;  // Decompression
++ (NSData *)ungzipData:(NSData *)compressedData; // Decompression
 
 @end

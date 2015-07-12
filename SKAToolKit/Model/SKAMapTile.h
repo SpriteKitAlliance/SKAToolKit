@@ -28,9 +28,9 @@
 
 @interface SKAMapTile : NSObject
 
-@property(nonatomic) NSInteger indexKey;
+@property (nonatomic) NSInteger indexKey;
 
-@property(nonatomic, strong) NSDictionary *properties;
-@property(nonatomic, strong) SKTexture *texture;
+@property (nonatomic, strong) NSDictionary *properties;
+@property (nonatomic, strong) SKTexture *texture;
 
 @end

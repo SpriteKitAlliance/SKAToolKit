@@ -1,6 +1,15 @@
-BasedOnStyle: LLVM
+BasedOnStyle: WebKit
 IndentWidth: 4
 UseTab: Never
+Language: Cpp
 BreakBeforeBraces: Allman
 AllowShortIfStatementsOnASingleLine: false
 IndentCaseLabels: false
+AlignOperands: true
+AllowShortBlocksOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+ObjCSpaceAfterProperty: true
+ObjCSpaceBeforeProtocolList: false
+PointerAlignment: Right
+MaxEmptyLinesToKeep: 1

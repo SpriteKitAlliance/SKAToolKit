@@ -27,7 +27,7 @@
 
 @interface SKAMiniMap ()
 
-@property(nonatomic, readwrite) float scaledTo;
+@property (nonatomic, readwrite) float scaledTo;
 
 @end
 
@@ -45,8 +45,7 @@
 
     float scaledTo = (float)width / map.calculateAccumulatedFrame.size.width;
 
-    NSInteger height =
-        (scaledTo * (float)map.calculateAccumulatedFrame.size.height);
+    NSInteger height = (scaledTo * (float)map.calculateAccumulatedFrame.size.height);
 
     SKSpriteNode *miniMap =
         [SKSpriteNode spriteNodeWithTexture:texture

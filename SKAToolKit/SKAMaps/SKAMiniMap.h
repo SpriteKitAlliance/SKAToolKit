@@ -27,7 +27,7 @@
 
 @interface SKAMiniMap : SKSpriteNode
 
-@property(nonatomic, readonly) float scaledTo;
+@property (nonatomic, readonly) float scaledTo;
 
 /**
  map must be part of a scene with a view

@@ -31,7 +31,7 @@
 /**
  node that is child of map used to create minimap
  */
-@property(nonatomic, strong) SKNode *autoFollowNode;
+@property (nonatomic, strong) SKNode *autoFollowNode;
 
 /**
  map must be part of a scene with a view

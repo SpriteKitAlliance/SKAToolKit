@@ -71,7 +71,10 @@ NSString *const kZlib = @"zlib";
 @implementation NSMutableDictionary (SKATMXParserUtils)
 
 #pragma mark - Public
-- (void)cleanseMap { [self cleanseProperties]; }
+- (void)cleanseMap
+{
+    [self cleanseProperties];
+}
 
 - (void)cleanseTileset
 {

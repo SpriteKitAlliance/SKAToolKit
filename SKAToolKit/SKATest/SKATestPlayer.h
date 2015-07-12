@@ -35,8 +35,8 @@ typedef NS_ENUM(NSUInteger, PlayerState)
 
 @interface SKATestPlayer : SKSpriteNode
 
-@property(nonatomic) BOOL wantsToJump;
-@property(nonatomic) PlayerState playerState;
+@property (nonatomic) BOOL wantsToJump;
+@property (nonatomic) PlayerState playerState;
 
 - (void)update;
 

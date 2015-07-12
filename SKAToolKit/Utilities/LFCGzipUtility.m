@@ -17,27 +17,21 @@
     if (!pUncompressedData || [pUncompressedData length] == 0)
     {
         NSLog(@"%s: Error: Can't compress an empty or null NSData object.",
-              __func__);
+            __func__);
         return nil;
     }
 
     z_stream zlibStreamStruct;
-    zlibStreamStruct.zalloc =
-        Z_NULL; // Set zalloc, zfree, and opaque to Z_NULL so
-    zlibStreamStruct.zfree =
-        Z_NULL; // that when we call deflateInit2 they will be
-    zlibStreamStruct.opaque =
-        Z_NULL; // updated to use default allocation functions.
-    zlibStreamStruct.total_out =
-        0; // Total number of output bytes produced so far
-    zlibStreamStruct.next_in =
-        (Bytef *)[pUncompressedData bytes]; // Pointer to input bytes
-    zlibStreamStruct.avail_in =
-        (uInt)[pUncompressedData length]; // Number of input bytes left to
-                                          // process
+    zlibStreamStruct.zalloc = Z_NULL; // Set zalloc, zfree, and opaque to Z_NULL so
+    zlibStreamStruct.zfree = Z_NULL; // that when we call deflateInit2 they will be
+    zlibStreamStruct.opaque = Z_NULL; // updated to use default allocation functions.
+    zlibStreamStruct.total_out = 0; // Total number of output bytes produced so far
+    zlibStreamStruct.next_in = (Bytef *)[pUncompressedData bytes]; // Pointer to input bytes
+    zlibStreamStruct.avail_in = (uInt)[pUncompressedData length]; // Number of input bytes left to
+    // process
 
     int initError = deflateInit2(&zlibStreamStruct, Z_DEFAULT_COMPRESSION,
-                                 Z_DEFLATED, (15 + 16), 8, Z_DEFAULT_STRATEGY);
+        Z_DEFLATED, (15 + 16), 8, Z_DEFAULT_STRATEGY);
 
     if (initError != Z_OK)
     {
@@ -60,7 +54,7 @@
             break;
         }
         NSLog(@"%s: deflateInit2() Error: \"%@\" Message: \"%s\"", __func__,
-              errorMsg, zlibStreamStruct.msg);
+            errorMsg, zlibStreamStruct.msg);
         return nil;
     }
 
@@ -74,8 +68,7 @@
         zlibStreamStruct.next_out =
             [compressedData mutableBytes] + zlibStreamStruct.total_out;
 
-        zlibStreamStruct.avail_out =
-            (uInt)([compressedData length] - zlibStreamStruct.total_out);
+        zlibStreamStruct.avail_out = (uInt)([compressedData length] - zlibStreamStruct.total_out);
 
         deflateStatus = deflate(&zlibStreamStruct, Z_FINISH);
 
@@ -116,8 +109,8 @@
         }
 
         NSLog(@"%s: zlib error while attempting compression: \"%@\" Message: "
-              @"\"%s\"",
-              __func__, errorMsg, zlibStreamStruct.msg);
+            @"\"%s\"",
+            __func__, errorMsg, zlibStreamStruct.msg);
 
         // Free data structures that were dynamically created for the stream.
         deflateEnd(&zlibStreamStruct);
@@ -129,7 +122,7 @@
     deflateEnd(&zlibStreamStruct);
     [compressedData setLength:zlibStreamStruct.total_out];
     NSLog(@"%s: Compressed file from %tu KB to %tu KB", __func__,
-          [pUncompressedData length] / 1024, [compressedData length] / 1024);
+        [pUncompressedData length] / 1024, [compressedData length] / 1024);
 
     return compressedData;
 }

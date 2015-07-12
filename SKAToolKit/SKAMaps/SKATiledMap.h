@@ -32,26 +32,26 @@
 
 - (instancetype)initWithMapName:(NSString *)mapName;
 
-@property(nonatomic) NSInteger mapWidth;
-@property(nonatomic) NSInteger mapHeight;
-@property(nonatomic) NSInteger tileWidth;
-@property(nonatomic) NSInteger tileHeight;
+@property (nonatomic) NSInteger mapWidth;
+@property (nonatomic) NSInteger mapHeight;
+@property (nonatomic) NSInteger tileWidth;
+@property (nonatomic) NSInteger tileHeight;
 
 /**
  returns an array of SKASpriteLayers
  */
-@property(nonatomic, strong) NSArray *spriteLayers;
+@property (nonatomic, strong) NSArray *spriteLayers;
 
 /**
  returns an array of SKAObjectLayers
  */
-@property(nonatomic, strong) NSArray *objectLayers;
+@property (nonatomic, strong) NSArray *objectLayers;
 
-@property(nonatomic, strong) NSDictionary *mapProperties;
+@property (nonatomic, strong) NSDictionary *mapProperties;
 
-@property(nonatomic, strong) SKSpriteNode *firstTile;
+@property (nonatomic, strong) SKSpriteNode *firstTile;
 
-@property(nonatomic, strong) SKNode *autoFollowNode;
+@property (nonatomic, strong) SKNode *autoFollowNode;
 
 - (void)update;
 - (CGPoint)indexForPoint:(CGPoint)point;
