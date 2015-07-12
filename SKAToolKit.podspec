@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                  'Marc Vandehey' => 'marc.vandehey@gmail.com' 
                }
   s.source   = { 
-                 :git => 'https://github.com/marcjv/SKAToolKit.git',
+                 :git => 'https://github.com/SpriteKitAlliance/SKAToolKit.git',
                  :tag => s.version.to_s 
                }
 
