@@ -55,6 +55,7 @@ NSString *const kTile = @"tile";
 NSString *const kTileHeight = @"tileheight";
 NSString *const kTileLayer = @"tilelayer";
 NSString *const kTileProperties = @"tileproperties";
+NSString *const kTiles = @"tiles";
 NSString *const kTileset = @"tileset";
 NSString *const kTilesets = @"tilesets";
 NSString *const kTileWidth = @"tilewidth";

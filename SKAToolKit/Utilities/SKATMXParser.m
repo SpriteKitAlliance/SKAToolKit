@@ -44,6 +44,7 @@ typedef NS_ENUM(NSUInteger, ParseMode)
 @property (strong, nonatomic) NSMutableDictionary *currentTileset;
 @property (strong, nonatomic) NSMutableDictionary *currentProperties;
 @property (strong, nonatomic) NSMutableDictionary *currentLayer;
+@property (strong, nonatomic) NSMutableDictionary *currentCollectionProperties;
 
 @property (strong, nonatomic) NSDictionary *currentDataAttributes;
 
@@ -170,6 +171,7 @@ typedef NS_ENUM(NSUInteger, ParseMode)
         self.parseMode = ParseModeTileset;
         self.currentTileset =
             [NSMutableDictionary dictionaryWithDictionary:attributeDict];
+        self.currentCollectionProperties = [[NSMutableDictionary alloc]init];
         [self.currentTileset cleanseTileset];
     }
     else if([elementName isEqualToString:kImage])
@@ -179,6 +181,12 @@ typedef NS_ENUM(NSUInteger, ParseMode)
             self.currentTileset[kImage] = attributeDict[kSource];
             self.currentTileset[kImageWidth] = attributeDict[kWidth];
             self.currentTileset[kImageHeight] = attributeDict[kHeight];
+        }
+        else if (self.currentTileID)
+        {
+            self.currentCollectionProperties[self.currentTileID] = attributeDict;
+            self.currentTileset[kTiles] = self.currentCollectionProperties;
+            self.currentTileID = nil;
         }
     }
     else if([elementName isEqualToString:kTile])

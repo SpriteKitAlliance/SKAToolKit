@@ -66,13 +66,10 @@
 
     if([[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
-        NSLog(@"Loading TMX");
         [self loadMap:[self mapDictionaryForTMXFile:filePath]];
     }
     else
     {
-        NSLog(@"Loading JSON");
-
         filePath =
             [[NSBundle mainBundle] pathForResource:fileName
                                             ofType:@"json"];
@@ -243,14 +240,27 @@
         }
         else
         {
-            NSLog(@"working off of a collection");
 
             for(NSString *key in [tileset[@"tiles"] allKeys])
             {
                 SKAMapTile *mapTile = [[SKAMapTile alloc] init];
 
                 NSDictionary *spriteDict = tileset[@"tiles"][key];
-                NSString *imageName = [spriteDict[@"image"] lastPathComponent];
+                NSString *imageName;
+                
+                if (spriteDict[@"image"])
+                {
+                    imageName = [spriteDict[@"image"] lastPathComponent];
+                }
+                else if (spriteDict[@"source"])
+                {
+                    imageName = [spriteDict[@"source"] lastPathComponent];
+                }
+                else
+                {
+                    NSLog(@"error finding source for image in collection");
+                }
+                
 
                 SKTexture *texture =
                     [SKTexture textureWithImageNamed:imageName];

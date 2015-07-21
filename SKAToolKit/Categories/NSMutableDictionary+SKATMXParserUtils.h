@@ -55,6 +55,7 @@ extern NSString *const kTile;
 extern NSString *const kTileHeight;
 extern NSString *const kTileLayer;
 extern NSString *const kTileProperties;
+extern NSString *const kTiles;
 extern NSString *const kTileset;
 extern NSString *const kTilesets;
 extern NSString *const kTileWidth;
