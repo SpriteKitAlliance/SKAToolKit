@@ -28,9 +28,9 @@
 // used in the final project
 typedef NS_ENUM(NSUInteger, PlayerState)
 {
+    PlayerStateMoveIdel,
     PlayerStateMoveLeft,
-    PlayerStateMoveRight,
-    PlayerStateMoveIdel
+    PlayerStateMoveRight
 };
 
 @interface SKATestPlayer : SKSpriteNode
