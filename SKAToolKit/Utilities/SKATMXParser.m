@@ -177,8 +177,8 @@ typedef NS_ENUM(NSUInteger, ParseMode)
         if(self.parseMode == ParseModeTileset)
         {
             self.currentTileset[kImage] = attributeDict[kSource];
-            self.currentTileset[kImageWidth] = attributeDict[kHeight];
-            self.currentTileset[kImageHeight] = attributeDict[kWidth];
+            self.currentTileset[kImageWidth] = attributeDict[kWidth];
+            self.currentTileset[kImageHeight] = attributeDict[kHeight];
         }
     }
     else if([elementName isEqualToString:kTile])
