@@ -1,0 +1,46 @@
+//
+//  SKACroppedMiniMap.h
+//  SKAToolKitExample
+//
+//  Copyright (c) 2015 Sprite Kit Alliance
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to
+//  deal in the Software without restriction, including without limitation the
+//  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+//  sell copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+//  IN THE SOFTWARE.
+//
+
+#import <SpriteKit/SpriteKit.h>
+#import "SKAMiniMap.h"
+
+@interface SKACroppedMiniMap : SKAMiniMap
+
+/**
+ node that is child of map used to create minimap
+ */
+@property (nonatomic, strong) SKNode *autoFollowNode;
+
+/**
+ map must be part of a scene with a view
+ map size max 4096 on newer devices and 2048 max on older devices
+ */
+- (id)initWithMap:(SKNode *)map
+        withWidth:(NSInteger)width
+  withCroppedSize:(CGSize)size;
+
+- (void)update;
+
+@end
