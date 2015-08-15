@@ -5,11 +5,11 @@ The Sprite Kit Alliance is happy to provide the SKAToolKit free of charge withou
 
 ##SKAToolKit Install Instructions
 - Copy all files in SKAToolKit folder into your project
-- Import either SKATiledMap or any SKA file you want
-- Link to `libz.dylib` in the “Linked Frameworks and Libraries” section of your project file
+- Import either SKAToolKit.h or any specific SKA Tool you want
+- Link to `libz.dylib` in the “Linked Frameworks and Libraries” section of your project file if you are using SKAToolKit.h or SKATiledMap.h
 
 ##SKATiledMap
-This is a sprite node that represents a map created in Tiled. Currently SKATiledMap only supports JSON format. Add the JSON file and any images used for your tiles into your project.
+This is a sprite node that represents a map created in Tiled. Add the TMX or JSON file and any images used for your tiles into your project.
 
 ###Resolution Support
 
@@ -17,12 +17,12 @@ This is a sprite node that represents a map created in Tiled. Currently SKATiled
 It is important that you make your map in Tiled using 1x assets. When you are ready to bring it into your app for best results provide 1x, @2x, and @3x assets. Keep in mind that there limitation with SpriteKit and texture sizes. Make sure your 1x assets do not exceed 675 x 675 (when at 3x they would be 2025 under the 2048 limit). Just like tiled you only need to import the images used to create your map. Put these images into an asset catalog for best results. No plist files or reference folders needed.
 
 ####Collection Tilesets
-Tiled supports collection tilesets. Make sure you design your map with 1x graphics. You can provide 1x and 2x .atlas or .atlasc folders containing the same image names you used to create your tile map. Remember to add .atlas and .atlasc folders to Xcode as reference folders. At the moment @3x is not supported in atlas folders.
+Tiled supports collection tilesets. Make sure you design your map with 1x graphics. You can provide 1x and 2x .atlas or .atlasc folders containing the same image names you used to create your tile map. Remember to add .atlas and .atlasc folders to Xcode as reference folders. At the moment @3x is not supported in atlas folders due to Xcode limitations.
 
 ###Supported Map Types
 
 ####TMX
-TMX support is in its early stages but is now supported. Make sure you include your .tmx and locate all images you used for your map and import those along with any @2x and @3x version of those images (if using normal tilesets) or create atlas folders (if using collection tilesets). See Resolution Support for more info. SKATiledMap will look for a TMX file before it looks for a JSON file. If a feature is missing please contact skyler@skymistdevelopment.com
+Make sure you include your .tmx and locate all images you used for your map and import those along with any @2x and @3x version of those images (if using normal tilesets) or create atlas folders (if using collection tilesets). See Resolution Support for more info. SKATiledMap will look for a TMX file before it looks for a JSON file. If a feature is missing please contact skyler@skymistdevelopment.com
 
     SKATiledMap *map = [[SKATiledMap alloc]initWithMapName:@"yourMapName"]; //name of your TMX file
     
@@ -129,14 +129,15 @@ Example
     [self addChild:self.buttonLeft];
     
 ##SKAMiniMap
-SKAMiniMap creates a mini map of any node that you pass in. The node you pass in must be part of a scene with a view
+SKAMiniMap creates a mini map of any node that you pass in. The node you pass in must be part of a scene with a view. Note that the map size max is 4096 on newer devices and 2048 max on older devices.
+
 
 ![SKAMiniMap Example](Documentation/skaminimap.png)
 
 
 
 ##SKACroppedMiniMap
-SKACroppedMiniMap is similar to SKAMiniMap, but instead of seeing the entire map at once you can choice a viewport size.
+SKACroppedMiniMap is similar to SKAMiniMap, but instead of seeing the entire map at once you can choice a viewport size. Note that the map size max is 4096 on newer devices and 2048 max on older devices.
 
 ###SKACroppedMiniMap AutoFollowFeature
 SKACroppedMiniMap has an auto follow feature. Set the autoFollowNode to a node that is a child of the map used to create the SKACroppedMiniMap.
