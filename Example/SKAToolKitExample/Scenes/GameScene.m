@@ -100,6 +100,13 @@
 
     [self addChild:testHud];
     [self.map addChild:self.player];
+
+    SKALabelNode *labelNode = [[SKALabelNode alloc] init];
+    labelNode.text = @"This is an\nexample of a\nmultiline\nSKALabelNode";
+    labelNode.position = CGPointMake(100, self.size.height - 50);
+    label.fontSize = 20;
+    [testHud addChild:labelNode];
+    [labelNode drawLabel];
 }
 
 - (void)update:(NSTimeInterval)currentTime

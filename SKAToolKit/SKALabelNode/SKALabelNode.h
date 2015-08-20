@@ -1,6 +1,8 @@
 //
-//  SKAToolKit.h
-//  SKAToolKitExample
+//  SKALabelNode.h
+//
+//  Created by Max Kargin on 8/10/15.
+//  Copyright (c) 2015 Sprite Kit Alliance
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -19,27 +21,25 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 //  IN THE SOFTWARE.
-//
 
-#ifndef _SKAToolKit_h
-#define _SKAToolKit_h
-#define _SKAToolKit_
+#import <SpriteKit/SpriteKit.h>
 
-#import "SKACroppedMiniMap.h"
-#import "SKAMiniMap.h"
-#import "SKATiledMap.h"
+@interface SKALabelNode : SKSpriteNode
 
-#import "SKATMXParser.h"
++ (instancetype)labelNodeWithFontNamed:(NSString *)fontName;
++ (instancetype)labelNodeWithText:(NSString *)text;
+- (instancetype)initWithFontNamed:(NSString *)fontName;
 
-#import "SKASprite.h"
-#import "SKAObject.h"
-#import "SKAMapTile.h"
-#import "SKACollisionDefine.h"
-#import "SKAObjectLayer.h"
-#import "SKASpriteLayer.h"
+- (void)drawLabel;
 
-#import "SKAButtonSprite.h"
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) SKColor *fontColor;
+@property (nonatomic, strong) NSString *fontName;
+@property (nonatomic, setter=setHorizontalAlignment:) SKLabelHorizontalAlignmentMode horizontalAlignmentMode;
+@property (nonatomic, setter=setVerticalAlignnment:) SKLabelVerticalAlignmentMode verticalAlignmentMode;
+@property (nonatomic) int lineSpacing;
+@property (nonatomic, strong) NSShadow *shadow;
+@property (nonatomic) NSTextAlignment textAlignmentMode;
+@property (nonatomic) CGFloat fontSize;
 
-#import "SKALabelNode.h"
-
-#endif
+@end
