@@ -143,6 +143,23 @@ SKACroppedMiniMap has an auto follow feature. Set the autoFollowNode to a node t
 
 ![SKACroppedMiniMap Example](Documentation/skacroppedminimap.png)
 
+##SKALabelNode
+SKALabelNode implements SpriteKit's `SKLabelNode` with support for multi-line strings and shadows while inheriting from `SKSpriteNode`. Expect to see `SKLabelNode` functionality along with `SKSpriteNode` properties and methods.<br>
+A few key points about the SKALabelNode:
+- use the `NSShadow` class with the `shadow` property.
+- when using multi-line strings, specify the `lineSpacing` property if you need to change the distance between lines.
+- to change the text alignment, specify the `textAlignmentMode` property, which takes the class `NSTextAlignment`. Sprite Kit's `verticalAlignmentMode` and `horizontalAlignmentMode` properties change only the anchor point, and not the text alignment itself.
+<br>
+**Important:** You must call the label's `drawLabel` method whenever you want to display or update the label.
+
+Example
+
+```
+SKALabelNode *multiLineLabelNode = [SKALabelNode labelNodeWithText:@"Hello\nI was drawn by SpriteKit!"];
+multiLineLabelNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+[multiLineLabelNode drawLabel];
+[self addChild:multiLineLabelNode];
+```
     
 ###Contact Info
 If you would like to get in contact with the SKA email Skyler at skyler@skymistdevelopment.com
