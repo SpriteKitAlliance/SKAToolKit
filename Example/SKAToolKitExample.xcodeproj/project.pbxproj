@@ -33,6 +33,7 @@
 		B6883C181B67A9C200056809 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B6883C171B67A9C200056809 /* bg.png */; };
 		B6EBB2A01B5EB9FD00A17D18 /* SKACroppedMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBB29F1B5EB9FD00A17D18 /* SKACroppedMiniMap.m */; };
 		B6EBB2AD1B5EBA8300A17D18 /* SKAMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBB2AC1B5EBA8300A17D18 /* SKAMiniMap.m */; };
+		B6F24CEB1B8955FB00577DB5 /* SKALabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F24CEA1B8955FB00577DB5 /* SKALabelNode.m */; };
 		F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,8 @@
 		B6EBB29F1B5EB9FD00A17D18 /* SKACroppedMiniMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKACroppedMiniMap.m; path = ../../SKAToolKit/SKACroppedMiniMap/SKACroppedMiniMap.m; sourceTree = "<group>"; };
 		B6EBB2AB1B5EBA8300A17D18 /* SKAMiniMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKAMiniMap.h; path = ../../SKAToolKit/SKAMiniMap/SKAMiniMap.h; sourceTree = "<group>"; };
 		B6EBB2AC1B5EBA8300A17D18 /* SKAMiniMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKAMiniMap.m; path = ../../SKAToolKit/SKAMiniMap/SKAMiniMap.m; sourceTree = "<group>"; };
+		B6F24CE91B8955FB00577DB5 /* SKALabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKALabelNode.h; path = ../../SKAToolKit/SKALabelNode/SKALabelNode.h; sourceTree = "<group>"; };
+		B6F24CEA1B8955FB00577DB5 /* SKALabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKALabelNode.m; path = ../../SKAToolKit/SKALabelNode/SKALabelNode.m; sourceTree = "<group>"; };
 		BB60EA121B52993A00FD72ED /* SKAToolKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SKAToolKit.h; path = ../../SKAToolKit/SKAToolKit.h; sourceTree = "<group>"; };
 		F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -229,6 +232,7 @@
 				B643FA551B5F353E00621A87 /* SKAButton */,
 				B6EBB2521B5EB88E00A17D18 /* SKACroppedMiniMap */,
 				B6EBB2511B5EB88000A17D18 /* SKAMiniMap */,
+				B6F24CE81B8955E000577DB5 /* SKALabelNode */,
 			);
 			name = SKAToolKit;
 			sourceTree = "<group>";
@@ -249,6 +253,15 @@
 				B6EBB29F1B5EB9FD00A17D18 /* SKACroppedMiniMap.m */,
 			);
 			name = SKACroppedMiniMap;
+			sourceTree = "<group>";
+		};
+		B6F24CE81B8955E000577DB5 /* SKALabelNode */ = {
+			isa = PBXGroup;
+			children = (
+				B6F24CE91B8955FB00577DB5 /* SKALabelNode.h */,
+				B6F24CEA1B8955FB00577DB5 /* SKALabelNode.m */,
+			);
+			name = SKALabelNode;
 			sourceTree = "<group>";
 		};
 		BB3704911B50D37F00D7EE0B /* Resources */ = {
@@ -379,6 +392,7 @@
 				B63D29E01AF6F50600E7F043 /* GameScene.m in Sources */,
 				B643FA751B5F35F100621A87 /* SKASprite.m in Sources */,
 				B643FA721B5F35F100621A87 /* SKACollisionDefine.m in Sources */,
+				B6F24CEB1B8955FB00577DB5 /* SKALabelNode.m in Sources */,
 				B643FA811B5F370200621A87 /* SKATestPlayer.m in Sources */,
 				B643FA771B5F35F100621A87 /* SKATiledMap.m in Sources */,
 				B63D27C71AF6C17800E7F043 /* main.m in Sources */,
