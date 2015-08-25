@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.authors  = {
                  'Norman Croan'  => 'ncroan@gmail.com', 
                  'Ben Kane'      => 'ben.kane27@gmail.com',
+                 'Max Kargin'    => 'maksym.kargin@gmail.com',
                  'Skyler Lauren' => 'skyler@skymistdevelopment.com',
                  'Marc Vandehey' => 'marc.vandehey@gmail.com' 
                }
@@ -19,9 +20,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.requires_arc = true
-  s.source_files = 'SKAToolKit', 'SKAToolKit/Categories', 'SKAToolKit/Model', 'SKAToolKit/SKAButtons', 'SKAToolKit/SKAMaps', 'SKAToolKit/SKATest', 'SKAToolKit/Utilities'
+  s.source_files = 'SKAToolKit', 'SKAToolKit/SKAButton', 'SKAToolKit/SKACroppedMiniMap', 'SKAToolKit/SKALabelNode', 'SKAToolKit/SKAMiniMap', 'SKAToolKit/SKATestingNodes', 'SKAToolKit/SKATiledMap', 'SKAToolKit/SKATiledMap/Categories', 'SKAToolKit/SKATiledMap/Utilities'
   s.frameworks  = 'SpriteKit', 'UIKit'
   s.library = 'z'
   s.xcconfig       = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/"' }
-  s.requires_arc = true
 end
