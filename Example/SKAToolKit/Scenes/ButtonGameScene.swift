@@ -11,10 +11,22 @@ import SpriteKit
 
 class ButtonGameScene: SKScene {
   var button: SKAButtonSprite?
+  var danceAction: SKAction?
   
   override func didMoveToView(view: SKView) {
     super.didMoveToView(view)
     
+    let disableButton = SKAButtonSprite(color: UIColor.redColor(), size: CGSize(width: 50, height: 50))
+    disableButton.position = CGPoint(x: view.center.x, y: UIScreen.mainScreen().bounds.height - 60)
+    disableButton.addTarget(self, selector: "disableSKA:", forControlEvents: .TouchUpInside)
+    addChild(disableButton)
+    
+    //Dance Action
+    let textures = [SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance2"), SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance3"), SKTexture(imageNamed: "ska-dance1")]
+    let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+    danceAction = SKAction.repeatActionForever(dance)
+    
+    //SKA Button
     button = SKAButtonSprite(color: UIColor.blueColor(), size: CGSize(width: 100, height: 100))
     addChild(button!)
     
@@ -25,10 +37,12 @@ class ButtonGameScene: SKScene {
     button?.addTarget(self, selector: "dragEnter:", forControlEvents: .DragEnter)
     button?.addTarget(self, selector: "dragExit:", forControlEvents: .DragExit)
     button?.addTarget(self, selector: "touchDown:", forControlEvents: .TouchDown)
-
-    button?.position = CGPoint(x: 100, y: 100)
     
-    button?.anchorPoint = CGPoint(x: 0, y: 0)
+    button?.setTexture(SKTexture(imageNamed: "ska-dance0"), forState: .Normal)
+    button?.setTexture(SKTexture(imageNamed: "ska-pressed"), forState: .Highlighted)
+    button?.setTexture(SKTexture(imageNamed: "ska-disabled"), forState: .Disabled)
+
+    button?.position = CGPoint(x: view.center.x, y: 100)
   }
   
   override func update(currentTime: NSTimeInterval) {
@@ -38,35 +52,60 @@ class ButtonGameScene: SKScene {
   
   func touchUpInside(sender:AnyObject) {
     print("SKABUTTON: touchUpInside")
+    if button != nil {
+      
+      if button!.selected {
+        button!.selected = false
+        button!.removeAllActions()
+      } else {
+        button!.selected = true
+        guard let dance = danceAction else { return }
+        button!.runAction(dance)
+      }
+    }
   }
   
   func touchUpOutside(sender:AnyObject) {
     print("SKABUTTON: touchUpOutside")
-
   }
   
   func dragOutside(sender:AnyObject) {
     print("SKABUTTON: dragOutside")
-
   }
   
   func dragInside(sender:AnyObject) {
     print("SKABUTTON: dragInside")
-
   }
   
   func dragEnter(sender:AnyObject) {
     print("SKABUTTON: dragEnter")
-
+    
+    if button != nil {
+      button!.removeAllActions()
+    }
   }
   
   func dragExit(sender:AnyObject) {
     print("SKABUTTON: dragExit")
-
+    
+    if button?.selected ?? false {
+      button?.selected = true
+      guard let dance = danceAction else { return }
+      button?.runAction(dance)
+    }
   }
   
   func touchDown(sender:AnyObject) {
     print("SKABUTTON: touchDown")
-
+    
+    if button != nil {
+      button!.removeAllActions()
+    }
+  }
+  
+  func disableSKA(sender:AnyObject) {
+    guard let button = button else { return }
+    
+    button.enabled = !button.enabled
   }
 }

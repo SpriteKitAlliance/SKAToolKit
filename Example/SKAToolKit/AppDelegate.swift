@@ -34,6 +34,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func somethingElse(sender:AnyObject) {
     print("something else selector \(sender)")
   }
-
 }
 

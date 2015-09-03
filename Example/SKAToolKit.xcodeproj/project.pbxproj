@@ -13,6 +13,12 @@
 		BB22A8531B94B2460064B89E /* SKAToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22A8521B94B2460064B89E /* SKAToolKitTests.swift */; };
 		BB334D0D1B95DEF400C07C39 /* SKAButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB334D0C1B95DEF400C07C39 /* SKAButtonViewController.swift */; };
 		BB334D111B95E0A800C07C39 /* ButtonGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB334D101B95E0A800C07C39 /* ButtonGameScene.swift */; };
+		BBDD36031B988AFB00F626D5 /* ska-dance0.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD35FF1B988AFB00F626D5 /* ska-dance0.png */; settings = {ASSET_TAGS = (); }; };
+		BBDD36041B988AFB00F626D5 /* ska-dance1.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36001B988AFB00F626D5 /* ska-dance1.png */; settings = {ASSET_TAGS = (); }; };
+		BBDD36051B988AFB00F626D5 /* ska-dance2.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36011B988AFB00F626D5 /* ska-dance2.png */; settings = {ASSET_TAGS = (); }; };
+		BBDD36061B988AFB00F626D5 /* ska-dance3.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36021B988AFB00F626D5 /* ska-dance3.png */; settings = {ASSET_TAGS = (); }; };
+		BBDD36081B9891DC00F626D5 /* ska-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36071B9891DC00F626D5 /* ska-disabled.png */; settings = {ASSET_TAGS = (); }; };
+		BBDD360A1B989CFD00F626D5 /* ska-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36091B989CFD00F626D5 /* ska-pressed.png */; settings = {ASSET_TAGS = (); }; };
 		BBEC29E51B94B3B8000D9964 /* SKAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC29E41B94B3B8000D9964 /* SKAButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +45,12 @@
 		BB22A85F1B94B2460064B89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB334D0C1B95DEF400C07C39 /* SKAButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAButtonViewController.swift; path = Views/SKAButtonViewController.swift; sourceTree = "<group>"; };
 		BB334D101B95E0A800C07C39 /* ButtonGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonGameScene.swift; path = Scenes/ButtonGameScene.swift; sourceTree = "<group>"; };
+		BBDD35FF1B988AFB00F626D5 /* ska-dance0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance0.png"; path = "Textures.atlas/ska-dance0.png"; sourceTree = "<group>"; };
+		BBDD36001B988AFB00F626D5 /* ska-dance1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance1.png"; path = "Textures.atlas/ska-dance1.png"; sourceTree = "<group>"; };
+		BBDD36011B988AFB00F626D5 /* ska-dance2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance2.png"; path = "Textures.atlas/ska-dance2.png"; sourceTree = "<group>"; };
+		BBDD36021B988AFB00F626D5 /* ska-dance3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance3.png"; path = "Textures.atlas/ska-dance3.png"; sourceTree = "<group>"; };
+		BBDD36071B9891DC00F626D5 /* ska-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-disabled.png"; path = "Textures.atlas/ska-disabled.png"; sourceTree = "<group>"; };
+		BBDD36091B989CFD00F626D5 /* ska-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-pressed.png"; path = "Textures.atlas/ska-pressed.png"; sourceTree = "<group>"; };
 		BBEC29E41B94B3B8000D9964 /* SKAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAButton.swift; path = ../../SKAToolKit/SKAButton/SKAButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +97,12 @@
 				BB22A83D1B94B2460064B89E /* AppDelegate.swift */,
 				BB22A8441B94B2460064B89E /* Assets.xcassets */,
 				BB22A8461B94B2460064B89E /* LaunchScreen.storyboard */,
+				BBDD35FF1B988AFB00F626D5 /* ska-dance0.png */,
+				BBDD36001B988AFB00F626D5 /* ska-dance1.png */,
+				BBDD36011B988AFB00F626D5 /* ska-dance2.png */,
+				BBDD36021B988AFB00F626D5 /* ska-dance3.png */,
+				BBDD36071B9891DC00F626D5 /* ska-disabled.png */,
+				BBDD36091B989CFD00F626D5 /* ska-pressed.png */,
 				BB22A8491B94B2460064B89E /* Info.plist */,
 				BB334D0F1B95E07700C07C39 /* Scenes */,
 				BB334D0E1B95E07000C07C39 /* Controllers */,
@@ -215,6 +233,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDD36081B9891DC00F626D5 /* ska-disabled.png in Resources */,
+				BBDD36051B988AFB00F626D5 /* ska-dance2.png in Resources */,
+				BBDD36031B988AFB00F626D5 /* ska-dance0.png in Resources */,
+				BBDD36041B988AFB00F626D5 /* ska-dance1.png in Resources */,
+				BBDD360A1B989CFD00F626D5 /* ska-pressed.png in Resources */,
+				BBDD36061B988AFB00F626D5 /* ska-dance3.png in Resources */,
 				BB22A8481B94B2460064B89E /* LaunchScreen.storyboard in Resources */,
 				BB22A8451B94B2460064B89E /* Assets.xcassets in Resources */,
 			);
@@ -360,7 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SKAToolKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKA.SKAToolKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,7 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SKAToolKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKA.SKAToolKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

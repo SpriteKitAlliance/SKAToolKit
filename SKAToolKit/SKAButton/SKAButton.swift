@@ -72,15 +72,42 @@ struct SKAButtonSelector {
   let selector: Selector
 }
 
-struct SKAAction {
-  let action: SKAction
-  let key: String
-  let completion: (()->())?
-}
-
 class SKAButtonSprite : SKSpriteNode {
-  var selectors = [SKAControlEvent: [SKAButtonSelector]]()
-  var actions = [SKAControlState: SKAAction]()
+  private var selectors = [SKAControlEvent: [SKAButtonSelector]]()
+  private var textures = [SKAControlState: SKTexture]()
+  private var normalTextures = [SKAControlState: SKTexture]()
+  private var colors = [SKAControlState: SKColor]()
+  
+  var tintColor = SKColor.darkGrayColor()
+  
+//  override var color: SKColor {
+//    set(newColor){
+//      setColor(newColor, forState: .Normal)
+//    }
+//    get{
+//      return backgroundColor
+//    }
+//  }
+//  
+//  override var texture: SKTexture? {
+//    set(newTexture){
+//      setTexture(newTexture, forState: .Normal)
+//    }
+//    get {
+//      return textures[.Normal]
+//    }
+//  }
+//  
+//  override var normalTexture: SKTexture? {
+//    set(newTexture){
+//      setNormalTexture(newTexture, forState: .Normal)
+//    }
+//    get {
+//      return normalTextures[.Normal]
+//    }
+//  }
+  
+  private var backgroundColor = SKColor.clearColor()
   
   var selected = false {
     didSet {
@@ -95,9 +122,9 @@ class SKAButtonSprite : SKSpriteNode {
   var enabled = true {
     didSet {
       if enabled {
-        controlState.insert(.Disabled)
-      } else {
         controlState.subtractInPlace(.Disabled)
+      } else {
+        controlState.insert(.Disabled)
       }
     }
   }
@@ -107,21 +134,75 @@ class SKAButtonSprite : SKSpriteNode {
     didSet {
       if oldValue != controlState {
         print("this was updated: \(controlState)")
-
-        if controlState.contains(.Disabled) {
-          runActionForState(.Disabled)
-        } else if controlState.contains(.Selected) {
-          runActionForState(.Selected)
-        } else if controlState.contains(.Highlighted){
-          runActionForState(.Highlighted)
-        } else {
-          runActionForState(.Normal)
-        }
+        updateButton()
       }
     }
   }
   
-  // MARK: Selector Events
+  /*
+   * Update the button based on the state of the button. Since the button can hold more than one state at a time,
+   * determine the most important state and display the correct texture/color
+   */
+  private func updateButton() {
+    var newNormalTexture:SKTexture?
+    var newTexture:SKTexture?
+    var newColor = color
+    
+    if controlState.contains(.Disabled) {
+      if let disabledNormal = normalTextures[.Disabled] {
+        newNormalTexture = disabledNormal
+      }
+        
+      if let disabled = textures[.Disabled] {
+        newTexture = disabled
+      }
+      
+      if let disabledColor = colors[.Disabled] {
+        newColor = disabledColor
+      }
+      
+    } else if controlState.contains(.Selected) {
+      if let selectedNormal = normalTextures[.Selected] {
+        newNormalTexture = selectedNormal
+      }
+      
+      if let selected = textures[.Selected] {
+        newTexture = selected
+      }
+      
+      if let selectedColor = colors[.Selected] {
+        newColor = selectedColor
+      }
+    } else if controlState.contains(.Highlighted){
+      if let highlightedNormal = normalTextures[.Highlighted] {
+        newNormalTexture = highlightedNormal
+      }
+      
+      if let highlighted = textures[.Highlighted] {
+        newTexture = highlighted
+      }
+      
+      if let highlightedColor = colors[.Highlighted] {
+        newColor = highlightedColor
+      }
+    } else if let normalColor = colors[.Normal] {
+      newColor = normalColor
+    }
+    
+    if newNormalTexture == nil {
+      newNormalTexture = normalTextures[.Normal]
+    }
+    
+    if newTexture == nil {
+      newTexture = textures[.Normal]
+    }
+    
+    normalTexture = newNormalTexture
+    texture = newTexture
+    color = newColor
+  }
+  
+  // MARK: - Selector Events
   
   func addTarget(target: AnyObject, selector: Selector, forControlEvents events: SKAControlEvent) {
     userInteractionEnabled = true
@@ -160,25 +241,29 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  // MARK: Action Events
-  func addAction(action:SKAction, forControlState controlState: SKAControlState) {
-    addAction(action, forControlState: controlState, completion: nil)
+  // Mark: - Control States
+  func setColor(color:UIColor, forState state:SKAControlState) {
+    colors[state] = color
+    updateButton()
   }
   
-  func addAction(action:SKAction, forControlState controlState: SKAControlState, completion:(()->())?) {
-    let skaAction = SKAAction(action: action, key: "\(controlState.rawValue)", completion: completion)
-    actions[controlState] = skaAction
-  }
-  
-  private func runActionForState(state:SKAControlState) {
-    guard let skaAction = actions[state] else { return }
-    
-    removeAllActions()
-    if let completion = skaAction.completion{
-      runAction(skaAction.action, completion: completion)
+  func setTexture(texture:SKTexture?, forState state:SKAControlState) {
+    if let texture = texture {
+      textures[state] = texture
     } else {
-      runAction(skaAction.action, withKey: skaAction.key)
+      textures.removeValueForKey(state)
     }
+    updateButton()
+  }
+  
+  func setNormalTexture(texture:SKTexture?, forState state:SKAControlState){
+    if let texture = texture {
+      normalTextures[state] = texture
+    } else {
+      normalTextures.removeValueForKey(state)
+    }
+    
+    updateButton()
   }
   
   //Save a touch to help determine if the touch just entered or exited the node
@@ -197,24 +282,27 @@ class SKAButtonSprite : SKSpriteNode {
     if let touch = touches.first as UITouch?, scene = scene where enabled {
       let currentLocation = (touch.locationInNode(scene))
       
-      if lastEvent == .DragInside && !containsPoint(currentLocation) {
-        //Touch Moved Outside Node
-        performSelectorsForType(.DragExit)
-        controlState.subtractInPlace(.Highlighted)
-        lastEvent = .DragExit
-      } else if lastEvent == .DragOutside && containsPoint(currentLocation) {
-        //Touched Moved Inside Node
-        performSelectorsForType(.DragEnter)
-        controlState.insert(.Highlighted)
-        lastEvent = .DragEnter
-      } else if !containsPoint(currentLocation) {
-        // Touch stayed Outside Node
-        performSelectorsForType(.DragOutside)
-        lastEvent = .DragOutside
-      } else if containsPoint(currentLocation) {
-        //Touch Stayed Inside Node
-        performSelectorsForType(.DragInside)
-        lastEvent = .DragInside
+      if !containsPoint(currentLocation) {
+        if lastEvent != .DragOutside  && lastEvent != .DragExit {
+          performSelectorsForType(.DragExit)
+          controlState.subtractInPlace(.Highlighted)
+          lastEvent = .DragExit
+        } else {
+          // Touch stayed Outside Node
+          performSelectorsForType(.DragOutside)
+          lastEvent = .DragOutside
+        }
+      } else  {
+        if lastEvent != .DragInside && lastEvent != .DragEnter {
+          //Touched Moved Inside Node
+          performSelectorsForType(.DragEnter)
+          controlState.insert(.Highlighted)
+          lastEvent = .DragEnter
+        } else {
+          //Touch Stayed Inside Node
+          performSelectorsForType(.DragInside)
+          lastEvent = .DragInside
+        }
       }
     }
     
@@ -231,7 +319,6 @@ class SKAButtonSprite : SKSpriteNode {
       }
       
       controlState.subtractInPlace(.Highlighted)
-      selected = false
     }
     
     super.touchesEnded(touches, withEvent: event)
@@ -244,5 +331,10 @@ class SKAButtonSprite : SKSpriteNode {
     }
     
     super.touchesCancelled(touches, withEvent: event)
+  }
+  
+  deinit {
+    textures.removeAll()
+    normalTextures.removeAll()
   }
 }
