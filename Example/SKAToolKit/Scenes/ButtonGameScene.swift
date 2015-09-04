@@ -22,7 +22,7 @@ class ButtonGameScene: SKScene {
     addChild(disableButton)
     
     //Dance Action
-    let textures = [SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance2"), SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance3"), SKTexture(imageNamed: "ska-dance1")]
+    let textures = [SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance2"), SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance3")]
     let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
     danceAction = SKAction.repeatActionForever(dance)
     
