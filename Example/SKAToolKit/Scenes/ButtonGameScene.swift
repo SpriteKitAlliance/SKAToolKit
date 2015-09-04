@@ -26,6 +26,7 @@ class ButtonGameScene: SKScene {
     let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
     danceAction = SKAction.repeatActionForever(dance)
     
+    
     //SKA Button
     button = SKAButtonSprite(color: UIColor.blueColor(), size: CGSize(width: 100, height: 100))
     addChild(button!)
@@ -56,11 +57,11 @@ class ButtonGameScene: SKScene {
       
       if button!.selected {
         button!.selected = false
-        button!.removeAllActions()
+        button!.removeActionForKey("dance")
       } else {
         button!.selected = true
         guard let dance = danceAction else { return }
-        button!.runAction(dance)
+        button!.runAction(dance, withKey: "dance")
       }
     }
   }
@@ -75,13 +76,17 @@ class ButtonGameScene: SKScene {
   
   func dragInside(sender:AnyObject) {
     print("SKABUTTON: dragInside")
+    
+    if button != nil {
+      button!.removeActionForKey("dance")
+    }
   }
   
   func dragEnter(sender:AnyObject) {
     print("SKABUTTON: dragEnter")
     
     if button != nil {
-      button!.removeAllActions()
+      button!.removeActionForKey("dance")
     }
   }
   
@@ -91,7 +96,7 @@ class ButtonGameScene: SKScene {
     if button?.selected ?? false {
       button?.selected = true
       guard let dance = danceAction else { return }
-      button?.runAction(dance)
+      button!.runAction(dance, withKey: "dance")
     }
   }
   
@@ -99,7 +104,7 @@ class ButtonGameScene: SKScene {
     print("SKABUTTON: touchDown")
     
     if button != nil {
-      button!.removeAllActions()
+      button!.removeActionForKey("dance")
     }
   }
   

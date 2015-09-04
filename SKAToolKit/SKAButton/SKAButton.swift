@@ -40,7 +40,7 @@ struct SKAControlEvent: OptionSetType, Hashable {
   static var DragExit:       SKAControlEvent   { return SKAControlEvent(rawValue: 1 << 6) }
   static var TouchCancelled: SKAControlEvent   { return SKAControlEvent(rawValue: 1 << 7) }
   static var AllOptions:     [SKAControlEvent] {
-    return [.None, .TouchDown, .TouchUpInside, .TouchUpOutside, .DragOutside, .DragInside, .DragEnter, .DragEnter, .TouchCancelled]
+    return [.TouchDown, .TouchUpInside, .TouchUpOutside, .DragOutside, .DragInside, .DragEnter, .DragExit, .TouchCancelled]
   }
   var hashValue: Int {
     return rawValue.hashValue
@@ -77,41 +77,19 @@ class SKAButtonSprite : SKSpriteNode {
   private var textures = [SKAControlState: SKTexture]()
   private var normalTextures = [SKAControlState: SKTexture]()
   private var colors = [SKAControlState: SKColor]()
-  
-  var tintColor = SKColor.darkGrayColor()
-  
-//  override var color: SKColor {
-//    set(newColor){
-//      setColor(newColor, forState: .Normal)
-//    }
-//    get{
-//      return backgroundColor
-//    }
-//  }
-//  
-//  override var texture: SKTexture? {
-//    set(newTexture){
-//      setTexture(newTexture, forState: .Normal)
-//    }
-//    get {
-//      return textures[.Normal]
-//    }
-//  }
-//  
-//  override var normalTexture: SKTexture? {
-//    set(newTexture){
-//      setNormalTexture(newTexture, forState: .Normal)
-//    }
-//    get {
-//      return normalTextures[.Normal]
-//    }
-//  }
-  
   private var backgroundColor = SKColor.clearColor()
   
-  var selected = false {
-    didSet {
-      if selected {
+  //  var tintColor = SKColor.darkGrayColor()
+  
+  /*
+  * Show the button in the selected state
+  */
+  var selected:Bool {
+    get {
+      return controlState.contains(.Selected)
+    }
+    set(newValue) {
+      if newValue {
         controlState.insert(.Selected)
       } else {
         controlState.subtractInPlace(.Selected)
@@ -119,9 +97,15 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  var enabled = true {
-    didSet {
-      if enabled {
+  /*
+  * Show the button in the enabled/disabled state. In a disabled state, the button will not trigger selectors
+  */
+  var enabled:Bool {
+    get {
+      return !controlState.contains(.Disabled)
+    }
+    set(newValue) {
+      if newValue {
         controlState.subtractInPlace(.Disabled)
       } else {
         controlState.insert(.Disabled)
@@ -140,9 +124,10 @@ class SKAButtonSprite : SKSpriteNode {
   }
   
   /*
-   * Update the button based on the state of the button. Since the button can hold more than one state at a time,
-   * determine the most important state and display the correct texture/color
-   */
+  * Update the button based on the state of the button. Since the button can hold more than one state at a time,
+  * determine the most important state and display the correct texture/color
+  * Disabled > Highlighted > Selected > Normal
+  */
   private func updateButton() {
     var newNormalTexture:SKTexture?
     var newTexture:SKTexture?
@@ -152,26 +137,13 @@ class SKAButtonSprite : SKSpriteNode {
       if let disabledNormal = normalTextures[.Disabled] {
         newNormalTexture = disabledNormal
       }
-        
+      
       if let disabled = textures[.Disabled] {
         newTexture = disabled
       }
       
       if let disabledColor = colors[.Disabled] {
         newColor = disabledColor
-      }
-      
-    } else if controlState.contains(.Selected) {
-      if let selectedNormal = normalTextures[.Selected] {
-        newNormalTexture = selectedNormal
-      }
-      
-      if let selected = textures[.Selected] {
-        newTexture = selected
-      }
-      
-      if let selectedColor = colors[.Selected] {
-        newColor = selectedColor
       }
     } else if controlState.contains(.Highlighted){
       if let highlightedNormal = normalTextures[.Highlighted] {
@@ -185,7 +157,19 @@ class SKAButtonSprite : SKSpriteNode {
       if let highlightedColor = colors[.Highlighted] {
         newColor = highlightedColor
       }
-    } else if let normalColor = colors[.Normal] {
+    } else if controlState.contains(.Selected) {
+      if let selectedNormal = normalTextures[.Selected] {
+        newNormalTexture = selectedNormal
+      }
+      
+      if let selected = textures[.Selected] {
+        newTexture = selected
+      }
+      
+      if let selectedColor = colors[.Selected] {
+        newColor = selectedColor
+      }
+    }  else if let normalColor = colors[.Normal] {
       newColor = normalColor
     }
     
@@ -204,6 +188,12 @@ class SKAButtonSprite : SKSpriteNode {
   
   // MARK: - Selector Events
   
+  /*
+  * Add target for a SKAControlEvent. You may call this multiple times and you can specify multiple targets for any event.
+  * :param: target  Object the selecter will be called on
+  * :param: selector  The chosen selector for the event that is a member of the target
+  * :param: events  SKAControlEvents that you want to register the selector to
+  */
   func addTarget(target: AnyObject, selector: Selector, forControlEvents events: SKAControlEvent) {
     userInteractionEnabled = true
     let buttonSelector = SKAButtonSelector(target: target, selector: selector)
@@ -282,27 +272,24 @@ class SKAButtonSprite : SKSpriteNode {
     if let touch = touches.first as UITouch?, scene = scene where enabled {
       let currentLocation = (touch.locationInNode(scene))
       
-      if !containsPoint(currentLocation) {
-        if lastEvent != .DragOutside  && lastEvent != .DragExit {
-          performSelectorsForType(.DragExit)
-          controlState.subtractInPlace(.Highlighted)
-          lastEvent = .DragExit
-        } else {
-          // Touch stayed Outside Node
-          performSelectorsForType(.DragOutside)
-          lastEvent = .DragOutside
-        }
-      } else  {
-        if lastEvent != .DragInside && lastEvent != .DragEnter {
-          //Touched Moved Inside Node
-          performSelectorsForType(.DragEnter)
-          controlState.insert(.Highlighted)
-          lastEvent = .DragEnter
-        } else {
-          //Touch Stayed Inside Node
-          performSelectorsForType(.DragInside)
-          lastEvent = .DragInside
-        }
+      if lastEvent == .DragInside && !containsPoint(currentLocation) {
+        //Touch Moved Outside Node
+        controlState.subtractInPlace(.Highlighted)
+        performSelectorsForType(.DragExit)
+        lastEvent = .DragExit
+      } else if lastEvent == .DragOutside && containsPoint(currentLocation) {
+        //Touched Moved Inside Node
+        controlState.insert(.Highlighted)
+        performSelectorsForType(.DragEnter)
+        lastEvent = .DragEnter
+      } else if !containsPoint(currentLocation) {
+        // Touch stayed Outside Node
+        performSelectorsForType(.DragOutside)
+        lastEvent = .DragOutside
+      } else if containsPoint(currentLocation) {
+        //Touch Stayed Inside Node
+        performSelectorsForType(.DragInside)
+        lastEvent = .DragInside
       }
     }
     
