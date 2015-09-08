@@ -42,7 +42,6 @@ class ButtonGameScene: SKScene {
     button?.setTexture(SKTexture(imageNamed: "ska-dance0"), forState: .Normal)
     button?.setTexture(SKTexture(imageNamed: "ska-pressed"), forState: .Highlighted)
     button?.setTexture(SKTexture(imageNamed: "ska-disabled"), forState: .Disabled)
-
     button?.position = CGPoint(x: view.center.x, y: 100)
   }
   

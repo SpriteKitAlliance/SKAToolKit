@@ -67,7 +67,7 @@ struct SKAControlState: OptionSetType, Hashable {
   }
 }
 
-struct SKAButtonSelector {
+private struct SKAButtonSelector {
   let target: AnyObject
   let selector: Selector
 }
@@ -79,10 +79,8 @@ class SKAButtonSprite : SKSpriteNode {
   private var colors = [SKAControlState: SKColor]()
   private var backgroundColor = SKColor.clearColor()
   
-  //  var tintColor = SKColor.darkGrayColor()
-  
   /*
-  * Show the button in the selected state
+  * Sets the button to the selected state
   */
   var selected:Bool {
     get {
@@ -98,7 +96,7 @@ class SKAButtonSprite : SKSpriteNode {
   }
   
   /*
-  * Show the button in the enabled/disabled state. In a disabled state, the button will not trigger selectors
+  * Sets the button to the enabled/disabled state. In a disabled state, the button will not trigger selectors
   */
   var enabled:Bool {
     get {
@@ -113,8 +111,10 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  //Disabled > Selected > Highlighted > Normal
-  var controlState:SKAControlState = .Normal {
+  /*
+  * Current State of the button - readonly
+  */
+  private(set) var controlState:SKAControlState = .Normal {
     didSet {
       if oldValue != controlState {
         print("this was updated: \(controlState)")
@@ -202,6 +202,8 @@ class SKAButtonSprite : SKSpriteNode {
   
   /*
   * Add Selector(s) to our dictionary of actions based on the SKAControlEvent
+  * :param: buttonSelector  Internal struct containing the selector and the target
+  * :param: events  SKAControl event(s) associated to the selector
   */
   private func addButtonSelector(buttonSelector: SKAButtonSelector, forControlEvents events: SKAControlEvent) {
     for option in SKAControlEvent.AllOptions where events.contains(option) {
@@ -216,14 +218,16 @@ class SKAButtonSprite : SKSpriteNode {
   
   /*
   * Checks if there are any listed selectors for the control event, and performs them
+  * :param:  event Single control event
   */
-  private func performSelectorsForType(type:SKAControlEvent) {
-    guard let selectors = selectors[type] else { return }
+  private func performSelectorsForEvent(event:SKAControlEvent) {
+    guard let selectors = selectors[event] else { return }
     performSelectors(selectors)
   }
   
   /*
   * Loops through the selected actions and performs the selectors associated to them
+  * :param: buttonSelectors  buttonSelectors Array of button selectors to perform
   */
   private func performSelectors(buttonSelectors: [SKAButtonSelector]) {
     for selector in buttonSelectors {
@@ -232,11 +236,22 @@ class SKAButtonSprite : SKSpriteNode {
   }
   
   // Mark: - Control States
-  func setColor(color:UIColor, forState state:SKAControlState) {
+  
+  /*
+  * Sets the node's background color for the specified control state
+  * :param: color The specified color
+  * :param: state The specified control state to trigger the color change
+  */
+  func setColor(color:SKColor, forState state:SKAControlState) {
     colors[state] = color
     updateButton()
   }
   
+  /*
+  * Sets the node's texture for the specified control state
+  * :param: texture The specified texture, if nil it clears the texture for the control state
+  * :param: state The specified control state to trigger the texture change
+  */
   func setTexture(texture:SKTexture?, forState state:SKAControlState) {
     if let texture = texture {
       textures[state] = texture
@@ -246,7 +261,12 @@ class SKAButtonSprite : SKSpriteNode {
     updateButton()
   }
   
-  func setNormalTexture(texture:SKTexture?, forState state:SKAControlState){
+  /*
+  * Sets the node's normal texture for the specified control state
+  * :param: texture The specified texture, if nil it clears the texture for the control state
+  * :param: state The specified control state to trigger the normal texture change
+  */
+  func setNormalTexture(texture:SKTexture?, forState state:SKAControlState) {
     if let texture = texture {
       normalTextures[state] = texture
     } else {
@@ -259,9 +279,11 @@ class SKAButtonSprite : SKSpriteNode {
   //Save a touch to help determine if the touch just entered or exited the node
   private var lastEvent:SKAControlEvent = .None
   
+  // Mark: - Touch Methods
+  
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     if let _ = touches.first as UITouch? where enabled {
-      performSelectorsForType(.TouchDown)
+      performSelectorsForEvent(.TouchDown)
       lastEvent = .TouchDown
       controlState.insert(.Highlighted)
     }
@@ -275,20 +297,20 @@ class SKAButtonSprite : SKSpriteNode {
       if lastEvent == .DragInside && !containsPoint(currentLocation) {
         //Touch Moved Outside Node
         controlState.subtractInPlace(.Highlighted)
-        performSelectorsForType(.DragExit)
+        performSelectorsForEvent(.DragExit)
         lastEvent = .DragExit
       } else if lastEvent == .DragOutside && containsPoint(currentLocation) {
         //Touched Moved Inside Node
         controlState.insert(.Highlighted)
-        performSelectorsForType(.DragEnter)
+        performSelectorsForEvent(.DragEnter)
         lastEvent = .DragEnter
       } else if !containsPoint(currentLocation) {
         // Touch stayed Outside Node
-        performSelectorsForType(.DragOutside)
+        performSelectorsForEvent(.DragOutside)
         lastEvent = .DragOutside
       } else if containsPoint(currentLocation) {
         //Touch Stayed Inside Node
-        performSelectorsForType(.DragInside)
+        performSelectorsForEvent(.DragInside)
         lastEvent = .DragInside
       }
     }
@@ -300,9 +322,9 @@ class SKAButtonSprite : SKSpriteNode {
     lastEvent = .None
     if let touch = touches.first as UITouch?, scene = scene where enabled {
       if containsPoint(touch.locationInNode(scene)) {
-        performSelectorsForType(.TouchUpInside)
+        performSelectorsForEvent(.TouchUpInside)
       } else {
-        performSelectorsForType(.TouchUpOutside)
+        performSelectorsForEvent(.TouchUpOutside)
       }
       
       controlState.subtractInPlace(.Highlighted)
@@ -314,12 +336,13 @@ class SKAButtonSprite : SKSpriteNode {
   override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
     lastEvent = .None
     if let _ = touches?.first as UITouch? {
-      performSelectorsForType(.TouchCancelled)
+      performSelectorsForEvent(.TouchCancelled)
     }
     
     super.touchesCancelled(touches, withEvent: event)
   }
   
+  //Remove unneeded textures
   deinit {
     textures.removeAll()
     normalTextures.removeAll()
