@@ -67,6 +67,9 @@ struct SKAControlState: OptionSetType, Hashable {
   }
 }
 
+/// Container for SKAButton Selectors
+/// - Parameter target: target Object to call the selector on
+/// - Parameter selector: Selector to call
 private struct SKAButtonSelector {
   let target: AnyObject
   let selector: Selector
@@ -79,9 +82,8 @@ class SKAButtonSprite : SKSpriteNode {
   private var colors = [SKAControlState: SKColor]()
   private var backgroundColor = SKColor.clearColor()
   
-  /*
-  * Sets the button to the selected state
-  */
+  /// Sets the button to the selected state
+  /// - Note: If an SKAction is taking place, the selected state may not show properly
   var selected:Bool {
     get {
       return controlState.contains(.Selected)
@@ -95,9 +97,8 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  /*
-  * Sets the button to the enabled/disabled state. In a disabled state, the button will not trigger selectors
-  */
+  /// Sets the button to the enabled/disabled state. In a disabled state, the button will not trigger selectors
+  /// - Note: If an SKAction is taking place, the disabled state may not show properly
   var enabled:Bool {
     get {
       return !controlState.contains(.Disabled)
@@ -111,9 +112,8 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  /*
-  * Current State of the button - readonly
-  */
+  /// Current State of the button
+  /// - Note: ReadOnly
   private(set) var controlState:SKAControlState = .Normal {
     didSet {
       if oldValue != controlState {
@@ -123,11 +123,11 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  /*
-  * Update the button based on the state of the button. Since the button can hold more than one state at a time,
-  * determine the most important state and display the correct texture/color
-  * Disabled > Highlighted > Selected > Normal
-  */
+  /// Update the button based on the state of the button. Since the button can hold more than one state at a time,
+  /// determine the most important state and display the correct texture/color
+  /// - Note: Disabled > Highlighted > Selected > Normal
+  /// - Warning: SKActions will override setting the textures
+  /// - Returns: void
   private func updateButton() {
     var newNormalTexture:SKTexture?
     var newTexture:SKTexture?
@@ -188,23 +188,21 @@ class SKAButtonSprite : SKSpriteNode {
   
   // MARK: - Selector Events
   
-  /*
-  * Add target for a SKAControlEvent. You may call this multiple times and you can specify multiple targets for any event.
-  * :param: target  Object the selecter will be called on
-  * :param: selector  The chosen selector for the event that is a member of the target
-  * :param: events  SKAControlEvents that you want to register the selector to
-  */
+  /// Add target for a SKAControlEvent. You may call this multiple times and you can specify multiple targets for any event.
+  /// - Parameter target: Object the selecter will be called on
+  /// - Parameter selector: The chosen selector for the event that is a member of the target
+  /// - Parameter events: SKAControlEvents that you want to register the selector to
+  /// - Returns: void
   func addTarget(target: AnyObject, selector: Selector, forControlEvents events: SKAControlEvent) {
     userInteractionEnabled = true
     let buttonSelector = SKAButtonSelector(target: target, selector: selector)
     addButtonSelector(buttonSelector, forControlEvents: events)
   }
   
-  /*
-  * Add Selector(s) to our dictionary of actions based on the SKAControlEvent
-  * :param: buttonSelector  Internal struct containing the selector and the target
-  * :param: events  SKAControl event(s) associated to the selector
-  */
+  /// Add Selector(s) to our dictionary of actions based on the SKAControlEvent
+  /// - Parameter buttonSelector: Internal struct containing the selector and the target
+  /// - Parameter events: SKAControl event(s) associated to the selector
+  /// - Returns: void
   private func addButtonSelector(buttonSelector: SKAButtonSelector, forControlEvents events: SKAControlEvent) {
     for option in SKAControlEvent.AllOptions where events.contains(option) {
       if var buttonSelectors = selectors[option] {
@@ -216,19 +214,17 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  /*
-  * Checks if there are any listed selectors for the control event, and performs them
-  * :param:  event Single control event
-  */
+  /// Checks if there are any listed selectors for the control event, and performs them
+  /// - Parameter event: Single control event
+  /// - Returns: void
   private func performSelectorsForEvent(event:SKAControlEvent) {
     guard let selectors = selectors[event] else { return }
     performSelectors(selectors)
   }
   
-  /*
-  * Loops through the selected actions and performs the selectors associated to them
-  * :param: buttonSelectors  buttonSelectors Array of button selectors to perform
-  */
+  /// Loops through the selected actions and performs the selectors associated to them
+  /// - Parameter buttonSelectors: buttonSelectors Array of button selectors to perform
+  /// - Returns: void
   private func performSelectors(buttonSelectors: [SKAButtonSelector]) {
     for selector in buttonSelectors {
       selector.target.performSelector(selector.selector, withObject: self)
@@ -237,21 +233,19 @@ class SKAButtonSprite : SKSpriteNode {
   
   // Mark: - Control States
   
-  /*
-  * Sets the node's background color for the specified control state
-  * :param: color The specified color
-  * :param: state The specified control state to trigger the color change
-  */
+  /// Sets the node's background color for the specified control state
+  /// - Parameter color: The specified color
+  /// - Parameter state: The specified control state to trigger the color change
+  /// - Returns: void
   func setColor(color:SKColor, forState state:SKAControlState) {
     colors[state] = color
     updateButton()
   }
   
-  /*
-  * Sets the node's texture for the specified control state
-  * :param: texture The specified texture, if nil it clears the texture for the control state
-  * :param: state The specified control state to trigger the texture change
-  */
+  /// Sets the node's texture for the specified control state
+  /// - Parameter texture: The specified texture, if nil it clears the texture for the control state
+  /// - Parameter state: The specified control state to trigger the texture change
+  /// - Returns: void
   func setTexture(texture:SKTexture?, forState state:SKAControlState) {
     if let texture = texture {
       textures[state] = texture
@@ -261,11 +255,10 @@ class SKAButtonSprite : SKSpriteNode {
     updateButton()
   }
   
-  /*
-  * Sets the node's normal texture for the specified control state
-  * :param: texture The specified texture, if nil it clears the texture for the control state
-  * :param: state The specified control state to trigger the normal texture change
-  */
+  /// Sets the node's normal texture for the specified control state
+  /// - Parameter texture: The specified texture, if nil it clears the texture for the control state
+  /// - Parameter state: The specified control state to trigger the normal texture change
+  /// - Returns: void
   func setNormalTexture(texture:SKTexture?, forState state:SKAControlState) {
     if let texture = texture {
       normalTextures[state] = texture
@@ -276,7 +269,7 @@ class SKAButtonSprite : SKSpriteNode {
     updateButton()
   }
   
-  //Save a touch to help determine if the touch just entered or exited the node
+  /// Save a touch to help determine if the touch just entered or exited the node
   private var lastEvent:SKAControlEvent = .None
   
   // Mark: - Touch Methods
@@ -342,7 +335,7 @@ class SKAButtonSprite : SKSpriteNode {
     super.touchesCancelled(touches, withEvent: event)
   }
   
-  //Remove unneeded textures
+  /// Remove unneeded textures
   deinit {
     textures.removeAll()
     normalTextures.removeAll()
