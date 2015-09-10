@@ -81,6 +81,14 @@ class SKAButtonSprite : SKSpriteNode {
   private var normalTextures = [SKAControlState: SKTexture]()
   private var colors = [SKAControlState: SKColor]()
   private var backgroundColor = SKColor.clearColor()
+  private var savedSize = CGSize()
+  
+  /// Saving the size, we need to reset the size if a state has a different sized texture applied
+  override var size:CGSize {
+    didSet{
+      savedSize = size
+    }
+  }
   
   /// Sets the button to the selected state
   /// - Note: If an SKAction is taking place, the selected state may not show properly
@@ -184,6 +192,7 @@ class SKAButtonSprite : SKSpriteNode {
     normalTexture = newNormalTexture
     texture = newTexture
     color = newColor
+    size = savedSize
   }
   
   // MARK: - Selector Events
@@ -335,6 +344,19 @@ class SKAButtonSprite : SKSpriteNode {
     super.touchesCancelled(touches, withEvent: event)
   }
   
+  /// Fix button to correct state after action is removed
+  override func removeActionForKey(key: String) {
+    super.removeActionForKey(key)
+    
+    updateButton()
+  }
+  
+  /// Fix button to correct state after action is removed
+  override func removeAllActions() {
+    super.removeAllActions()
+    updateButton()
+  }
+    
   /// Remove unneeded textures
   deinit {
     textures.removeAll()

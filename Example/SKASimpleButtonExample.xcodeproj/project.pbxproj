@@ -13,12 +13,7 @@
 		BB22A8531B94B2460064B89E /* SKAToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB22A8521B94B2460064B89E /* SKAToolKitTests.swift */; };
 		BB334D0D1B95DEF400C07C39 /* SKAButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB334D0C1B95DEF400C07C39 /* SKAButtonViewController.swift */; };
 		BB334D111B95E0A800C07C39 /* ButtonGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB334D101B95E0A800C07C39 /* ButtonGameScene.swift */; };
-		BBDD36031B988AFB00F626D5 /* ska-dance0.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD35FF1B988AFB00F626D5 /* ska-dance0.png */; settings = {ASSET_TAGS = (); }; };
-		BBDD36041B988AFB00F626D5 /* ska-dance1.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36001B988AFB00F626D5 /* ska-dance1.png */; settings = {ASSET_TAGS = (); }; };
-		BBDD36051B988AFB00F626D5 /* ska-dance2.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36011B988AFB00F626D5 /* ska-dance2.png */; settings = {ASSET_TAGS = (); }; };
-		BBDD36061B988AFB00F626D5 /* ska-dance3.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36021B988AFB00F626D5 /* ska-dance3.png */; settings = {ASSET_TAGS = (); }; };
-		BBDD36081B9891DC00F626D5 /* ska-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36071B9891DC00F626D5 /* ska-disabled.png */; settings = {ASSET_TAGS = (); }; };
-		BBDD360A1B989CFD00F626D5 /* ska-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BBDD36091B989CFD00F626D5 /* ska-pressed.png */; settings = {ASSET_TAGS = (); }; };
+		BB6743811BA203C3008F1D11 /* Textures.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BB6743801BA203C3008F1D11 /* Textures.atlas */; };
 		BBEC29E51B94B3B8000D9964 /* SKAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC29E41B94B3B8000D9964 /* SKAButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,24 +28,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BB22A83A1B94B2460064B89E /* SKAToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKAToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB22A83A1B94B2460064B89E /* SKASimpleButtonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKASimpleButtonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB22A83D1B94B2460064B89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB22A8441B94B2460064B89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB22A8471B94B2460064B89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB22A8491B94B2460064B89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB22A84E1B94B2460064B89E /* SKAToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKAToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB22A84E1B94B2460064B89E /* SKASimpleButtonExample.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKASimpleButtonExample.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB22A8521B94B2460064B89E /* SKAToolKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAToolKitTests.swift; sourceTree = "<group>"; };
 		BB22A8541B94B2460064B89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB22A85D1B94B2460064B89E /* SKAToolKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAToolKitUITests.swift; sourceTree = "<group>"; };
 		BB22A85F1B94B2460064B89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB334D0C1B95DEF400C07C39 /* SKAButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAButtonViewController.swift; path = Views/SKAButtonViewController.swift; sourceTree = "<group>"; };
 		BB334D101B95E0A800C07C39 /* ButtonGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonGameScene.swift; path = Scenes/ButtonGameScene.swift; sourceTree = "<group>"; };
-		BBDD35FF1B988AFB00F626D5 /* ska-dance0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance0.png"; path = "Textures.atlas/ska-dance0.png"; sourceTree = "<group>"; };
-		BBDD36001B988AFB00F626D5 /* ska-dance1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance1.png"; path = "Textures.atlas/ska-dance1.png"; sourceTree = "<group>"; };
-		BBDD36011B988AFB00F626D5 /* ska-dance2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance2.png"; path = "Textures.atlas/ska-dance2.png"; sourceTree = "<group>"; };
-		BBDD36021B988AFB00F626D5 /* ska-dance3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-dance3.png"; path = "Textures.atlas/ska-dance3.png"; sourceTree = "<group>"; };
-		BBDD36071B9891DC00F626D5 /* ska-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-disabled.png"; path = "Textures.atlas/ska-disabled.png"; sourceTree = "<group>"; };
-		BBDD36091B989CFD00F626D5 /* ska-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ska-pressed.png"; path = "Textures.atlas/ska-pressed.png"; sourceTree = "<group>"; };
+		BB6743801BA203C3008F1D11 /* Textures.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Textures.atlas; sourceTree = "<group>"; };
 		BBEC29E41B94B3B8000D9964 /* SKAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKAButton.swift; path = ../../SKAToolKit/SKAButton/SKAButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,8 +75,8 @@
 		BB22A83B1B94B2460064B89E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB22A83A1B94B2460064B89E /* SKAToolKit.app */,
-				BB22A84E1B94B2460064B89E /* SKAToolKitTests.xctest */,
+				BB22A83A1B94B2460064B89E /* SKASimpleButtonExample.app */,
+				BB22A84E1B94B2460064B89E /* SKASimpleButtonExample.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,13 +87,8 @@
 				BB22A83D1B94B2460064B89E /* AppDelegate.swift */,
 				BB22A8441B94B2460064B89E /* Assets.xcassets */,
 				BB22A8461B94B2460064B89E /* LaunchScreen.storyboard */,
-				BBDD35FF1B988AFB00F626D5 /* ska-dance0.png */,
-				BBDD36001B988AFB00F626D5 /* ska-dance1.png */,
-				BBDD36011B988AFB00F626D5 /* ska-dance2.png */,
-				BBDD36021B988AFB00F626D5 /* ska-dance3.png */,
-				BBDD36071B9891DC00F626D5 /* ska-disabled.png */,
-				BBDD36091B989CFD00F626D5 /* ska-pressed.png */,
 				BB22A8491B94B2460064B89E /* Info.plist */,
+				BB6743801BA203C3008F1D11 /* Textures.atlas */,
 				BB334D0F1B95E07700C07C39 /* Scenes */,
 				BB334D0E1B95E07000C07C39 /* Controllers */,
 				BBEC29E31B94B3A0000D9964 /* SKAToolKit */,
@@ -156,9 +141,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB22A8391B94B2460064B89E /* SKAToolKit */ = {
+		BB22A8391B94B2460064B89E /* SKASimpleButtonExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB22A8621B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKAToolKit" */;
+			buildConfigurationList = BB22A8621B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKASimpleButtonExample" */;
 			buildPhases = (
 				BB22A8361B94B2460064B89E /* Sources */,
 				BB22A8371B94B2460064B89E /* Frameworks */,
@@ -168,14 +153,14 @@
 			);
 			dependencies = (
 			);
-			name = SKAToolKit;
+			name = SKASimpleButtonExample;
 			productName = SKAToolKit;
-			productReference = BB22A83A1B94B2460064B89E /* SKAToolKit.app */;
+			productReference = BB22A83A1B94B2460064B89E /* SKASimpleButtonExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BB22A84D1B94B2460064B89E /* SKAToolKitTests */ = {
+		BB22A84D1B94B2460064B89E /* SKASimpleButtonExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB22A8651B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKAToolKitTests" */;
+			buildConfigurationList = BB22A8651B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKASimpleButtonExampleTests" */;
 			buildPhases = (
 				BB22A84A1B94B2460064B89E /* Sources */,
 				BB22A84B1B94B2460064B89E /* Frameworks */,
@@ -186,9 +171,9 @@
 			dependencies = (
 				BB22A8501B94B2460064B89E /* PBXTargetDependency */,
 			);
-			name = SKAToolKitTests;
+			name = SKASimpleButtonExampleTests;
 			productName = SKAToolKitTests;
-			productReference = BB22A84E1B94B2460064B89E /* SKAToolKitTests.xctest */;
+			productReference = BB22A84E1B94B2460064B89E /* SKASimpleButtonExample.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -197,7 +182,8 @@
 		BB22A8321B94B2460064B89E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "SpriteKit Alliance";
 				TargetAttributes = {
 					BB22A8391B94B2460064B89E = {
@@ -209,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BB22A8351B94B2460064B89E /* Build configuration list for PBXProject "SKAToolKit" */;
+			buildConfigurationList = BB22A8351B94B2460064B89E /* Build configuration list for PBXProject "SKASimpleButtonExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -222,8 +208,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB22A8391B94B2460064B89E /* SKAToolKit */,
-				BB22A84D1B94B2460064B89E /* SKAToolKitTests */,
+				BB22A8391B94B2460064B89E /* SKASimpleButtonExample */,
+				BB22A84D1B94B2460064B89E /* SKASimpleButtonExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,13 +219,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBDD36081B9891DC00F626D5 /* ska-disabled.png in Resources */,
-				BBDD36051B988AFB00F626D5 /* ska-dance2.png in Resources */,
-				BBDD36031B988AFB00F626D5 /* ska-dance0.png in Resources */,
-				BBDD36041B988AFB00F626D5 /* ska-dance1.png in Resources */,
-				BBDD360A1B989CFD00F626D5 /* ska-pressed.png in Resources */,
-				BBDD36061B988AFB00F626D5 /* ska-dance3.png in Resources */,
 				BB22A8481B94B2460064B89E /* LaunchScreen.storyboard in Resources */,
+				BB6743811BA203C3008F1D11 /* Textures.atlas in Resources */,
 				BB22A8451B94B2460064B89E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +259,7 @@
 /* Begin PBXTargetDependency section */
 		BB22A8501B94B2460064B89E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BB22A8391B94B2460064B89E /* SKAToolKit */;
+			target = BB22A8391B94B2460064B89E /* SKASimpleButtonExample */;
 			targetProxy = BB22A84F1B94B2460064B89E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -333,7 +314,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,7 +368,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKA.SKAToolKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SKASimpleButtonExample;
 			};
 			name = Debug;
 		};
@@ -399,7 +380,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKA.SKAToolKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SKASimpleButtonExample;
 			};
 			name = Release;
 		};
@@ -410,8 +391,8 @@
 				INFOPLIST_FILE = SKAToolKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKA.SKAToolKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKAToolKit.app/SKAToolKit";
+				PRODUCT_NAME = SKASimpleButtonExample;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKASimpleButtonExample.app/SKASimpleButtonExample";
 			};
 			name = Debug;
 		};
@@ -422,15 +403,15 @@
 				INFOPLIST_FILE = SKAToolKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKA.SKAToolKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKAToolKit.app/SKAToolKit";
+				PRODUCT_NAME = SKASimpleButtonExample;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKASimpleButtonExample.app/SKASimpleButtonExample";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB22A8351B94B2460064B89E /* Build configuration list for PBXProject "SKAToolKit" */ = {
+		BB22A8351B94B2460064B89E /* Build configuration list for PBXProject "SKASimpleButtonExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB22A8601B94B2460064B89E /* Debug */,
@@ -439,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB22A8621B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKAToolKit" */ = {
+		BB22A8621B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKASimpleButtonExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB22A8631B94B2460064B89E /* Debug */,
@@ -448,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB22A8651B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKAToolKitTests" */ = {
+		BB22A8651B94B2460064B89E /* Build configuration list for PBXNativeTarget "SKASimpleButtonExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB22A8661B94B2460064B89E /* Debug */,

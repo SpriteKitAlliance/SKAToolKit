@@ -11,23 +11,27 @@ import SpriteKit
 
 class ButtonGameScene: SKScene {
   var button: SKAButtonSprite?
+  var disableButton: SKAButtonSprite!
   var danceAction: SKAction?
-  
+  let atlas = SKTextureAtlas(named: "Textures")
+
   override func didMoveToView(view: SKView) {
     super.didMoveToView(view)
     
-    let disableButton = SKAButtonSprite(color: UIColor.redColor(), size: CGSize(width: 50, height: 50))
-    disableButton.position = CGPoint(x: view.center.x, y: UIScreen.mainScreen().bounds.height - 60)
+    disableButton = SKAButtonSprite(color: UIColor.redColor(), size: CGSize(width: 260, height: 44))
+    disableButton.setTexture(self.atlas.textureNamed("disable"), forState: .Normal)
+    disableButton.setTexture(self.atlas.textureNamed("enabled"), forState: .Selected)
+    disableButton.position = CGPoint(x: view.center.x, y: UIScreen.mainScreen().bounds.height - 100)
     disableButton.addTarget(self, selector: "disableSKA:", forControlEvents: .TouchUpInside)
     addChild(disableButton)
     
     //Dance Action
-    let textures = [SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance2"), SKTexture(imageNamed: "ska-dance1"), SKTexture(imageNamed: "ska-dance3")]
-    let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+    let textures = [self.atlas.textureNamed("ska-dance1"), self.atlas.textureNamed("ska-dance2"), self.atlas.textureNamed("ska-dance1"), self.atlas.textureNamed("ska-dance3")]
+
+    let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.12, resize: true, restore: false)
     danceAction = SKAction.repeatActionForever(dance)
-    
     //SKA Button
-    button = SKAButtonSprite(color: UIColor.blueColor(), size: CGSize(width: 100, height: 100))
+    button = SKAButtonSprite(color: UIColor.blueColor(), size: CGSize(width: 126, height: 112))
     addChild(button!)
     
     button?.addTarget(self, selector: "touchUpInside:", forControlEvents: .TouchUpInside)
@@ -38,9 +42,9 @@ class ButtonGameScene: SKScene {
     button?.addTarget(self, selector: "dragExit:", forControlEvents: .DragExit)
     button?.addTarget(self, selector: "touchDown:", forControlEvents: .TouchDown)
     
-    button?.setTexture(SKTexture(imageNamed: "ska-dance0"), forState: .Normal)
-    button?.setTexture(SKTexture(imageNamed: "ska-pressed"), forState: .Highlighted)
-    button?.setTexture(SKTexture(imageNamed: "ska-disabled"), forState: .Disabled)
+    button?.setTexture(self.atlas.textureNamed("ska-stand"), forState: .Normal)
+    button?.setTexture(self.atlas.textureNamed("ska-pressed"), forState: .Highlighted)
+    button?.setTexture(self.atlas.textureNamed("ska-disabled"), forState: .Disabled)
     button?.position = CGPoint(x: view.center.x, y: 100)
   }
   
@@ -103,5 +107,6 @@ class ButtonGameScene: SKScene {
   func disableSKA(sender:AnyObject) {
     guard let button = button else { return }
     button.enabled = !button.enabled
+    disableButton.selected = !button.enabled
   }
 }
