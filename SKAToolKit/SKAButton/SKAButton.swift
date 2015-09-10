@@ -67,6 +67,27 @@ struct SKAControlState: OptionSetType, Hashable {
   }
 }
 
+struct SKButtonEdgeInsets {
+  let top:CGFloat
+  let right:CGFloat
+  let bottom:CGFloat
+  let left:CGFloat
+  
+  init() {
+    top = 0
+    right = 0
+    bottom = 0
+    left = 0
+  }
+  
+  init(top:CGFloat, right:CGFloat, bottom:CGFloat, left:CGFloat) {
+    self.top = top
+    self.right = right
+    self.bottom = bottom
+    self.left = left
+  }
+}
+
 /// Container for SKAButton Selectors
 /// - Parameter target: target Object to call the selector on
 /// - Parameter selector: Selector to call
@@ -75,19 +96,33 @@ private struct SKAButtonSelector {
   let selector: Selector
 }
 
+/// SKSpriteNode set up to mimic the utility of UIButton
 class SKAButtonSprite : SKSpriteNode {
   private var selectors = [SKAControlEvent: [SKAButtonSelector]]()
   private var textures = [SKAControlState: SKTexture]()
   private var normalTextures = [SKAControlState: SKTexture]()
   private var colors = [SKAControlState: SKColor]()
   private var backgroundColor = SKColor.clearColor()
-  private var savedSize = CGSize()
+  private var childNode: SKSpriteNode
   
-  /// Saving the size, we need to reset the size if a state has a different sized texture applied
-  override var size:CGSize {
-    didSet{
-      savedSize = size
-    }
+  /// Will restore the size of the texture node to the button size every time the button is updated
+  var restoreSizeAfterAction = true
+  var touchTarget:CGSize
+  
+  // MARK: - Initializers
+  
+  override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+    childNode = SKSpriteNode(texture: nil, color: color, size: size)
+    touchTarget = size
+    super.init(texture: texture, color: color, size: size)
+    self.addChild(childNode)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    childNode = SKSpriteNode()
+    touchTarget = CGSize()
+    super.init(coder: aDecoder)
+    self.addChild(childNode)
   }
   
   /// Sets the button to the selected state
@@ -139,7 +174,7 @@ class SKAButtonSprite : SKSpriteNode {
   private func updateButton() {
     var newNormalTexture:SKTexture?
     var newTexture:SKTexture?
-    var newColor = color
+    var newColor = childNode.color
     
     if controlState.contains(.Disabled) {
       if let disabledNormal = normalTextures[.Disabled] {
@@ -188,11 +223,13 @@ class SKAButtonSprite : SKSpriteNode {
     if newTexture == nil {
       newTexture = textures[.Normal]
     }
+    childNode.normalTexture = newNormalTexture
+    childNode.texture = newTexture
+    childNode.color = newColor
     
-    normalTexture = newNormalTexture
-    texture = newTexture
-    color = newColor
-    size = savedSize
+    if restoreSizeAfterAction {
+      childNode.size = childNode.size
+    }
   }
   
   // MARK: - Selector Events
@@ -240,7 +277,7 @@ class SKAButtonSprite : SKSpriteNode {
     }
   }
   
-  // Mark: - Control States
+  // MARK: - Control States
   
   /// Sets the node's background color for the specified control state
   /// - Parameter color: The specified color
@@ -278,10 +315,45 @@ class SKAButtonSprite : SKSpriteNode {
     updateButton()
   }
   
+  /// Private variable to tell us when to update the button size or the child size
+  private var updatingTargetSize = false
+  
+  /// Insets for the texture/color of the node
+  ///
+  /// - Note: Inset direction will move the texture/color towards that edge at the given amount.
+  ///
+  /// - SKButtonEdgeInsets(top: 10, right: 0, bottom: 0, left: 0) 
+  ///   Top will move the texture/color towards the top
+  /// - SKButtonEdgeInsets(top: 10, right: 0, bottom: 10, left: 0) 
+  ///   Top and Bottom will cancel each other out
+  var insets = SKButtonEdgeInsets() {
+    didSet{
+      childNode.position = CGPoint(x: -insets.left + insets.right, y: -insets.bottom + insets.top)
+    }
+  }
+  
+  /// Sets the touchable area for the button
+  /// - Parameter size: The size of the touchable area
+  /// - Returns: void
+  func setButtonTargetSize(size:CGSize) {
+    updatingTargetSize = true
+    self.size = size
+  }
+  
+  /// Sets the touchable area for the button
+  /// - Parameter size: The size of the touchable area
+  /// - Parameter insets: The edge insets for the texture/color of the node
+  /// - Returns: void
+  /// - Note: Inset direction will move the texture/color towards that edge at the given amount.
+  func setButtonTargetSize(size:CGSize, insets:SKButtonEdgeInsets) {
+    self.insets = insets
+    self.setButtonTargetSize(size)
+  }
+  
   /// Save a touch to help determine if the touch just entered or exited the node
   private var lastEvent:SKAControlEvent = .None
   
-  // Mark: - Touch Methods
+  // MARK: - Touch Methods
   
   override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     if let _ = touches.first as UITouch? where enabled {
@@ -343,23 +415,85 @@ class SKAButtonSprite : SKSpriteNode {
     
     super.touchesCancelled(touches, withEvent: event)
   }
+
+  /// MARK: Override basic functions and pass them to our child node, this leaves the button as a colorless touchable area
   
-  /// Fix button to correct state after action is removed
+  override func actionForKey(key: String) -> SKAction? {
+    return childNode.actionForKey(key)
+  }
+  
+  override func runAction(action: SKAction) {
+    childNode.runAction(action)
+  }
+  
+  override func runAction(action: SKAction, completion block: () -> Void) {
+    childNode.runAction(action, completion: block)
+  }
+  
+  override func runAction(action: SKAction, withKey key: String) {
+    childNode.runAction(action, withKey: key)
+  }
+  
   override func removeActionForKey(key: String) {
-    super.removeActionForKey(key)
-    
+    childNode.removeActionForKey(key)
     updateButton()
   }
   
-  /// Fix button to correct state after action is removed
   override func removeAllActions() {
-    super.removeAllActions()
+    childNode.removeAllActions()
     updateButton()
   }
-    
+  
+  override func removeAllChildren() {
+    childNode.removeAllChildren()
+  }
+  
+  override var texture: SKTexture? {
+    get {
+      return childNode.texture
+    }
+    set {
+      childNode.texture = newValue
+    }
+  }
+  
+  override var normalTexture: SKTexture? {
+    get {
+      return childNode.normalTexture
+    }
+    set {
+      childNode.normalTexture = newValue
+    }
+  }
+  
+  override var color: SKColor {
+    get {
+      return childNode.color
+    }
+    set {
+      super.color = SKColor.clearColor()
+      childNode.color = newValue
+    }
+  }
+  
+ override var size: CGSize {
+    willSet {
+      if updatingTargetSize {
+        if self.size != newValue {
+          super.size = newValue
+        }
+      
+        updatingTargetSize = false
+      } else {
+        childNode.size = newValue
+      }
+    }
+  }
+  
   /// Remove unneeded textures
   deinit {
     textures.removeAll()
     normalTextures.removeAll()
+    removeAllChildren()
   }
 }

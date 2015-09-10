@@ -23,15 +23,17 @@ class ButtonGameScene: SKScene {
     disableButton.setTexture(self.atlas.textureNamed("enabled"), forState: .Selected)
     disableButton.position = CGPoint(x: view.center.x, y: UIScreen.mainScreen().bounds.height - 100)
     disableButton.addTarget(self, selector: "disableSKA:", forControlEvents: .TouchUpInside)
+    disableButton.setButtonTargetSize(CGSize(width: 300, height: 60))
+
     addChild(disableButton)
     
     //Dance Action
     let textures = [self.atlas.textureNamed("ska-dance1"), self.atlas.textureNamed("ska-dance2"), self.atlas.textureNamed("ska-dance1"), self.atlas.textureNamed("ska-dance3")]
 
-    let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.12, resize: true, restore: false)
+    let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.12, resize: true, restore: true)
     danceAction = SKAction.repeatActionForever(dance)
     //SKA Button
-    button = SKAButtonSprite(color: UIColor.blueColor(), size: CGSize(width: 126, height: 112))
+    button = SKAButtonSprite(color: UIColor.greenColor(), size: CGSize(width: 126, height: 112))
     addChild(button!)
     
     button?.addTarget(self, selector: "touchUpInside:", forControlEvents: .TouchUpInside)
@@ -45,7 +47,7 @@ class ButtonGameScene: SKScene {
     button?.setTexture(self.atlas.textureNamed("ska-stand"), forState: .Normal)
     button?.setTexture(self.atlas.textureNamed("ska-pressed"), forState: .Highlighted)
     button?.setTexture(self.atlas.textureNamed("ska-disabled"), forState: .Disabled)
-    button?.position = CGPoint(x: view.center.x, y: 100)
+    button?.position = CGPoint(x: view.center.x, y: 200)
   }
   
   func touchUpInside(sender:AnyObject) {
