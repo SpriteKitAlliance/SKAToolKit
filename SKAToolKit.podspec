@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name     = 'SKAToolKit'
-  s.version  = '1.0.2'
+  s.version  = '1.0.3'
   s.license  = 'MIT'
-  s.summary  = 'SKAToolKit is a free set of tools to be used with Apples Sprite Kit framework.'
+  s.summary  = 'SKAToolKit is a free set of tools to be used with Apple\'s Sprite Kit framework.'
   s.homepage = 'http://spritekitalliance.com/'
   s.social_media_url = 'https://twitter.com/SKADevs'
   s.authors  = {
