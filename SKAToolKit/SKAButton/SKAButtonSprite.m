@@ -29,7 +29,11 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.delegate buttonSpriteDown:self];
+    if([self.delegate respondsToSelector:@selector(buttonSpriteDown:)])
+    {
+        [self.delegate buttonSpriteDown:self];
+    }
+
     NSLog(@"touched");
     self.alpha = .5;
 }
@@ -44,14 +48,20 @@
         if(CGRectContainsPoint(self.calculateAccumulatedFrame, location))
         {
             NSLog(@"UP IN SIDE");
-            [self.delegate buttonSpritePressed:self];
+            if([self.delegate respondsToSelector:@selector(buttonSpritePressed:)])
+            {
+                [self.delegate buttonSpritePressed:self];
+            }
         }
         else
         {
             NSLog(@"not touched");
         }
 
-        [self.delegate buttonSpriteUp:self];
+        if([self.delegate respondsToSelector:@selector(buttonSpriteUp:)])
+        {
+            [self.delegate buttonSpriteUp:self];
+        }
     }
 }
 
@@ -59,7 +69,10 @@
 {
     self.alpha = 1;
 
-    [self.delegate buttonSpriteUp:self];
+    if([self.delegate respondsToSelector:@selector(buttonSpriteUp:)])
+    {
+        [self.delegate buttonSpriteUp:self];
+    }
 }
 
 @end
