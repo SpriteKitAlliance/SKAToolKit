@@ -162,7 +162,7 @@ multiLineLabelNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMi
 ```
     
 ###Contact Info
-If you would like to get in contact with the SKA email Skyler at skyler@skymistdevelopment.com
+If you would like to get in contact with the SKA, email us at join@spritekitalliance.com
     
 ###License
 Copyright (c) 2015 Sprite Kit Alliance
