@@ -18,6 +18,7 @@ class ButtonGameScene: SKScene {
   override func didMoveToView(view: SKView) {
     super.didMoveToView(view)
     
+    //Setup The Disable Button
     disableButton = SKAButtonSprite(color: UIColor.redColor(), size: CGSize(width: 260, height: 44))
     disableButton.setTexture(self.atlas.textureNamed("disable"), forState: .Normal)
     disableButton.setTexture(self.atlas.textureNamed("enabled"), forState: .Selected)
@@ -32,6 +33,7 @@ class ButtonGameScene: SKScene {
 
     let dance = SKAction.animateWithTextures(textures, timePerFrame: 0.12, resize: true, restore: true)
     danceAction = SKAction.repeatActionForever(dance)
+    
     //SKA Button
     button = SKAButtonSprite(color: UIColor.greenColor(), size: CGSize(width: 126, height: 112))
     addChild(button!)

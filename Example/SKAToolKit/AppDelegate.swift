@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
-    // Override point for customization after application launch.
     let viewController = SKAButtonViewController()
     
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -35,4 +34,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("something else selector \(sender)")
   }
 }
-

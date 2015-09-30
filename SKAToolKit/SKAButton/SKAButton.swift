@@ -26,11 +26,27 @@
 import Foundation
 import SpriteKit
 
+/// SKAControlEvent Mimics the usefulness of UIControl class
+/// - Note: None - Used internally only
+///
+/// TouchDown - User Touches Down on the button
+///
+/// TouchUpInside - User releases Touch inside the bounds of the button
+///
+/// TouchUpOutside - User releases Touch outside the bounds of the button
+///
+/// DragOutside - User Drags touch from outside the bounds of the button and stays outside
+///
+/// DragInside - User Drags touch from inside the bounds of the button and stays inside
+///
+/// DragEnter - User Drags touch from outside the bounds of the button to inside the bounds of the button
+///
+/// DragExit - User Drags touch from inside the bounds of the button to outside the bounds of the button
 struct SKAControlEvent: OptionSetType, Hashable {
   let rawValue: Int
   init(rawValue: Int) { self.rawValue = rawValue }
   
-  static var None:           SKAControlEvent   { return SKAControlEvent(rawValue: 0) }
+  static private var None:   SKAControlEvent   { return SKAControlEvent(rawValue: 0) }
   static var TouchDown:      SKAControlEvent   { return SKAControlEvent(rawValue: 1 << 0) }
   static var TouchUpInside:  SKAControlEvent   { return SKAControlEvent(rawValue: 1 << 1) }
   static var TouchUpOutside: SKAControlEvent   { return SKAControlEvent(rawValue: 1 << 2) }
@@ -42,11 +58,20 @@ struct SKAControlEvent: OptionSetType, Hashable {
   static var AllOptions:     [SKAControlEvent] {
     return [.TouchDown, .TouchUpInside, .TouchUpOutside, .DragOutside, .DragInside, .DragEnter, .DragExit, .TouchCancelled]
   }
+  
   var hashValue: Int {
     return rawValue.hashValue
   }
 }
 
+/// SKAControlState Possible states for the SKAButton
+/// - Note: Normal - No States are active on the button
+///
+/// Highlighted - Button is being touched
+///
+/// Selected - Button in selected state
+///
+/// Disabled - Button in disabled state, will ignore SKAControlEvents
 struct SKAControlState: OptionSetType, Hashable {
   let rawValue: Int
   let key: String
@@ -67,6 +92,14 @@ struct SKAControlState: OptionSetType, Hashable {
   }
 }
 
+/// Insets for the texture/color of the node
+///
+/// - Note: Inset direction will move the texture/color towards that edge at the given amount.
+///
+/// - SKButtonEdgeInsets(top: 10, right: 0, bottom: 0, left: 0)
+///   Top will move the texture/color towards the top
+/// - SKButtonEdgeInsets(top: 10, right: 0, bottom: 10, left: 0)
+///   Top and Bottom will cancel each other out
 struct SKButtonEdgeInsets {
   let top:CGFloat
   let right:CGFloat
