@@ -28,7 +28,6 @@
 @interface SKACroppedMiniMap ()
 
 @property (nonatomic, strong) SKAMiniMap *miniMap;
-@property (nonatomic, strong) SKNode *map;
 
 @end
 

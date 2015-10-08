@@ -261,9 +261,9 @@
                     NSLog(@"error finding source for image in collection");
                 }
                 
-
+                //iOS 9 does not like path extensions for textureWithImageName:
                 SKTexture *texture =
-                    [SKTexture textureWithImageNamed:imageName];
+                    [SKTexture textureWithImageNamed:[imageName stringByDeletingPathExtension]];
                 texture.filteringMode = SKTextureFilteringNearest;
 
                 mapTile.texture = texture;
@@ -434,7 +434,7 @@
 
                 object.objectID = [objectDictionary[@"objectID"] integerValue];
                 object.name = objectDictionary[@"name"];
-                object.roation = [objectDictionary[@"roation"] integerValue];
+                object.rotation = [objectDictionary[@"rotation"] integerValue];
                 object.type = objectDictionary[@"type"];
                 object.visible = [objectDictionary[@"visible"] boolValue];
 

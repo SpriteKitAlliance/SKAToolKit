@@ -42,6 +42,11 @@
     }
 
     SKTexture *texture = [map.scene.view textureFromNode:map];
+    
+    if(texture.size.width > 2048 || texture.size.height > 2048)
+    {
+        NSLog(@"WARNING map max size is {2048, 2048} for mini map yours is: %@", NSStringFromCGSize(texture.size));
+    }
 
     float scaledTo = (float)width / map.calculateAccumulatedFrame.size.width;
 

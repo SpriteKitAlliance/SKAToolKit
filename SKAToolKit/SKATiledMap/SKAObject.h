@@ -35,7 +35,7 @@
 @property (nonatomic) NSInteger width;
 
 @property (nonatomic) NSInteger objectID;
-@property (nonatomic) NSInteger roation;
+@property (nonatomic) NSInteger rotation;
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *type;
