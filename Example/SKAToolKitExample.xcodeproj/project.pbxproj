@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		732934CF1BCC6212000A2F86 /* SKAProgressNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 732934CE1BCC6212000A2F86 /* SKAProgressNode.m */; };
 		B63D27C71AF6C17800E7F043 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27C61AF6C17800E7F043 /* main.m */; };
 		B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27C91AF6C17800E7F043 /* AppDelegate.m */; };
 		B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27CC1AF6C17800E7F043 /* ViewController.m */; };
@@ -51,6 +52,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		732934CD1BCC6212000A2F86 /* SKAProgressNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKAProgressNode.h; path = ../../SKAToolKit/SKAProgressNode/SKAProgressNode.h; sourceTree = "<group>"; };
+		732934CE1BCC6212000A2F86 /* SKAProgressNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKAProgressNode.m; path = ../../SKAToolKit/SKAProgressNode/SKAProgressNode.m; sourceTree = "<group>"; };
 		B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKAToolKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D27C51AF6C17800E7F043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63D27C61AF6C17800E7F043 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		732934CC1BCC61C3000A2F86 /* SKAProgressNode */ = {
+			isa = PBXGroup;
+			children = (
+				732934CD1BCC6212000A2F86 /* SKAProgressNode.h */,
+				732934CE1BCC6212000A2F86 /* SKAProgressNode.m */,
+			);
+			name = SKAProgressNode;
+			sourceTree = "<group>";
+		};
 		B63D27B81AF6C17800E7F043 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +238,7 @@
 		B6C7510E1B13907100455CA6 /* SKAToolKit */ = {
 			isa = PBXGroup;
 			children = (
+				732934CC1BCC61C3000A2F86 /* SKAProgressNode */,
 				BB60EA121B52993A00FD72ED /* SKAToolKit.h */,
 				B643FA5A1B5F35C500621A87 /* SKATiledMap */,
 				B643FA591B5F355100621A87 /* SKATestingNodes */,
@@ -380,6 +393,7 @@
 			files = (
 				B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */,
 				B643FA801B5F370200621A87 /* SKATestHud.m in Sources */,
+				732934CF1BCC6212000A2F86 /* SKAProgressNode.m in Sources */,
 				B643FA781B5F35F100621A87 /* LFCGzipUtility.m in Sources */,
 				B643FA791B5F35F100621A87 /* SKAMapTile.m in Sources */,
 				B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */,
