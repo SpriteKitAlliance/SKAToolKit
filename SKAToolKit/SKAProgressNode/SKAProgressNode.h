@@ -3,7 +3,7 @@
 //  CircularProgressNodeAlpha
 //
 //  Created by Violet on 9/29/15.
-//  Copyright (c) 2015 Violetsoft. All rights reserved.
+//  Copyright (c) 2015 Sprite Kit Alliance
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -32,7 +32,7 @@ typedef void (^ProgressHandler)(CGFloat);
 @interface SKAProgressNode : SKShapeNode
 
 - (instancetype)initWithRadius:(CGFloat)radius
-                      andWidth:(CGFloat)width
+                  andLineWidth:(CGFloat)width
             andForegroundColor:(SKColor *)foregroundColor
             andBackgroundColor:(SKColor *)backgroundColor
           inClockwiseDirection:(BOOL)clockwise;
@@ -43,13 +43,17 @@ typedef void (^ProgressHandler)(CGFloat);
 
 - (void)stopProgress;
 
+// You can call this to manually set the progress.
 - (void)setPercentageLabel:(SKLabelNode*)percentageLabel;
 
+// Countdown without completion handler.
 - (void)countdownWithDuration:(NSTimeInterval)duration;
 
+// Countdown with completion handler.
 - (void)countdownWithDuration:(NSTimeInterval)duration
          andCompletionHandler:(ProgressCompletionHandler)completionHandler;
 
+// Countdown with completion and progress handler.
 - (void)countdownWithDuration:(NSTimeInterval)duration
            andProgressHandler:(ProgressHandler)progressHandler
          andCompletionHandler:(ProgressCompletionHandler)completionHandler;

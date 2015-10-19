@@ -3,7 +3,7 @@
 //  CircularProgressNodeAlpha
 //
 //  Created by Violet on 9/29/15.
-//  Copyright (c) 2015 Violetsoft. All rights reserved.
+//  Copyright (c) 2015 Sprite Kit Alliance
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -52,46 +52,33 @@ NSString *const kProgressCountdownAction = @"progressCountdownAction";
 @implementation SKAProgressNode
 
 - (instancetype)initWithRadius:(CGFloat)radius
-                      andWidth:(CGFloat)width
+                  andLineWidth:(CGFloat)width
             andForegroundColor:(SKColor *)foregroundColor
             andBackgroundColor:(SKColor *)backgroundColor
           inClockwiseDirection:(BOOL)clockwise {
     
     if (self = [super init]) {
         
-        self.path = CGPathCreateWithEllipseInRect(
-                                                  CGRectMake(-radius, -radius, radius * 2.0f, radius * 2.0f), NULL);
+        CGRect rect = CGRectMake(-radius, -radius, radius * 2.0f, radius * 2.0f);
+        self.path = CGPathCreateWithEllipseInRect(rect, NULL);
         
         self.name = @"progressBackgroundNode";
-        
         self.fillColor = [SKColor clearColor];
-        
         self.strokeColor = backgroundColor;
-        
         self.lineWidth = width;
         
         // Initializing parameters required for progressIndicatorNode creation.
-        
         _radius = radius;
-        
         _foregroundColor = foregroundColor;
-        
         _clockwise = clockwise;
-        
         _progress = 0.0f;
         
         // Creating progress indicator node.
-        
         _progressInidicatorNode = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-        
         _progressInidicatorNode.fillColor = [SKColor clearColor];
-        
         _progressInidicatorNode.lineWidth = width;
-        
         _progressInidicatorNode.strokeColor = foregroundColor;
-        
         _progressInidicatorNode.name = @"progressIndicatorNode";
-        
         _progressInidicatorNode.zPosition = 2;
         
         self.zPosition = _progressInidicatorNode.zPosition - 1;

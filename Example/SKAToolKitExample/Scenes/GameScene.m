@@ -31,6 +31,9 @@
 @property (nonatomic, strong) SKATiledMap *map;
 @property (nonatomic, strong) SKACroppedMiniMap *croppedMiniMap;
 
+@property (nonatomic, strong) SKAProgressNode *progressNode;
+@property (nonatomic) CGFloat progress;
+
 @end
 
 @implementation GameScene
@@ -74,19 +77,7 @@
 
     //adding mini map
     NSInteger padding = 10;
-
-    /*  //creating a normal mini map
-    SKAMiniMap *miniMap =
-    [[SKAMiniMap alloc] initWithMap:self.map
-                          withWidth:150];
-    miniMap.position = CGPointMake(self.size.width - miniMap.size.width / 2 - padding,
-                                   self.size.height - miniMap.size.height / 2 - padding);
     
-    miniMap.position = CGPointMake(self.size.width - miniMap.size.width / 2,
-                                   self.size.height - miniMap.size.height / 2);
-    
-    [testHud addChild:miniMap];
-*/
     self.croppedMiniMap =
         [[SKACroppedMiniMap alloc] initWithMap:self.map
                                      withWidth:225
@@ -107,10 +98,24 @@
     labelNode.fontSize = 20;
     [testHud addChild:labelNode];
     [labelNode drawLabel];
+    
+    //SKAProgressNode Example
+    self.progressNode = [[SKAProgressNode alloc]initWithRadius:14 andLineWidth:10 andForegroundColor:[SKColor blueColor] andBackgroundColor:[SKColor redColor] inClockwiseDirection:YES];
+    self.progressNode.position = CGPointMake(self.scene.size.width/2, 50);
+    [testHud addChild:self.progressNode];
+    
+    SKLabelNode *percentLabel = [[SKLabelNode alloc]init];
+    percentLabel.fontSize = 20;
+    percentLabel.fontColor = [SKColor blackColor];
+    percentLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter;
+    percentLabel.position = CGPointMake(0, -40);
+    [self.progressNode setPercentageLabel:percentLabel];
+    
 }
 
 - (void)update:(NSTimeInterval)currentTime
 {
+
     //player movement
     [self.player update];
 
@@ -124,6 +129,11 @@
     //auto follow updates
     [self.map update];
     [self.croppedMiniMap update];
+    
+    //progress node updates
+    self.progress += .01;
+    self.progress = self.progress > 1 ? 0.0 : self.progress;
+    [self.progressNode updateProgress:self.progress];
 }
 
 @end

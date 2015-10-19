@@ -42,4 +42,6 @@
 
 #import "SKALabelNode.h"
 
+#import "SKAProgressNode.h"
+
 #endif
