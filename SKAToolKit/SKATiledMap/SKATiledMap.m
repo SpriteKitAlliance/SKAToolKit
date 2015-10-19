@@ -648,7 +648,7 @@
         [tiles addObject:array[x][y - 1]];
     }
 
-    if(y + 1 >= 0)
+    if(y + 1 < self.mapHeight)
     {
         [tiles addObject:array[x][y + 1]];
     }
@@ -718,22 +718,22 @@
         // calculate what to make visiable
         self.visibleArray = [[NSMutableArray alloc] init];
 
-        NSInteger staringX = x - width / 2;
-        NSInteger staringY = y - height / 2;
-        NSInteger endingX = staringX + width;
-        NSInteger endingY = staringY + height;
+        NSInteger startingX = x - width / 2;
+        NSInteger startingY = y - height / 2;
+        NSInteger endingX = startingX + width;
+        NSInteger endingY = startingY + height;
 
         // TODO: Explain why we do this
-        if(staringX < 0)
+        if(startingX < 0)
         {
-            staringX = 0;
+            startingX = 0;
 
             endingX = width;
         }
 
-        if(staringY < 0)
+        if(startingY < 0)
         {
-            staringY = 0;
+            startingY = 0;
 
             endingY = height;
         }
@@ -742,24 +742,24 @@
         {
             endingX = self.mapWidth - 1;
 
-            staringX = endingX - width;
+            startingX = endingX - width;
         }
 
         if(endingY > self.mapHeight - 1)
         {
             endingY = self.mapHeight - 1;
 
-            staringY = endingY - height;
+            startingY = endingY - height;
         }
 
-        if(staringX < 0)
+        if(startingX < 0)
         {
-            staringX = 0;
+            startingX = 0;
         }
 
-        if(staringY < 0)
+        if(startingY < 0)
         {
-            staringY = 0;
+            startingY = 0;
         }
 
         if(endingX < 0)
@@ -774,9 +774,9 @@
 
         for(NSInteger l = 0; l < self.spriteLayers.count; l++)
         {
-            for(NSInteger x = staringX; x < endingX; x++)
+            for(NSInteger x = startingX; x < endingX; x++)
             {
-                for(NSInteger y = staringY; y < endingY; y++)
+                for(NSInteger y = startingY; y < endingY; y++)
                 {
                     SKASprite *sprite =
                         [self spriteOnLayer:l

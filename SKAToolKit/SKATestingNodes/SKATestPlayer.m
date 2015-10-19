@@ -100,7 +100,6 @@
         [self jump];
     }
 
-    self.wantsToJump = NO;
 }
 
 - (void)runLeft
@@ -121,6 +120,8 @@
 
 - (void)jump
 {
+    self.wantsToJump = NO;
+
     self.physicsBody.velocity = CGVectorMake(self.physicsBody.velocity.dx, 800);
 }
 
