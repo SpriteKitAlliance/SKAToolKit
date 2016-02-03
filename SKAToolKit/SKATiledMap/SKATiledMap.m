@@ -700,7 +700,8 @@
                         [self spriteOnLayer:l
                                      indexX:x
                                      indexY:y];
-                    sprite.hidden = YES;
+                    //sprite.hidden = YES;
+                    [sprite removeFromParent];
                 }
             }
         }
@@ -712,7 +713,8 @@
         // hide sprites that were previsouly visible
         for(SKASprite *sprite in self.visibleArray)
         {
-            sprite.hidden = YES;
+//            sprite.hidden = YES;
+            [sprite removeFromParent];
         }
 
         // calculate what to make visiable
@@ -782,10 +784,12 @@
                         [self spriteOnLayer:l
                                      indexX:x
                                      indexY:y];
-                    sprite.hidden = NO;
+//                    sprite.hidden = NO;
+                    SKASpriteLayer *layer = self.spriteLayers[l];
 
                     if(sprite)
                     {
+                        [layer addChild:sprite];
                         [self.visibleArray addObject:sprite];
                     }
                 }

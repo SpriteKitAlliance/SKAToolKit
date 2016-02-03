@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		732934CF1BCC6212000A2F86 /* SKAProgressNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 732934CE1BCC6212000A2F86 /* SKAProgressNode.m */; };
+		B631F5CF1BFC288B0069E8F2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B631F5CE1BFC288B0069E8F2 /* libz.tbd */; };
 		B63D27C71AF6C17800E7F043 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27C61AF6C17800E7F043 /* main.m */; };
 		B63D27CA1AF6C17800E7F043 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27C91AF6C17800E7F043 /* AppDelegate.m */; };
 		B63D27CD1AF6C17800E7F043 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63D27CC1AF6C17800E7F043 /* ViewController.m */; };
@@ -35,7 +36,6 @@
 		B6EBB2A01B5EB9FD00A17D18 /* SKACroppedMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBB29F1B5EB9FD00A17D18 /* SKACroppedMiniMap.m */; };
 		B6EBB2AD1B5EBA8300A17D18 /* SKAMiniMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EBB2AC1B5EBA8300A17D18 /* SKAMiniMap.m */; };
 		B6F24CEB1B8955FB00577DB5 /* SKALabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F24CEA1B8955FB00577DB5 /* SKALabelNode.m */; };
-		F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +54,7 @@
 /* Begin PBXFileReference section */
 		732934CD1BCC6212000A2F86 /* SKAProgressNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKAProgressNode.h; path = ../../SKAToolKit/SKAProgressNode/SKAProgressNode.h; sourceTree = "<group>"; };
 		732934CE1BCC6212000A2F86 /* SKAProgressNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKAProgressNode.m; path = ../../SKAToolKit/SKAProgressNode/SKAProgressNode.m; sourceTree = "<group>"; };
+		B631F5CE1BFC288B0069E8F2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B63D27C11AF6C17800E7F043 /* SKAToolKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKAToolKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63D27C51AF6C17800E7F043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63D27C61AF6C17800E7F043 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		B6F24CE91B8955FB00577DB5 /* SKALabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKALabelNode.h; path = ../../SKAToolKit/SKALabelNode/SKALabelNode.h; sourceTree = "<group>"; };
 		B6F24CEA1B8955FB00577DB5 /* SKALabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKALabelNode.m; path = ../../SKAToolKit/SKALabelNode/SKALabelNode.m; sourceTree = "<group>"; };
 		BB60EA121B52993A00FD72ED /* SKAToolKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SKAToolKit.h; path = ../../SKAToolKit/SKAToolKit.h; sourceTree = "<group>"; };
-		F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F461257B1B30EA2700352D7C /* libz.1.2.5.dylib in Frameworks */,
+				B631F5CF1BFC288B0069E8F2 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +131,7 @@
 		B63D27B81AF6C17800E7F043 = {
 			isa = PBXGroup;
 			children = (
+				B631F5CE1BFC288B0069E8F2 /* libz.tbd */,
 				B63D27C31AF6C17800E7F043 /* SKAToolKitExample */,
 				B63D27C21AF6C17800E7F043 /* Products */,
 			);
@@ -147,7 +148,6 @@
 		B63D27C31AF6C17800E7F043 /* SKAToolKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				F461257A1B30EA2700352D7C /* libz.1.2.5.dylib */,
 				BB3704961B50D3F700D7EE0B /* Controllers */,
 				BB3704971B50D40400D7EE0B /* Scenes */,
 				B6C7510E1B13907100455CA6 /* SKAToolKit */,
