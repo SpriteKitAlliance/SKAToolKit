@@ -724,15 +724,16 @@
             
             startingY = endingY - height;
         }
+        NSMutableArray *spritesToTrash = [[NSMutableArray alloc] init];
        [self.visibleArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
         {
             SKASprite *sprite = obj;
             if (sprite.positionOnMap.x < startingX || sprite.positionOnMap.x >= endingX || sprite.positionOnMap.y < startingY || sprite.positionOnMap.y >= endingY) {
                 [sprite removeFromParent];
-                [self.visibleArray removeObjectAtIndex:idx];
+                [spritesToTrash addObject:sprite];
             }
         }];
-
+        [self.visibleArray removeObjectsInArray:spritesToTrash];
 
         for(NSInteger l = 0; l < self.spriteLayers.count; l++)
         {
@@ -747,9 +748,9 @@
                                          indexY:y];
 
                             if (sprite && sprite.parent == nil) {
-                                SKASpriteLayer *layer = self.spriteLayers[l];
-                                [layer addChild:sprite];
-                                [self.visibleArray addObject:sprite];
+                                    SKASpriteLayer *layer = self.spriteLayers[l];
+                                    [layer addChild:sprite];
+                                    [self.visibleArray addObject:sprite];
                             }
                     }
                 }
