@@ -28,5 +28,5 @@
 @interface SKASprite : SKSpriteNode
 
 @property (nonatomic, strong) NSDictionary *properties;
-
+@property (nonatomic) CGPoint positionOnMap;
 @end
