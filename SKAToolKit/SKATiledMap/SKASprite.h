@@ -26,7 +26,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface SKASprite : SKSpriteNode
-
+@property (nonatomic) CGPoint positionOnMap;
 @property (nonatomic, strong) NSDictionary *properties;
 
 @end
