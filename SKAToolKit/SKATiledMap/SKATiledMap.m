@@ -23,10 +23,10 @@
 //  IN THE SOFTWARE.
 //
 
-#import "SKATiledMap.h"
-#import "SKAMapTile.h"
 #import "SKACollisionDefine.h"
+#import "SKAMapTile.h"
 #import "SKATMXParser.h"
+#import "SKATiledMap.h"
 
 @interface SKATiledMap ()
 
@@ -247,12 +247,12 @@
 
                 NSDictionary *spriteDict = tileset[@"tiles"][key];
                 NSString *imageName;
-                
-                if (spriteDict[@"image"])
+
+                if(spriteDict[@"image"])
                 {
                     imageName = [spriteDict[@"image"] lastPathComponent];
                 }
-                else if (spriteDict[@"source"])
+                else if(spriteDict[@"source"])
                 {
                     imageName = [spriteDict[@"source"] lastPathComponent];
                 }
@@ -260,7 +260,7 @@
                 {
                     NSLog(@"error finding source for image in collection");
                 }
-                
+
                 //iOS 9 does not like path extensions for textureWithImageName:
                 SKTexture *texture =
                     [SKTexture textureWithImageNamed:[imageName stringByDeletingPathExtension]];
@@ -362,9 +362,7 @@
                         NSInteger x = (sprite.size.width / 2 - self.tileWidth / 2) + self.tileWidth / 2 + j * self.tileWidth;
                         NSInteger y = (sprite.size.height / 2 - self.tileHeight / 2) + self.tileHeight / 2 + i * self.tileHeight;
                         sprite.position = CGPointMake(x, y);
-
                         sprite.properties = mapTile.properties;
-
                         if([sprite.properties[@"SKACollisionType"]
                                isEqualToString:@"SKACollisionTypeRect"])
                         {
@@ -375,7 +373,7 @@
                             sprite.physicsBody.contactTestBitMask = SKACategoryPlayer;
                             sprite.zPosition = 20;
                         }
-
+                        sprite.positionOnMap = CGPointMake(j, i);
                         [spriteLayer addChild:sprite];
 
                         if(!spriteLayer.visible)
@@ -473,6 +471,7 @@
 
     self.spriteLayers = spriteLayers;
     self.objectLayers = objectLayers;
+    self.visibleArray = [[NSMutableArray alloc] init];
 }
 
 - (SKSpriteNode *)miniMapWithWidth:(NSInteger)width
@@ -686,7 +685,7 @@
              columnWidth:(NSInteger)width
                rowHeight:(NSInteger)height
 {
-    // hide everything
+    //Remove everything the first time around
     if(!self.culledBefore)
     {
         // TODO: Look into better ways to do this
@@ -700,7 +699,7 @@
                         [self spriteOnLayer:l
                                      indexX:x
                                      indexY:y];
-                    sprite.hidden = YES;
+                    [sprite removeFromParent];
                 }
             }
         }
@@ -709,21 +708,12 @@
     // only update if something changed
     if(self.lastX != x || self.lastY != y || self.lastWidth != width || self.lastHeight != height)
     {
-        // hide sprites that were previsouly visible
-        for(SKASprite *sprite in self.visibleArray)
-        {
-            sprite.hidden = YES;
-        }
-
-        // calculate what to make visiable
-        self.visibleArray = [[NSMutableArray alloc] init];
 
         NSInteger startingX = x - width / 2;
         NSInteger startingY = y - height / 2;
         NSInteger endingX = startingX + width;
         NSInteger endingY = startingY + height;
-
-        // TODO: Explain why we do this
+        //check that the boundaries are not illegal
         if(startingX < 0)
         {
             startingX = 0;
@@ -772,20 +762,31 @@
             endingY = 0;
         }
 
+        NSMutableArray *spritesToTrash = [[NSMutableArray alloc] init]; //array to hold sprites that have moved off-screen
+        [self.visibleArray
+            enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                SKASprite *sprite = obj;
+                if(sprite.positionOnMap.x < startingX || sprite.positionOnMap.x >= endingX || sprite.positionOnMap.y < startingY || sprite.positionOnMap.y >= endingY) //if the sprite has moved off-screen
+                {
+                    [sprite removeFromParent];
+                    [spritesToTrash addObject:sprite];
+                }
+            }];
+        [self.visibleArray removeObjectsInArray:spritesToTrash];
+
         for(NSInteger l = 0; l < self.spriteLayers.count; l++)
         {
             for(NSInteger x = startingX; x < endingX; x++)
             {
                 for(NSInteger y = startingY; y < endingY; y++)
                 {
-                    SKASprite *sprite =
-                        [self spriteOnLayer:l
-                                     indexX:x
-                                     indexY:y];
-                    sprite.hidden = NO;
 
-                    if(sprite)
+                    SKASprite *sprite = [self spriteOnLayer:l indexX:x indexY:y];
+
+                    if(sprite && sprite.parent == nil)
                     {
+                        SKASpriteLayer *layer = self.spriteLayers[l];
+                        [layer addChild:sprite];
                         [self.visibleArray addObject:sprite];
                     }
                 }
@@ -797,7 +798,6 @@
     self.lastY = y;
     self.lastWidth = width;
     self.lastHeight = height;
-
     self.culledBefore = YES;
 }
 
