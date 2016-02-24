@@ -119,7 +119,7 @@
     [self.map cullAroundIndexX:playerIndex.x
                         indexY:playerIndex.y
                    columnWidth:14
-                     rowHeight:7];
+                     rowHeight:9];
 
     //auto follow updates
     [self.map update];

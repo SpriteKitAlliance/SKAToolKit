@@ -46,7 +46,6 @@
     skView.showsFPS = YES;
     skView.showsDrawCount = YES;
     skView.showsNodeCount = YES;
-    skView.showsPhysics = YES;
 
     // Create and configure the scene.
     GameScene *scene = [GameScene sceneWithSize:self.view.bounds.size];

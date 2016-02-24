@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'SKAToolKit'
-  s.version  = '1.0.4'
+  s.version  = '1.0.5'
   s.license  = 'MIT'
   s.summary  = 'SKAToolKit is a free set of tools to be used with Apple\'s Sprite Kit framework.'
   s.homepage = 'http://spritekitalliance.com/'
@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
                  'Ben Kane'      => 'ben.kane27@gmail.com',
                  'Max Kargin'    => 'maksym.kargin@gmail.com',
                  'Skyler Lauren' => 'skyler@skymistdevelopment.com',
-                 'Marc Vandehey' => 'marc.vandehey@gmail.com' 
+                 'Sid Mani' => 'sidmani42@gmail.com',
+                 'Marc Vandehey' => 'marc.vandehey@gmail.com'
                }
   s.source   = { 
                  :git => 'https://github.com/SpriteKitAlliance/SKAToolKit.git',

@@ -67,7 +67,7 @@
     self.position = CGPointMake(300, 350);
     self.physicsBody =
         [SKPhysicsBody bodyWithCircleOfRadius:15
-                                       center:CGPointMake(0, -40)];
+                                       center:CGPointMake(0, -25)];
     self.physicsBody.allowsRotation = NO;
     self.physicsBody.restitution = 0;
     self.physicsBody.friction = 0.2;
